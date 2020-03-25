@@ -20,27 +20,62 @@ def run_tanubot (input_file_name, output_file_name):
     old=[]
     new=[]
 
-    tanubot_table_fixer               = False
-    tanubot_caption_adder             = False
-    tanubot_caption                   = ""
-    tanubot_figure                    = False
-    tanubot_example                   = False
-    tanubot_still_in_preamble         = True
-    tanubot_table_caption_only        = False
-    tanubot_table_next_line_is_title  = False
-    tanubot_table_next_line_is_header = False
-    text_size                         = ""
+    tanubot_table_fixer                         = False
+    tanubot_caption_adder                       = False
+    tanubot_caption                             = ""
+    tanubot_short_caption                       = ""
+    tanubot_figure                              = False
+    tanubot_example                             = False
+    tanubot_still_in_preamble                   = True
+    tanubot_table_caption_only                  = False
+    tanubot_table_next_line_is_title            = False
+    tanubot_table_next_line_is_header           = False
+    tanubot_waiting_for_additional_caption_line = False
+    tanubot_expecting_short_caption             = False
+    text_size                                   = ""
 
     for (index,line) in enumerate(lines):
 
+        tanubot_skip_line                           = False
+
+        if "hypertarget" in line and "chapter" in line:
+            tanubot_still_in_preamble = False
+
         if "\\begin{document}" in line:
             tanubot_still_in_preamble = False
-            continue
+            tanubot_skip_line = True
+
+        if "\\end{document}" in line:
+            tanubot_skip_line = True
 
         if tanubot_still_in_preamble:
-            continue
+            tanubot_skip_line = True
+
+        if (tanubot_waiting_for_additional_caption_line):
+            tanubot_caption += line.replace('\\^{}','',1).replace('\n',' ')
+            if (tanubot_caption.find('\\^{}') > 0):
+                tanubot_caption = tanubot_caption[0:tanubot_caption.find('\\^{}')]
+            if line.count("\\^{}")>0:
+                tanubot_waiting_for_additional_caption_line = False
+            tanubot_skip_line = True
+
+        if (line.count("\\^{}\\^{}") == 1):
+            tanubot_expecting_short_caption = True
+            tanubot_short_caption = line[line.find("\\^{}""\\^{}")+2*len("\\^{}"):].replace('\n',' ')
+            if "\\^{}" in tanubot_short_caption:
+                tanubot_short_caption =tanubot_short_caption.replace("\\^{}",'')
+                tanubot_expecting_short_caption = False
+            tanubot_skip_line = True
+        elif (tanubot_expecting_short_caption):
+            tanubot_short_caption += line.replace('\n',' ')
+            if "\\^{}" in tanubot_short_caption:
+                tanubot_short_caption =tanubot_short_caption.replace("\\^{}",'')
+                tanubot_expecting_short_caption = False
+            tanubot_skip_line = True
 
         if "TANUBOT" in line.upper():
+            print("EXECUTING TANUBOT COMMAND: %s" % line)
+
             if ("TANUBOT IMAGE\_WIDTH" in line):
                 new_width=line.split('=')[1].replace('\n','')
                 old.append("0.9\linewidth")
@@ -57,24 +92,65 @@ def run_tanubot (input_file_name, output_file_name):
                 new_width=line.split('=')[1].replace('\n','')
                 old.append("0.9\paperheight")
                 new.append(new_width)
-            elif ("TANUBOT FIX\_TABLE" in line or ("TANUBOT" in line and "CAPTION" in line)):
-                text_size=line.split('=')[1].split(" ")[0].replace('\n','')
-                if (line.split('=')[1].split(" ")[1]=="CAPTION"):
-                    tanubot_caption=line.split('=')[2].replace('\n','')
-                elif (line.split('=')[0] == "TANUBOT CAPTION"):
-                    tanubot_caption=line.split('=')[1].replace('\n','')
-                    tanubot_table_caption_only = True
+            elif ("FIX\_TABLE" in line or ("TANUBOT" in line and "CAPTION" in line)):
+
+                if ("FIX\_TABLE" in line):
+                    text_size=line.split('=')[1].split(" ")[0].replace('\n','')
 
                 tanubot_table_fixer = True
+
+                if ("CAPTION" in line):
+
+                    if ("TANUBOT CAPTION" in line and not "FIX\_TABLE" in line):
+
+                        expect_carrot                   = line.count("\\^{}") > 0
+
+                        tanubot_caption=line[line.find("CAPTION"):]
+                        tanubot_caption=tanubot_caption[tanubot_caption.find("=")+1:].replace('\\^{}','',1).replace('\n',' ')
+
+                        tanubot_table_caption_only = True
+                        if expect_carrot and tanubot_caption.count('\\^{}')==0:
+                                tanubot_waiting_for_additional_caption_line = True
+                                continue
+                        else:
+                            if (tanubot_caption.find('\\^{}') > 0):
+                                tanubot_caption = tanubot_caption[0:tanubot_caption.find('\\^{}')]
+                            tanubot_caption = tanubot_caption.replace('\\^{}','',1)
+                    else:
+                        tanubot_caption=line.split('=')[2].replace('\\^{}','',1).replace('\n',' ')
+                        if tanubot_caption.count('\\^{}')==0:
+                            tanubot_waiting_for_additional_caption_line = True
+                            continue
+                        else:
+                            tanubot_caption=tanubot_caption.replace('\\^{}','',1)
+
 
             elif ("TANUBOT FIGURE" in line):
                 tanubot_caption_adder = True
                 tanubot_figure = True
-                tanubot_caption = line.split('=')[1].replace('\n','')
+                tanubot_caption = line.split('=')[1].replace('\n',' ').replace('\\^{}','',1)
+                expect_carrot =line.count("\\^{}") > 0
+
+                if expect_carrot and tanubot_caption.count('\\^{}')==0:
+                        tanubot_waiting_for_additional_caption_line = True
+                        continue
+                else:
+                        if (tanubot_caption.find('\\^{}') > 0):
+                            tanubot_caption = tanubot_caption[0:tanubot_caption.find('\\^{}')]
+                        tanubot_caption = tanubot_caption.replace('\\^{}','',1)
+
             elif ("TANUBOT EXAMPLE" in line):
-                tanubot_caption_adder = True
-                tanubot_example = True
-                tanubot_caption = line.split('=')[1].replace('\n','')
+                tanubot_caption_adder           = True
+                tanubot_example                 = True
+                tanubot_caption                 = line.split('=')[1].replace('\n',' ').replace('\\^{}','',1)
+                expect_carrot                   = line.count("\\^{}") > 0
+
+                if expect_carrot and tanubot_caption.count('\\^{}')==0:
+                        tanubot_waiting_for_additional_caption_line = True
+                        continue
+                else:
+                    tanubot_caption = tanubot_caption.replace('\\^{}','',1)
+
             else:
                 print("UNKNOWN TANUBOT COMMAND IN FILE:")
                 print(input_file_name)
@@ -95,19 +171,27 @@ def run_tanubot (input_file_name, output_file_name):
 
 
                 if ("\\adjustimage" in line):
-                    print ("TANUBOT ADDING CAPTION TO EXAMPLE")
                     f.write("\\begin{%s}[H]\n" % fig_type)
                     f.write("    \\begin{center}\n")
+                    if len(old)>0 and old[0] in line:
+                        line = line.replace(old[0],new[0])
+                        old.pop()
+                        new.pop()
                     f.write(line)
-                    f.write("    \\caption{%s}\n" % tanubot_caption)
+                    if (tanubot_short_caption.replace(' ','')):
+                        f.write("    \\caption[%s]{%s}\n" % (tanubot_short_caption, tanubot_caption))
+                    else:
+                        f.write("    \\caption{%s}\n" % tanubot_caption)
                     f.write("    \\end{center}\n")
                     f.write("\\end{%s}\n" % fig_type)
 
                 elif not "{center}" in line:
-                    f.write(line)
+                    if (not tanubot_skip_line ):
+                        f.write(line)
 
             if ("\\end{center}" in line):
                     tanubot_caption       = ""
+                    tanubot_short_caption = ""
                     tanubot_figure        = False
                     tanubot_example       = False
                     tanubot_caption_adder = False
@@ -117,20 +201,24 @@ def run_tanubot (input_file_name, output_file_name):
 
                 if (not tanubot_table_caption_only):
                     f.write("\\begin{singlespace}\n")
-                    f.write("\\%s\n" % text_size)
                     cols = line.split("{")[2].replace('}','').replace("\n","")
                     cols_vline = "|"
 
                     for col in cols:
-                        cols_vline += col + "|"
+                        cols_vline += col + ""
 
-                    f.write("\\centering\n")
+                    cols_vline += "|"
 
                     f.write("\\begin{table}[H]\n")
+                    f.write("\\centering\n")
+                    f.write("\\%s\n" % text_size)
                     f.write("\\begin{tabular}{%s}\n" % cols_vline)
                 else:
                     f.write("\\begin{table}[H]\n")
-                    f.write(line)
+                    f.write("\\%s\n" % text_size)
+                    f.write("\\centering\n")
+                    if (not tanubot_skip_line ):
+                        f.write(line)
 
 
             elif (tanubot_table_next_line_is_title or tanubot_table_next_line_is_header):
@@ -138,9 +226,11 @@ def run_tanubot (input_file_name, output_file_name):
                     if ("multicolumn" in line):
                         tanubot_table_next_line_is_header = True
                         s = line.replace("\n","").split(" & ")[1].replace("}{"," $ ").replace("}","").replace("\\","").replace("{"," $ ").split(" $ ")
+                        f.write ("\\hline\n")
                         f.write ("{} & \\multicolumn{%s}{%s|}{\\textbf{%s}} \\\\\n" % (s[1],s[2],s[3]))
                         f.write ("\\hline\n")
                     else:
+                        f.write ("\\hline\n")
                         line_split = line.replace("\\\\","").replace("\n","").split(" & ")
                         for field_index, field in enumerate(line_split):
                             f.write ("\\textbf{%s}" % field)
@@ -148,26 +238,31 @@ def run_tanubot (input_file_name, output_file_name):
                                 f.write (" & ")
                         f.write ("\\\\\n")
                         tanubot_table_next_line_is_header = False
-                else:
+                elif (not tanubot_skip_line ):
                         f.write (line)
 
                 tanubot_table_next_line_is_title = False
-                #f.write("\\hline\n")
 
             elif ("\\end{tabular}" in line):
                 tanubot_table_next_line_is_header = False
                 tanubot_table_next_line_is_title = False
                 tanubot_table_fixer = False
                 f.write("\\end{tabular}\n")
-                f.write("\\caption{%s}\n" % tanubot_caption)
+                if (tanubot_short_caption.replace(' ','')!=""):
+                    f.write("\\caption[%s]{%s}\n" % (tanubot_short_caption, tanubot_caption))
+                else:
+                    f.write("\\caption{%s}\n" % tanubot_caption)
                 f.write("\\end{table}\n")
+                tanubot_caption = ""
+                tanubot_short_caption = ""
                 if (not tanubot_table_caption_only):
                     f.write("\\normalsize\n")
                     f.write("\\end{singlespace}\n")
             else:
                 if ("toprule" in line):
                     tanubot_table_next_line_is_title = True
-                f.write(line.replace("toprule", "hline").replace("midrule", "hline").replace("bottomrule", "hline"))
+                elif (not tanubot_skip_line ):
+                    f.write(line.replace("toprule", "hline").replace("midrule", "hline").replace("bottomrule", "hline"))
 
         elif len(old)>0 and old[0] in line:
             f.write(line.replace(old[0],new[0]))
@@ -175,7 +270,7 @@ def run_tanubot (input_file_name, output_file_name):
             new.pop()
 
 
-        else:
+        elif (not tanubot_skip_line ):
             f.write(line)
 
     f.close()

@@ -1,0 +1,1860 @@
+    
+    
+    
+
+    \hypertarget{Analysis I: Global Key Analysis}{\chapter{Analysis I: Global Key Analysis}\label{Analysis I: Global Key Analysis}}
+
+
+    \section{Global Analysis Objectives}\label{global-analysis-objectives}
+
+    This first chapter dedicated to analysis begins unfolding the narrative
+on temperament that will span the next three chapters, all of which,
+through the careful examination of various types of distributions of
+intervals as a function of different musical elements, on varying scales
+of generality, will cumulatively result in a deeper understanding of the
+role temperament plays in shaping the underlying musical structures and
+elements of compositions. The starting point of all of this will be
+looking at distributions of intervals on a global, nonparameterized
+scale, examining the relationship between temperament and key on a
+compositional level, and how this trends across the volume as a whole.
+
+While the distributions that we will be dealing with in this chapter are
+very broad, and on the level of compositions as the unit of study, it is
+on this macro level that we will be able to provide a proper bird's eye
+view on temperament's relationship with key, and subsequently, whether
+or not these effects extend to actual underlying compositional elements.
+It is also only on this level that we can reliably establish these
+effects to be statistically significant and have the properties of
+consistency, and not just local phenomenons that may be due to a third,
+unforeseen variable. Any of these large scale structures relating
+temperament to key established in this primary section will serve as an
+foundation for the increasingly localized subsequent chapters, that will
+progressively shift the focus from a statistics-heavy narrative, to more
+nuanced discussions on interpreting the data on a more musical level.
+
+This chapter opens with looking at general trends across the entire set
+of minor mode fugues in the WTC I to establish key division on a macro
+scale. From the most general level of analysis, I will demonstrate a
+division of the minor mode fugues into two rough categories, Pythagorean
+and Meantone, which is not only a phenomenon that arises through the
+tuning system itself, but more importantly a division that informed
+Bach's approach to composition within each category-\/-i.e.,
+compositions written within the Pythagorean class possess compositional
+qualities that make them more favorable to their class even when
+compared to Meantone compositions modulated to the same keys, and vice
+versa. The work done in this chapter will then set up the analyses to be
+performed in the next chapter, which will then narrow the focus to
+examine these two sets of minor mode fugues-\/-Pythagorean and
+Meantone-\/-separately to further parse out differences amongst the
+individual keys contained within each.
+
+This successively movement from general to local is a trend that I will
+continue throughout the entire portion of analysis; following these
+initial two chapters on more global distributions will be a final
+chapter focused more upon local structure of intervals and their usage
+in relationship with fugal elements-\/-primarily the subject and
+countersubject matter of a fugue-\/-and detailed analysis of individual
+fugues to demonstrate that these trends are indeed fractalized, that is
+to say, that the involvement of temperament in the hand of composition
+permeates its every structural level. This consistency at each level of
+scope is imperative in that it not only establishes statistical
+significance of the data, but also provides a sort of logical pathway
+that we can then retroactively trace to determine the musical forces
+involved in shaping these distributions, which in turn illustrate the
+wider musical significance of statistical trends.
+
+\subsection{Outline of Chapter
+Analysis}\label{outline-of-chapter-analysis}
+
+All of the data presented in this chapter-\/-and likewise, most of the
+data provided in all three analyses chapters will be presented in forms
+of various types of plots to aid in a more straightforward visualization
+of the information provided. In cases involving the comparison of
+different pieces, all plots have been normalized to account for duration
+variations within pieces, to ensure that the length of the piece does
+not become an artifact that could insidiously skew the data. Each plot
+will be explained and interpreted both from a statistical as well as
+musical point of view, at each points raising discussion as to the
+connection between the numbers being presented and the greater possible
+musical implications underlying the particular distribution and figures.
+Below is the following outline of the analysis and types of graphs
+presented in this chapter:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Temperament "fingerprint" plots for composition-independent key
+  visualization: Bar plots charting the distribution of interval cents
+  contained in each minor key in WTC I to visualize how temperament
+  inherently affects key independent of composition
+\item
+  KDE (Kernel Density Plots) for composition-independent and
+  composition-dependent key visualization: These graphs map out the
+  distribution of interval purity (cents from just) as a probability
+  density function for each individual minor fugue and their
+  transpositions. The goal of these plots is to:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    Visualize temperament's effect on key in terms of purity profile,
+    and be able to also visualize how keys systematically relate to each
+    other given the well-tempered tuning system.
+  \item
+    In the case of transposition KDE plots, determine whether or not the
+    inherent properties of purity and impurity of intervals dictated by
+    temperament are more than just confined to pure temperament, but are
+    mirrored in the actual corresponding composition themselves. To
+    demonstrate a connection between composition and temperament, we
+    will apply the test of transposition, in that in pieces transposed
+    to the same arbitrary key, we will witness keys and their close
+    neighbor key and temperament group (Pythagorean, Meantone) retaining
+    their original properties of purity profile in comparison to more
+    disparate keys, or keys belonging to the other group. If temperament
+    were merely an artifact, with no influence upon the underlying
+    composition itself, we should see a random effect when compositions
+    are all transposed to a certain arbitrary key, instead of trends and
+    the retention of certain patterns.
+  \end{enumerate}
+\end{enumerate}
+
+Following this outline for analysis, the resulting outline of the goals
+to be achieved are as follows:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Illustrate on a general scale the raw effects of well-temperament on
+  key profile to develop an intuition of the characteristics of each
+  key, and the emergence of two main groups of key type, Pythagorean
+  (characterized by pure fifths and narrow thirds), and Meantone
+  (characterized by narrow fifths and close-to-pure thirds).
+\item
+  Determine if these relations between temperament and key are more than
+  just a pure effect of the temperament itself, and furthermore
+  reflected in the compositional makeup of a piece written for a
+  particular key.
+\item
+  Determine whether or not there is a specific directional domain in
+  which we can observe stronger temperamental effects on composition.
+\end{enumerate}
+
+\subsection{A Word on Vertical vs. Horizontal
+Domains}\label{a-word-on-vertical-vs.-horizontal-domains}
+
+Before I delve into the analysis and discussion of the data and plots,
+it serves to clarify that I will be presenting horizontal plots and
+vertical plots in more or less a side by side fashion, in many instances
+providing the results of a search on the horizontal front, followed by
+the same search on the vertical dimension, especially for the initial
+global plots. The motivation behind this simultaneous presentation of
+both the dimensions of data is largely due to perception: while these
+domains are easily distinct axes on a pure merit of their auditory
+properties, the aggregate musical effect, and the perception of the
+musical structure that emerges from the combination of the both domains
+is one that is deeply intertwined and interactive. Furthermore, in
+Bach's case, and in the case of a fugue, the relationship between the
+vertical and horizontal dimensions of musical composition can be very
+systematic, and guided by rules of counterpoint. In the Baroque
+tradition, the horizontal domain can roughly be seen as more of an
+primary, motivating variable, with the vertical structure rising from
+the combination of independent, underlying linear structures on the
+horizontal domain. Still, to declare one domain as a purely independent
+variable, and the other dependent would be a misrepresentation, as the
+relationship between the two variables are more accurately a two way
+street; the vertical domain and contrapuntal rules dictate the
+possibilities of vocal combinations, therefore constraining the
+horizontal domain, and creating a sort of musical feedback loop between
+the two interacting dimensions.
+
+As the data becomes increasingly focused and localized in this
+dissertation, however, more of the intervals being analyzed and focused
+upon will be from the horizontal dimension-\/-with increased
+parameterization through limiting material to subject and countersubject
+material; while the increase focus upon the horizontal domain is
+partially due to the complication of the task of reliably coding the
+vertical searches, as the limitations placed by the search code makes it
+trickier to extract relevant data from noise, it is more primarily due
+to the dominance of linear structure over vertical structure in the
+fugal genre, making horizontal structures more apparent, and easier to
+parse out (as we will observe from the results of this section). From
+these horizontal structures, much can also be deduced about the vertical
+domain; however, this is not to discount the importance of vertical
+structure in these fugal works, rather, selecting a domain in which we
+have more control over the identifying salient intervals over noise, as
+well as being able to control for hierarchical structure, will provide
+more reliable data that most closely mirrors our auditory experience of
+the underlying complex musical structure.
+
+    \section{Global Tempered Key Plots}\label{global-tempered-key-plots}
+
+    This section serves as an overview and illustrative aid to help in the
+visualization of well-temperament, the variety of intervals that it
+creates, its relationship to key, and how this progression creates
+smooth changes when cycling through the circle of fifths. This section
+serves to demonstrate how, by virtue of temperament alone, keys each
+have their own separate and unique interval profiles (i.e.,
+distributions of tempered intervals), and just how much remote ends of
+the key spectrum differ from each other in terms of these interval
+profiles.
+
+Through looking at bar charts of intervals for each minor fugue, we can
+also see the emergence of two rough categories of keys, keys that
+resemble the medieval Pythagorean model of tuning, and keys that
+resemble the meantone model of tuning by virtue of specific tempered
+intervals reminiscent of their respective historical tuning traditions.
+For this dissertation, I will come to recognize and refer to these two
+groups of key by name of the historical tuning system that they
+respectively resemble: "Pythagorean keys", or the "Pythagorean group"
+referring to the keys that more resemble Pythagorean tuning, and
+"meantone keys" or "meantone group" for the keys that more closely
+resemble the meantone temperament scheme. These two categories will be a
+recurring theme that will be explored throughout the various levels of
+analysis of this thesis, and how Bach treatment of composition varies
+according to the key category that he is writing for through musical
+forces such as choice of interval, vocal texture, and note duration, and
+how these elements are systematically connected to and motivated by
+temperament.
+
+Before we delve into the specifics of Pythagorean and Meantone
+categories of keys through and their respective interval characteristics
+in regards to temperament, let us visualize the intervallic forces made
+available through well-temperament. The following chart shows the
+distinct variety of intervals within the octave created through the
+Werckmeister III tuning system; the leftmost column (not counting the
+indices in bold) indicates the semitone class (the number indicating the
+degree of separation between the two notes) the center column returns
+the corresponding value in cents, and the rightmost column gives the
+calculation of that particular interval's cent value from its just
+counterpart. For example, for the semitone class 3, which is largely
+dominated by (but not limited to) the minor third, we can see that
+Werckmeister III contains four varieties of the interval, ranging from
+294 cents all the way to 312 cents. The widest minor third, at -4 cents
+from just, is very close to pure, and is associated with the meantone
+tradition of close to pure thirds, and in Werckmeister III, is assigned
+to the diatonic keys (in this dissertation, what we will also refer to
+as the meantone keys), comprising the tonic third of a minor, and the
+dominant third of d minor. The narrowest minor third, at -22 cents from
+just (the difference of exactly one syntonic comma), is the Pythagorean
+minor third, named after the Pythagorean tuning system from which it is
+derived, and in Werckmeister III, found in the tonic thirds of the
+remote, chromatic keys (Pythagorean keys) of b-flat minor, d-sharp
+minor, and f minor.
+
+The following chart shows all available varieties of intervals found in
+Werckmeister III-\/-40 in total, counting the unison. In contrast, equal
+temperament only contains 12 different distinct varieties of intervals,
+as each interval comes only in one size, and besides the unison, no
+interval is exactly pure.
+
+
+\begin{singlespace}
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{|lrrr|}
+\hline
+\textbf{{}} & \textbf{ semitones} & \textbf{ cents} & \textbf{ cents from just }\\
+\hline
+0  &          0 &      0 &                0 \\
+1  &          1 &     90 &              -22 \\
+2  &          1 &     96 &              -16 \\
+3  &          1 &    102 &              -10 \\
+4  &          1 &    108 &               -4 \\
+5  &          2 &    192 &              -12 \\
+6  &          2 &    198 &               -6 \\
+7  &          2 &    204 &                0 \\
+8  &          3 &    294 &              -22 \\
+9  &          3 &    300 &              -16 \\
+10 &          3 &    306 &              -10 \\
+11 &          3 &    312 &               -4 \\
+12 &          4 &    390 &                4 \\
+13 &          4 &    396 &               10 \\
+14 &          4 &    402 &               16 \\
+15 &          4 &    408 &               22 \\
+16 &          5 &    498 &                0 \\
+17 &          5 &    504 &                6 \\
+18 &          6 &    588 &               -2 \\
+19 &          6 &    594 &                4 \\
+20 &          6 &    600 &               10 \\
+21 &          6 &    606 &               16 \\
+22 &          6 &    612 &               22 \\
+23 &          7 &    696 &               -6 \\
+24 &          7 &    702 &                0 \\
+25 &          8 &    792 &              -22 \\
+26 &          8 &    798 &              -16 \\
+27 &          8 &    804 &              -10 \\
+28 &          8 &    810 &               -4 \\
+29 &          9 &    888 &                4 \\
+30 &          9 &    894 &               10 \\
+31 &          9 &    900 &               16 \\
+32 &          9 &    906 &               22 \\
+33 &         10 &    996 &                0 \\
+34 &         10 &   1002 &                6 \\
+35 &         10 &   1008 &               12 \\
+36 &         11 &   1092 &                4 \\
+37 &         11 &   1098 &               10 \\
+38 &         11 &   1104 &               16 \\
+39 &         11 &   1110 &               22 \\
+\hline
+\end{tabular}
+\caption{All Werckmeister III Intervals in Cents }
+\end{table}
+\normalsize
+\end{singlespace}
+    Just for comparison, here are the intervals, in cents, and cent from
+just, for equal temperament. Because there only exists one instance of
+interval for interval type, keys in equal temperament, from the point of
+view of interval sizes, are mathematically identical across
+transposition. Furthermore, besides the unison class, none of the
+intervals in equal temperament are just.
+
+
+\begin{singlespace}
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{|lrrr|}
+\hline
+\textbf{{}} & \textbf{ semitones} & \textbf{ cents} & \textbf{ cents from just }\\
+\hline
+0  &          0 &      0 &                0 \\
+1  &          1 &    100 &              -12 \\
+2  &          2 &    200 &               -4 \\
+3  &          3 &    300 &              -16 \\
+4  &          4 &    400 &               14 \\
+5  &          5 &    500 &                2 \\
+6  &          6 &    600 &               10 \\
+7  &          7 &    700 &               -2 \\
+8  &          8 &    800 &              -14 \\
+9  &          9 &    900 &               16 \\
+10 &         10 &   1000 &                4 \\
+11 &         11 &   1100 &               12 \\
+\hline
+\end{tabular}
+\caption{All Equal-tempered Intervals in Cents }
+\end{table}
+\normalsize
+\end{singlespace}
+    Returning to the Werckmeister III well-temperament chart, a few things
+of significance to note are:
+
+\begin{itemize}
+\tightlist
+\item
+  Omitting the unison, of the 11 interval groups ranging from m2 to M7,
+  4 of those groups contain instances of the interval in its pure, or
+  just, form. These intervals are the perfect intervals (P4 and P5), and
+  the Major second and its inversion, the minor seventh. The purity of
+  these intervals are reminiscent of the older, Pythagorean tuning
+  tradition that was based on the retention of the purity of Perfect
+  intervals (fourths and fifths, at 3:2 and 4:3 ratios respectively),
+  and as a result from stacking just fifths, Major seconds as well
+  (9:8).
+\item
+  There are two groups of fifths and fourths, just intervals, and
+  intervals at ±6 cents from just. In Werckmeister III, 8 out of the 12
+  available fifths are just, and as we will observe later, most of the
+  just fifths are contained in the remote, Pythagorean keys (meaning
+  these fifths fall on prominent intervals within a key's tonal
+  construction, such as the tonic, dominant, and subdominant scale
+  degrees), while the impure intervals are assigned to the diatonic,
+  meantone keys.
+\item
+  The most dramatic difference in terms of cents from pure for intervals
+  found in Werckmeister III occur primarily at the imperfect intervals,
+  that is, the thirds (Major and minor), and sixths, at ±22 cents, or
+  the difference of a syntonic comma. This wide Major third at +22 cents
+  from just (or 81:64 in terms of ratios) and narrow minor third at -22
+  cents from just is known as the Pythagorean (Major or minor) third, as
+  this type of major third is derived from the superimposition of 4 just
+  fifths. These accordingly occur predominantly in the remote,
+  Pythagorean keys of b-flat minor, d\# minor, and f minor. In contrast,
+  the closest the imperfect intervals get to purity is 4 cents (4 cents
+  sharper for the Major third, and 4 cents flatter for the minor third);
+  this closest-to-pure third occurs as the tonic third of a minor, with
+  its neighboring keys (diatonic, meantone group) centered on similarly
+  closer-to-pure thirds of -10 cents.
+\item
+  the semitone also has a similar cents-from-just range as the imperfect
+  intervals, ranging from -22 to -4 cents. The narrowest of the
+  semitones, at -22 cents, is equivalent to the Pythagorean minor
+  semitone, or the Pythagorean limma. Werckmeister III assigns these
+  narrow semitones to harmonically functional scale positions in the
+  Pythagorean fugues, and a subsequent section in this chapter will
+  analyze how the scale degree placement of these semitones accentuate
+  linear direction through voice leading and leading tones in the
+  melodic/horizontal domain in the Pythagorean minor fugues, and comes
+  to define the modal nature of these keys.
+\end{itemize}
+
+It is important to note here that, while Werckmeister III is the system
+that I will be using as representative of well-temperament for my
+analysis, it is by no means the only existing system of historical
+well-temperaments, as there are indeed a vast body of others. With this
+said however, these different varieties of well-temperament still
+preserve in common the fundamental principles of the system itself, that
+is, it is a system of the gradual alteration of thirds from pure to
+Pythagorean (dictated by the syntonic comma), with the purer end of the
+spectrum reserved for the diatonic keys, and alterations to the interval
+increasing with progression through the circle of fifths. Thus, while
+different systems of well-temperament might present a slightly different
+collection of cent values for intervals, this fundamental principle of
+the purity of the diatonic keys (in terms of thirds), and smooth
+modulation, is unchanged, and the relationship between temperament and
+key, as well as the relationship between keys, is not, on a macro scale,
+drastically altered by changing which system of well-temperament we
+chose to employ.
+
+    \subsection{Temperament "Fingerprint"
+Plots}\label{temperament-fingerprint-plots}
+
+Having provided the brief overview of the variety of intervallic forces
+available through well-temperament, we can now turn to visualizing how
+this translates into the interval profile for keys through looking at
+key maps; because this dissertation is focused on minor keys, we will
+only be looking at key maps for the 12 minor fugues in Book I. Unlike
+its predecessors of Pythagorean tuning and the various meantone
+temperaments (as well as equal-temperament), well-temperament's system
+of containing a variety of different sizes of each interval yields a
+system that makes the scales of each key mathematically and physically
+different and unique from one another. Because the shift of interval
+size occur in gradients, this also means that shifts between keys happen
+in a systematic and gradual fashion as well, resulting in keys with
+closer harmonic relation to bear more similarities to one another than
+remote keys with little harmonic relation. The musical implications of
+this system are vast, which will be discussed in more of a theoretical
+and postulatory manner in this section, setting up questions and
+hypotheses that will subsequently be addressed and answered through the
+analysis in the chapter's subsequent sections.
+
+The key interval plots presented in this section will all be plots of
+intervals on the vertical domain; the motivation behind this is that
+interval usage on the vertical domain is more variegated, and hence more
+balanced, which provides us with a better tool for interval
+visualization. The horizontal domain, which is largely dominated by
+smaller intervals and stepwise motion, will contain an inherent skew to
+the shape of the distribution, as most of these smaller
+intervals-\/-\/-both Major and minor seconds, and minor thirds in
+Werckmeister III-\/-\/-range on the flat end of the spectrum (their
+cents vary from just, to flatter than just), as the wider intervals of
+Major sixths, and both Major and minor sevenths range from just to
+sharper than just. So while much of the dissertation's analysis will
+eventually focus on the horizontal domain for virtue of its more
+reliably extractable structure, the more even distribution of intervals
+along the vertical domain make it the more suitable option for
+visualizing the general relationship between key and temperament.
+
+The anatomy of the key interval plots presented in this section are as
+follows:
+
+\begin{itemize}
+\tightlist
+\item
+  Intervals presented in their simple form, and are laid out on the
+  x-axis in accordance to their semitone value from 0 (unison/octave) to
+  11 (Major seventh), and cent value. On the y-axis are measurements in
+  units of duration, normalized by the total duration of the piece.
+  While this normalization factor is not as important for the graphs in
+  this section, it will prove vital for plots that require looking at
+  distributions of intervals compiled across various compositions, as
+  without normalization, we can run into the danger of confounding the
+  weight of an interval's actual presence with the sheer duration of the
+  piece that the interval is taken from.
+\item
+  Intervals of the same type (m2, P4, etc.) are grouped and coded by
+  color. Transparency levels (alpha level) of bars correspond to their
+  purity, with level of transparency scaling according to an interval's
+  cents from its just counterpart. The more transparent the bar, the
+  closer to pure its corresponding interval it is; the more opaque the
+  bar, the more distant from pure. Transparency levels reflect absolute
+  values, so an interval that is -22 from just will have the same
+  opacity level of an interval that is 22 cents from just.
+\end{itemize}
+
+\subsubsection{Pythagorean and Meantone Examplar Plots and Temperament's
+Relationship with the Division of Minor
+Keys}\label{pythagorean-and-meantone-examplar-plots-and-temperaments-relationship-with-the-division-of-minor-keys}
+
+The following graph places side by side for comparison the interval maps
+of b-flat minor and a minor. These two keys are in many way
+exemplar\footnote{This is somewhat of a simplification, as we will show in subsequent chapters that a singular meantone exemplar key is a fuzzier notion, and shifts depending on which defining interval one chooses to focus on, nonetheless, this serves as a good elementary illustration of the temperamental polarization between the Pythagorean (remote) and meantone (diatonic) groups of keys.}
+keys, representing the two extreme ends of the Pythagorean-Meantone
+spectrum:
+
+
+
+\begin{figure}[H]
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_1_files/analysis_1_17_0.png}
+    \caption[Examplar Pythagorean (b-flat minor) and Meantone (a minor) Temperament Plots. ]{ Examplar Pythagorean (b-flat minor, left) and Meantone (a minor, right) Temperament Plots. Note the dramatic difference in the distribution envelopes.}
+    \end{center}
+\end{figure}
+    
+    From the two graphs laid out side by side, it is evident the marked
+difference of the Pythagorean key compared to the meantone one, even
+through just a general observation of the shape of each distribution's
+envelope. The envelope of the Pythagorean key is a great deal more
+extreme than that of the meantone key, with intervals either belonging
+to the pure variety, such as in the case of fifths, fourths, Major
+second and minor seventh, or the extreme sharp/flat (Pythagorean)
+variety, in case of the minor second, minor third, Major third, and
+minor and Major sixths. In contrast, the meantone key's treatment of
+pure/tempered interval distribution is far more egalitarian, with
+intervals evenly distributed amongst the spectrum of pure and tempered
+on the domain of fifths and fourths, and the imperfect intervals leaning
+towards pure (as to be expected in line with the meantone tradition),
+but not nearly as dramatically so as the Pythagorean group's sharp
+predilection for the extreme tempered versions of these intervals.
+
+Musically speaking, this theoretically translates to the Pythagorean
+keys being more extreme in their minor modality, as thirds are more
+narrow, increasing the overall "minor" quality of these keys, and the
+perfect intervals are pure, creating not only more sonic resonance in
+these keys, but also allowing for more tonal stability in these keys,
+granting the musical acceptability for pieces to move at slower speeds,
+while continuing to retain linear motion. This is further potentially
+accentuated by the narrow semitones at 90 and 96 cents, which
+facilitates voice leading and the resolution power of leading tones.
+Additionally, the dramatic difference between major and minor quality
+for the imperfect intervals (namely the thirds) result in more dramatic
+color shifts when toggling between major and minor key centers within a
+particular piece. The results of such a polarization of the minor keys
+and their major counterparts can unfold in interesting manners, and
+approach to composition involving modulation in these Pythagorean minor
+modes may involve more deliberate caution in regards to shifts to
+parallel and relative major modes. One such implication is that a
+composition in a Pythagorean minor key may tend to shy away from
+frequent, quick bouts of modulation into Major modes, especially when
+retaining the same motivic material, as this would cause too dramatic a
+disruption in the overall aesthetic cohesiveness of the piece, but
+shifts that do occur into the major realm would be done in a manner that
+accentuates the contrast for a desired effect.
+
+If the Pythagorean keys, with its built in ability for slower speeds and
+longer note durations through the aid of just perfect intervals, and
+narrow thirds and semitones serve to accentuate the effect of a sort of
+19th century exemplar of "minor" modality and a tendency towards the
+more depressive emotions, the meantone keys achieve a sort of opposite
+musical effect with the purity of the thirds against tempered fifths.
+The purity of the minor and major thirds closes the gap between these
+two intervals, making shifts between major and minor modes within pieces
+more even keeled, furthermore, the wider minor third, combined with the
+wider semitone, makes the feeling of the minor third more stable, and
+decreases its tendency to resolve inwards. Few just intervals on the
+domain of the fifths decreases sonic resonance, which favors faster
+motion and shorter note durations. These aggregate forces result in an
+overall faster, more upbeat minor mode of a distinctively different
+flavor than its Pythagorean counterpart, and a minor mode that is
+reminiscent of a tradition of minor modes as dignified and stately,
+rather than evocative of more depressive emotions.
+
+While all of these musical implications are, at this moment of analysis,
+still predominantly theoretical in nature, they comprise a bulk of the
+theories that I will test in a concrete manner through looking the
+various distributions and charts in the subsequent sections and chapters
+of this dissertation. However, through just looking at the shapes of
+these initial distributions, certain musical relationships between
+temperament and key are already coming to the forefront, and it is up to
+the subsequent analysis of this dissertation to test whether or not
+these temperament and key trends are reflected in and correspond with
+the underlying musical structures, and whether or not there actually
+exist these systematic connections and correlations between these
+professed musical elements (note duration, semitone placement and voice
+leading, predilection towards purity of fifths) that support these
+effects of temperament.
+
+Another salient thing of note is that, while these graphs are taken
+purely from the actual interval distributions of the B-flat minor and a
+minor fugues, they are not exceptional to these particular instances of
+these unique pieces. In other words, the overall envelope of the shape
+is composition-independent; B-flat is the actual key that maximizes the
+usage of pure fifth and Pythagorean minor thirds, making it the most
+extreme example of a minor fugue of the Pythagorean variety (pure
+fifths, narrow thirds), while a minor is the key that maximizes the
+usage of the closest-to-pure third, making it a model meantone minor key
+(close-to-pure thirds, narrower fifths).
+
+It is also important to observe that, while the pureness of the fifth
+and narrowness of the third lines up pretty well on the Pythagorean end
+of the spectrum, that is to say, that the extreme keys of B-flat minor
+and D\# minor both contain the highest instances of pure fifths as well
+as narrow thirds, the synchronization between pureness of thirds and
+flatness of fifths do not line up as exactly in the meantone minor keys.
+In terms of pureness of thirds, the peak falls at the key of a minor,
+however, the peak for tempered fifths falls two keys away on the circle
+of fifths, at g minor. This staggering creates a degree of fuzziness in
+the meantone keys in regards to which key fully exemplifies the traits
+of meantone minor (which we will unpack in greater detail in the section
+regarding scale degree analysis in the next chapter); however, it still
+remains true that the region of diatonic keys (i.e. c minor - e minor,
+with c minor and b minor being on the boundaries) embody roughly the
+region of meantone minor, while the chromatic keys (i.e. f minor to
+f-sharp minor, with b-flat and d-sharp at the pinnacle, and f minor
+lying on the boundary in terms of purity of fifths) comprise the
+Pythagorean group.
+
+\subsubsection{All Key Area Plots and Averaged
+Plots}\label{all-key-area-plots-and-averaged-plots}
+
+The following two tables now chart the interval maps of all minor keys,
+progressing through the circle of fifths in retrograde motion (circle of
+fourths, starting from f minor and ending on c minor). This ordering of
+keys in retrograde enables us to hit the Pythagorean keys first, and
+progresses into the meantone group, but does not have any other
+significant meaning beyond that; in all other regards, prograde cycling
+would have been just as acceptable. In actuality, these keys do not lie
+on a line but rather a circle, with c minor at the end wrapping around
+the f minor at the beginning. With all the graphs presented in
+succession, we can now observe the gentle gradient and shift as the
+shape of the envelope gradually morphs from the extreme, jagged outline
+in the Pythagorean keys to the smoother curves in the meantone region,
+with peak effects at b-flat minor and a minor.
+
+The first set of the tables below will chart actual fugues, and the
+second set will display actual fugues in the left column, compared to a
+chart of the composite of all fugues transposed to that given key, and
+averaged and renormalized. These envelope of these graphs represent the
+expected envelope of these keys, in other words, how we would expect a
+key to look like in the system of well-temperament independent of
+additional compositional elements that may tweak the shape of the
+distribution. Evoking an example to illustrate more clearly what is
+going on in these averaged graphs, the averaged graph of b-flat minor
+takes every fugue that Bach wrote for the WTC I (which is 12 fugues, one
+in each minor key), transposes each one of them from their original keys
+to the key of b-flat minor, and combines these new 12 fugues, all
+pitched in b-flat minor by adding up the normalized duration of each
+interval corresponding to their cent value (the normalization is
+important to prevent the varying lengths of pieces from producing
+artifacts in the resulting distribution), and again re-normalizing at
+the end.
+
+
+
+\begin{figure}[H]
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_1_files/analysis_1_20_0.png}
+    \caption{Minor Fugues Temperament Plots (Pythagorean Keys), Actual Fugues. }
+    \end{center}
+\end{figure}
+    
+
+
+\begin{figure}[H]
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_1_files/analysis_1_22_0.png}
+    \caption{Minor Fugues Temperament Plots (Meantone Keys), Actual Fugues. }
+    \end{center}
+\end{figure}
+    
+
+
+
+\begin{figure}[H]
+    \begin{center}
+    \adjustimage{max size={.63\linewidth}{0.9\paperheight}}{analysis_1_files/analysis_1_25_0.png}
+    \caption[Minor Fugues Temperament Plots (Pythagorean Keys), Actual Fugues and Averaged Fugues Compared. ]{Minor Fugues Temperament Plots (Pythagorean Keys), Actual Fugues (left) and Averaged Fugues (right) Compared.}
+    \end{center}
+\end{figure}
+    
+
+
+
+\begin{figure}[H]
+    \begin{center}
+    \adjustimage{max size={.63\linewidth}{0.9\paperheight}}{analysis_1_files/analysis_1_28_0.png}
+    \caption[Minor Fugues Temperament Plots (Meantone Keys), Actual Fugues and Averaged Fugues Compared. ]{Minor Fugues Temperament Plots (Meantone Keys), Actual Fugues (left) and Averaged Fugues (right) Compared.}
+    \end{center}
+\end{figure}
+    
+    The important result that is achieved in these graph of averages is that
+it decorrelates possible effects from other musical structures with key,
+essentially filtering out these factors, and allowing us to look only
+upon the effect that pure temperament has on key. The implications and
+usefulness of such a function is twofold: it allows us to check whether
+or not trends that we are attributing to temperament are true
+correlations, and not confounded by other, hidden variables, and perhaps
+more importantly, it allows us to test in the opposite direction:
+through the comparison of actual graphs against averaged graphs, the
+residual differences give us a powerful tool in testing the relationship
+between temperament and other compositional elements, determining
+whether or not the musical elements of the composition itself are
+working in conjunction with temperament to achieve certain desired
+effects. These averaged graphs, as well as the transposed graphs in
+isolation will serve as an important litmus tests for correlative power
+throughout this dissertation's analysis sections, especially the next
+section using Kernel Density Estimate plots, enabling us to check
+whether or not certain trends that we profess to arise through musical
+elements are indeed present, instead of merely just a result from tuning
+itself.
+
+\subsection{Observations, Section Summary, and
+Conclusions}\label{observations-section-summary-and-conclusions}
+
+The key maps in this section, both of the actual fugues and the averaged
+fugues, display the effect of the two rough groups of key types,
+Pythagorean and Meantone, that emerge through well-temperament, and how
+the transition from key to key via the circle of fifths is a gradual
+effect. Because these effects of gradual, systematic transition of the
+shape of the distribution across the circle of fifths, and the side by
+side comparison of the actual fugues and the averaged fugues bears a
+similar profile for each key, we can conclude that a key's particular
+distinct interval distribution is a direct result of temperament, and
+furthermore, that the system of well-temperament divides keys into these
+two rough groups of Pythagorean and meantone.
+
+Verifying that the shapes of these actual graphs and the averaged graphs
+to be similar is an important first step in establishing temperament's
+effect on key, but closer examination is necessary to codify the effect
+temperament exerts on actual compositional forces, which will be the
+driving force behind all of the analysis for the remainder of the
+dissertation. In the next chapter, we will revisit portions of these key
+maps (as well as portions of horizontal key maps), breaking them apart
+and examining closer the distributions of some of the intervals this
+time across the function of key area, but a closer look at the graphs in
+this section already show differences between the actual graphs and
+their averaged counterparts. Using the perfect intervals as an example,
+fifths and fourths of a specific group's home variety (pure in the case
+of Pythagorean, and tempered in the case of meantone) are maximized and
+more favored in their actual fugues as opposed to their averaged
+counterpart.
+
+The following are some immediate observations from the charts:
+
+\begin{itemize}
+\tightlist
+\item
+  In the Pythagorean keys, we can visibly, and consistently, observe
+  higher peaks in the actual keys as opposed to the averaged
+  counterparts for the pure variety of fifths for all keys (6 out of 6
+  keys, spanning from f minor to f-sharp minor). 4 out of the 6 keys
+  have lower values for the tempered intervals in the actual pieces
+  compared to their averaged counterparts, and 5 out of 6 keys have a
+  higher pure-to-tempered ratio in for the actual fugues, f minor being
+  the exception.
+\item
+  For fourths in the same Pythagorean keys, 4 out of the 6 keys have
+  higher peaks for pure fourths in their actual keys, with these same 4
+  out of 6 keys having a higher pure-to-tempered ratio as well in
+  comparison to the averaged fugues.
+\item
+  For the meantone keys, the trend is reversed for the fifths - for the
+  three keys in which the average graphs' tempered interval heights
+  exceed pure (c, g, d), two out of the three contain a greater ratios
+  of tempered to pure on their actual keys, and the two keys in which
+  pure fifths exceed tempered on the averaged graphs (a and e), a
+  minor's actual distribution finds the heights of the bars to be pretty
+  much equal, and e minor actually reverses the trend, favoring tempered
+  intervals over pure.
+\item
+  For minor thirds on the extreme Pythagorean keys of b-flat minor and
+  d-sharp minor, both of the actual graphs have higher peaks on the
+  Pythagorean (-22 cents) variety as opposed to the averaged graph, as
+  well as higher overall ratios for Pythagorean minor thirds (-22 cents)
+  against all other varieties of thirds.
+\end{itemize}
+
+All graphs are completely normalized, so the heights of bars essentially
+represent ratios, and the y-axis set to the same limit, making
+comparisons on height fair and not skewed by any other factors that
+might introduce differences in the data, such as overall duration of the
+piece. Again, segments from these charts will be revisited in a later
+section, along with exact numbers of the bar heights and ratio values.
+
+These differences between actual graphs and their averaged counterparts,
+especially if consistent, systematic, and span across entire groups of
+fugues, are important, because if we believe in a null hypothesis that
+temperament does not exert any effect on the underlying compositional
+structure and elements of a piece, we should not expect to see any
+patterned trends between differences of an temperament graphs of
+original fugues and the expected graphs of their keys, especially ones
+that adhere to our expectations of key traits given their key
+group-\/-instead, the data should be randomized. However, what we are
+seeing here (and what this dissertation will continue to demonstrate),
+is that when compared against a graph of expected averaged values, the
+original piece accentuates temperamental traits and idiosyncracies of
+their keys. Indeed, one of the keys to rejecting the null hypothesis
+lies within the logic of this transposition test: if we can establish
+that there are systematic traits of original keys that are retained
+across transposition (or demonstrated against expected values), and that
+these traits can be reliably linked to musical elements that are
+relatable, and correlate in some manner to the structure of
+well-temperament, then we have a strong reason to believe that
+temperament is not a mere independent artifact, but embedded in
+compositional structure of the piece itself. We will look at this is
+greater detail in clarity in the section now to follow.
+
+    \section{KDE Plots and Histograms}\label{kde-plots-and-histograms}
+
+This section explores the profile and distribution of pure and tempered
+intervals in keys through the usage of KDE plots and weighted
+histograms. KDE plots, or Kernel Density Plots, are closely related to
+probability density functions (PDFs) and histograms, both of which
+characterize the total distribution of a dataset as a normalized
+probability function, with the total area under the curve (or in the
+case of a histogram, the total area of the histogram bars) summing up to
+1. KDE plots and histograms are useful because they allow for intuitive
+visualization of the shape of the data; I have employed both in this
+section because the continuous nature of the KDE plots allow for easier
+visualization of the data, but the KDE plots in Python do not have a
+function for weighting, which is necessary for accounting for note
+duration in the case of the dataset that I will be looking at, so I will
+also be looking at weighted histograms for increased accuracy of the
+data. In some instances, such as the horizontal domain, the trends are
+strong enough that the additional weights of duration will not effect
+the outcome of the data much, but in certain vertical domain graphs, the
+increase of accuracy of the histograms might present some salient
+modifications.
+
+Similar to the plots seen in the previous section, the KDE plots and
+weighted histograms are a representation of all the intervals present in
+a single fugue, and furthermore, a representation of that key's
+particular interval profile in well-temperament. While the interval maps
+in the previous section offer a more specific breakdown in terms of
+actual intervals documented and their actual cent values, the KDE plots
+and histograms in this section are a little more coarse, as they only
+chart cents from just. Because of this, there is less information in
+regards to parsing out certain intervals from others, however, this is
+traded for a more apparent and intuitive representation of the key's
+pureness/temperedness balance. Furthermore, these KDE plots and
+histograms of cents from just allow for a more effective means of
+comparing multiple keys on the same graph, as using cents as a basis for
+the x-axis would be presenting too much information at once.
+
+It is also important for these KDE plots and histograms that we look at
+the total representation of all intervals present in a specific piece as
+a whole, or at least close to total, as to get a correct reading on the
+actual balance and distribution, devoid of any confounding artifacts. If
+we consider the KDE plot and a histogram as measure of percentage, we
+can greatly misrepresent the data if we choose only a subset of
+intervals, or only one interval to look at, as we will have no way of
+being able to retain a sense of how that interval fits into the piece as
+a whole. In this following hypothetical example, if we isolate the
+fifths and examine them with KDE plots, we will see a distribution with
+peaks only at 0 cents and 6 cents from just. If we transpose all fugues
+into b-flat minor, we may see a high peak at 0 cents for the e minor
+fugue, and from that make a deduction that the e minor fugue, when
+transposed to b-flat, may maximize pureness for the intervals of fifths.
+However, because the KDE plot forces the area of the curve to sum to 1,
+we have no way of knowing how much of the original e minor piece was
+occupied by fifths; if fifths were a negligible and relatively
+unimportant interval for the e minor fugue to begin with, it may very
+well be that the peak of that pure fifth, in comparison with other
+fugues, is actually very low, but we have no way of taking that into
+consideration when we look at this KDE plot charting isolated fifths. Of
+course, there is value and purpose as well in looking at isolated
+comparisons of pure vs. tempered intervals, and such charts will be
+explored in later sections of this chapter and the next, but it is
+crucial to establish earlier patterns on a macro scale before moving on
+to looking at the data in a more localized, specific fashion.
+
+I will be presenting KDE plots and histograms for the vertical domain
+first, followed by the horizontal domain. Similar to the previous
+section, plots will be presented for all keys, but this time
+superimposed upon one graph for better comparison. Tables of transposed
+graphs will then follow, with the purpose to determining whether or not
+any patterns can be detected after transposition. All bandwidths of KDE
+plots will be set to the same level, as will bin sizes for histograms to
+ensure that all plots are consistent with one another, and not
+confounded by any visual artifacts from inconsistent binning or
+bandwidth levels.
+
+This section will be mainly focused on the 0 cents from just (absolutely
+pure) category of intervals, partially because this category is the most
+prominently featured class in the KDE plots and histograms, and
+therefore the easiest and most reliable class to observe and detect
+patterns and trends for in a comparison setting. There also exists a
+deeper and underlying musical motivation for focusing on this class of
+interval, in that the category of absolute just intervals plays an
+integral role in terms of preservation of consonance across any key.
+Subsequent sections will closer examine the functional effect,
+placement, and musical importance of these just intervals within the
+setting of specific pieces, but the goal of this present section is
+focused upon providing more evidence to reject a null hypothesis that
+temperament does not have inherent and systematic ties to compositional
+strategy through demonstrating the existence of consistent trends after
+transposition.
+
+While these primary sections may be less musically exciting, per se,
+than the latter sections in this dissertation that will deal more
+directly with localized and specific musical structures and elements,
+this section is especially crucial in establishing the existence of a
+primary correlative relationship between temperament and the other
+compositional elements. Once this relationship is cemented, the final
+task is to identify these contributing compositional forces, and
+determine whether or not there exists strong and compelling enough
+theoretical reasons that links the musical functions of these
+compositional elements to the acoustical properties dictated by the
+temperament.
+
+Lastly, it should be said that, while the most pronounced trends and
+correlations in this section will be found on the horizontal domain, the
+vertical domain will be presented first as to provider a smoother
+transition from the previous section. Indeed, throughout the analysis in
+this dissertation, we will continue to observe consistently clearer
+trends and structures in the horizontal domain. This may not necessarily
+mean that the vertical domain does not contain these structures in such
+a pronounced fashion; it could be that the existing framework for the
+vertical dimension might be constructed in too general a fashion, making
+these structures more difficult to parse out. Alternatively, more
+apparent and readily parseable structures in the horizontal domain may
+be linked to the predominant linear approach to compositional structure
+of the Baroque era, especially in the case of the highly contrapuntal
+and linear genre of the fugue, where is dictated by the horizontal
+subject kernel. This hierarchical fugal structure, which radiates
+outwards from the subject kernel, means that structures on the fugal
+level (subject, countersubject) dictate the construction of the
+horizontal domain, which in turn directly impact the vertical dimension,
+so musical choices in terms of recurring motifs and intervals on the
+horizontal domain do not remain isolated and local, but serve to guide
+the piece as a whole.
+
+    \subsection{KDE and Histogram Overview
+Plots}\label{kde-and-histogram-overview-plots}
+
+\subsubsection{Vertical Dimension Plots}\label{vertical-dimension-plots}
+
+The graph below displays the Kernel Density Plots of our two exemplar
+keys, b-flat minor and a minor, coded in blue (b-flat) and a (red)
+respectively, superimposed on a singular axis.
+
+
+
+
+\begin{figure}[H]
+    \begin{center}
+    \adjustimage{max size={.8\linewidth}{0.9\paperheight}}{analysis_1_files/analysis_1_34_0.png}
+    \caption{B-flat minor and a minor Vertical KDE Plots.}
+    \end{center}
+\end{figure}
+    
+    The traits of Pythagorean and Meantone mode in well-temperament that was
+previously discussed in the prior section are elegantly captured in the
+KDE plots. The x-axis charts cents from just, with pure being at the 0
+marker in the middle of the axis. For the case of the KDE plots, the
+heights and shape of the curve are determined by counts of intervals
+(number of instances of occurrence of the interval across the entire
+piece), with the actual value on the y-axis reflecting the fact that the
+data is normalized so that the area under the curve will integrate to 1.
+The histograms presented later in this section will present the same
+data, but pass the counts through a weighting function that weights by
+the individual interval's duration for an increased accurate
+representation of the data, but the overall shape of the histograms and
+KDE plots remain essentially the same, as they are fundamentally
+charting the same thing.
+
+In this graph, we again observe the marked differences between the shape
+of the Pythagorean b-flat minor KDE curve and the Meantone a-minor
+curve; b-flat minor is a key of extremes, with most of the area either
+gathered under the pure, or the extreme ends of the spectrum at -22 and
+22 cents from just. Contrasting this, a minor has its area distributed
+more evenly across the spectrum, with a much lower peak at 0, and
+falling in an orderly and gradual fashion as it tapers off at the
+extreme ends of the spectrum. As we have observed in the graphs from the
+prior section, b-flat minor and a minor lie on the very extreme ends of
+the temperament spectrum, and we will continue to see this translated in
+the KDE plots and histograms of this current section.
+
+This next graph adds two more plots to the axis, the averaged fugue plot
+for b-flat minor (i.e., again, all the fugues from WTC I transposed to
+b-flat minor, summed, and averaged), and the averaged plot for a minor
+as well. The color of the averaged plots correspond to the key that they
+belong to, but they are distinguished with lighter (more transparent)
+lines. I have also provided the weighted histogram of this same
+functions as well. Both plots (KDE and histogram) represent the same
+data, with the exception of the histogram being weighted by interval
+durations. In other words, one can think of the area under the curve for
+the KDE plots as representative of percentage of raw occurrences of an
+interval's appearance in a particular piece, whereas the area of the
+bars of the histograms for a value represents the percentage of the
+total time (i.e. duration) spent on the interval. Because of this, the
+weighted histograms are a more accurate depiction of the data, as it
+takes into account that, for example, an interval sustained for a
+quarter or a half note should be given more weight than an interval
+presented as passing material in a sixteenth note passage, and provides
+them with these weights according to their duration values, rather than
+the KDE plots which represents both these intervals with the same weight
+as one count.
+
+While there are cumulative and perceptible differences between the two,
+as we should expect, viewing the KDE plot and the histograms side by
+side show that the overall shape and trends of the two types of graphs
+are comparable, with the KDE plots not only doing a thorough job of
+representing the data, but in some cases might possessing advantages
+over the weighted histogram in that its continuous nature allows for a
+more uninterrupted and simplistic view of the data. In summary, the KDE
+plot and the histogram both serve the represent the same data, but just
+in two slightly different formats, the KDE being a continuous
+representation, and the histogram being discretized. Because each format
+possesses its advantages over the other-\/-\/-namely, the continuous KDE
+being better for visualizing the overall shape of distributions, and the
+discretized histogram containing more accurate values, and allow for
+closer examination of individual x-axis values-\/-\/-I will be
+presenting both types of graphs in succession for the remainder of the
+data provided in this section.
+
+
+
+
+\begin{figure}[H]
+    \begin{center}
+    \adjustimage{max size={.8\linewidth}{0.9\paperheight}}{analysis_1_files/analysis_1_38_0.png}
+    \caption[B-flat minor and a minor Actual/Averages Comparison Vertical KDE Plots. ]{B-flat minor and a minor Actual/Averages Comparison Vertical KDE Plots. Actual fugues are indicated by darker lines, averaged fugues indictated by lighter lines.}
+    \end{center}
+\end{figure}
+    
+
+
+
+\begin{figure}[H]
+    \begin{center}
+    \adjustimage{max size={.8\linewidth}{0.9\paperheight}}{analysis_1_files/analysis_1_41_0.png}
+    \caption[B-flat minor and a minor Actual/Averages Comparison Weighted Histograms. ]{B-flat minor and a minor Actual/Averages Comparison Weighted Histograms. Actual fugues are indicated by darker lines, averaged fugues indictated by lighter lines.}
+    \end{center}
+\end{figure}
+    
+    Two important observations can be deduced from these graphs:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  The similar shapes that the averaged plots bear to the plots of their
+  actual fugue counterparts corroborate the findings in the previous
+  section that temperament exerts a strong effect on key independent of
+  composition.
+\item
+  In both cases, the curve of the actual graph is the more exemplary
+  version of the key's characteristic curve as opposed to the that of
+  the actual plot. If you observe the blue curve of the b-minor fugue,
+  the extreme profile of high peaks at just and Pythagorean Major/minor
+  (-22 and 22 cents) are maximized by the actual fugue's curve.
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    The peak at 0 cents from just is pronouncedly higher for the actual
+    b-flat minor fugue (and even more so on the weighted histogram), as
+    well as the peak at -22 cents (minor third and minor second), with
+    the intermediate dips during the middle values of the spectrum
+    around ±6 to ±10 cents lower on both the positive and negative ends
+    of the spectrum. These exact mid-values can be more clearly observed
+    in the weighted histogram.
+  \item
+    Adhering to its own end of the spectrum, the gradual, even shape of
+    the meantone keys is maximized by the actual a minor fugue's curve,
+    with its peak at 0 cents from just, as well as the curve at the far
+    extreme ends of the spectrum being lower than the averaged
+    counterpart, and the mid-values of the curve rising higher.
+  \end{enumerate}
+\end{enumerate}
+
+From the graphs of these two keys, we can see that in both instances,
+the actual fugues written with the specific key in mind both accentuated
+the effects of their respective key's temperament profile compared
+against the expected values from the graphs of averages. This strongly
+suggests that the compositional elements of these two fugues are acting
+somewhat in sympathy with the underlying trends dictated by temperament;
+again, if the null hypothesis were to be true, we should have no reason
+to see any systematic difference between the interval profile of a fugue
+written with a certain key in mind, and an averaged graph of a
+collection of pieces all transposed to that particular key.
+
+Having looked at these two examples, and developed a sense for the
+function of the KDE plot, the following plots present the KDE plots and
+histograms of all of the minor keys on the same axis.
+
+
+
+
+\begin{figure}[H]
+    \begin{center}
+    \adjustimage{max size={.8\linewidth}{0.9\paperheight}}{analysis_1_files/analysis_1_45_0.png}
+    \caption{All Minor Fugues Vertical KDE Plots.}
+    \end{center}
+\end{figure}
+    
+
+
+
+\begin{figure}[H]
+    \begin{center}
+    \adjustimage{max size={.8\linewidth}{0.9\paperheight}}{analysis_1_files/analysis_1_48_0.png}
+    \caption{All Minor Fugues Vertical Weighted Histograms.}
+    \end{center}
+\end{figure}
+    
+    With all the keys now present, we can see a smooth-\/-\/-and rather
+elegant-\/-\/-gradient from Pythagorean to Meantone, cycling through the
+circle of fifths. For this graph, and for many of the graphs in the rest
+of this thesis, I have assigned the Pythagorean keys to shades of blue,
+and meantone to shades of red, with the darkest shade falling on the
+most extreme of the keys for both groups (dark blue for b-flat, and dark
+red for a minor), and gradually getting lighter as keys progress away
+from these centers along the circle of fifths. With this system, the
+most extreme ends of the Pythagorean keys will be represented with the
+darkest shades of blue, and the extreme ends of the meantone spectrum
+with the darkest reds, with the transition/boundary keys light shades of
+either blue or red, depending on what end of the spectrum they fall.
+This color scheme not only reflects the circular nature of the fifths
+progression, and wrap-around at the edges, but more crucially it is
+important to recognize that, besides for sheer color choice, the
+systematic pattern of shading for the keys is not arbitrary, nor was it
+motivated or adjusted in response to the trend set forth by the graph.
+Rather, it is merely a reflection of the circle of fifths (as observable
+in the legend in the upper right hand corner), and any emerging pattern
+that results in the graph in terms of smooth gradient transitions is a
+direct result from the key structures of well-temperament.
+
+Indeed, the structure of the keys here is apparent: the sharpest peaks
+at 0 and -22/22 are kept by the darkest shade of blue, falling off
+gradually and trasitioning into the red tones, which cluster towards the
+mid-ranges of the graph. As expected, at the extreme ends of the
+spectrum on the x-axis (-22 and 22 cents), the lowest corresponding
+y-axis values are kept by the darkest shades of red. It is also expected
+that the lowest point of the peaks at 0 cents belongs not to the darkest
+shade of red (a minor), because while a minor is the key that maximizes
+the purity of the minor third, it is not the key that maximizes the
+usage of the tempered fifth. Rather, the keys that maximizes the
+tempered fifth is centered around g minor, and we can see this reflected
+in the graph accordingly.
+
+Now let us consider the same graph, but of the averaged fugues instead:
+
+
+
+
+\begin{figure}[H]
+    \begin{center}
+    \adjustimage{max size={.8\linewidth}{0.9\paperheight}}{analysis_1_files/analysis_1_52_0.png}
+    \caption{All Averaged (Expected Value) Minor Fugues Vertical KDE Plots. }
+    \end{center}
+\end{figure}
+    
+
+
+
+\begin{figure}[H]
+    \begin{center}
+    \adjustimage{max size={.8\linewidth}{0.9\paperheight}}{analysis_1_files/analysis_1_55_0.png}
+    \caption{All Averaged (Expected Value) Minor Fugues Vertical Weighted Histograms. }
+    \end{center}
+\end{figure}
+    
+    The graph yielded by a plot of the averaged fugues bears a close
+resemblance to the graphs of the actual fugues, but in many ways is an
+idealized graph of smooth and consistent key change. The spacing between
+the fugues is even, the gradient order is perfect in regards to the
+Pythagorean (blue) fugues on the 0 cents domain. Here are the graphs
+side by side, with the y-axis set to the same upper limit value for
+accurate comparison:
+
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_1_files/analysis_1_57_0.png}
+    \end{center}
+    
+
+
+\begin{figure}[H]
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_1_files/analysis_1_59_0.png}
+    \caption[Actual and Averaged Minor Fugues Vertical Comparison KDE Plots and Histograms. ]{All Actual (right) and Averaged (left) Minor Fugues Vertical Comparison KDE Plots and Histograms.}
+    \end{center}
+\end{figure}
+    
+    From laying out these two graphs side by side, with the same upper limit
+value on the y-axis, we can start to parse out the differences between
+the two graphs. Similar to the earlier, simpler graphs in the beginning
+of this section comparing actual fugues with averaged fugues for the two
+exemplar fugues, b-flat and a minor, the same trend can be observed in
+these graphs of keys tending towards the more exaggerated versions of
+their temperament profiles, especially on the dimension of just
+intervals. If we look at the y-axis spread for the 0 cents from just
+placement on the x-axis, we see the averaged fugues clustered more
+compactly towards the mid-values, while the spread of the actual fugues
+is greater, with more extreme values on either end of the blue/red
+spectrum. Precisely, with exception of the two outer boundary keys, f
+minor and c minor, all of the Pythagorean keys have higher peaks at 0
+cents from just in their actual fugue plots as opposed to the averaged
+fugues, with exception of d-sharp minor, and all of the actual fugues in
+the meantone keys respectively have lower peaks. As we will see in this
+next subsection repeating these graphs for the horizontal intervals,
+effects on the horizontal dimension are even more dramatic, with the
+polarization of the two groups of keys even more pronounced for the
+graph of the actual fugues.
+
+    \subsubsection{Horizontal Dimension
+Plots}\label{horizontal-dimension-plots}
+
+Before I get the following section looking at transposition plots in
+greater detail (prior to then, all the transposition plots we have been
+looking at are averages), I will repeat all of the previous vertical
+subsection's interval plots, but this time, for intervals on the
+horizontal domain. As this is the first time in this analysis section
+that horizontal plots are being introduced, a few important things of
+note on the differences between horizontal and vertical structure are as
+follows:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  As stated in the previous section involving interval maps, because of
+  the linear nature of horizontal structure, with the predominant
+  melodic motion being stepwise, the intervals most frequently used on
+  the horizontal domain are the narrower, step-wise intervals of
+  seconds, both major and minor, followed by narrow leaps of minor
+  thirds. The combination of this linear structure, and Werckmeister
+  III's temperament structure of all intervals under a major third (m2,
+  M2, and m3) being either just, or narrower than just, results in
+  horizontal graphs that have a majority of their material on the
+  negative end of the spectrum, with the information on the positive end
+  largely representing major thirds, as leaps wider than a major third
+  become increasingly uncommon. In contrast, the vertical domain has a
+  more even distributions of intervals, and because of the triadic
+  nature of Western tonal music, the majority of the intervals
+  represented on the vertical domain are not seconds, but rather fifths
+  and their inversions (fourths), and thirds (leaning towards minor
+  thirds in minor mode pieces) and their inversions (sixths). In
+  Werckmeister III, these intervals and their inversions span both the
+  positive and negative end of the spectrum more or less in an equal,
+  balanced fashion, resulting in the more symmetric graphs observed in
+  the vertical domain.
+\item
+  Completing the logic outlined in item 1 above regarding the
+  differences between treatment of intervals in the horizontal and
+  vertical domains: because larger intervals are a rarer occurrence in
+  the horizontal dimension, this gives us a unique platform on the
+  horizontal domain for analyzing intervals that exceed the width of a
+  third (increasingly so for intervals that exceed the octave), as we
+  have more of a reason to believe that the presence of these intervals
+  in the horizontal domain are more of a result of deliberate
+  compositional choice beyond a mere functional role, especially if
+  these intervals occur within subject or countersubject material.
+  Indeed, this is a prominent motivating factor behind the focus upon
+  fifths and fourths on the horizontal dimension in the later sections
+  in this dissertation that deal increasingly with the relationship
+  between temperament and the underlying compositional forces.
+\end{enumerate}
+
+This is not to say that the larger intervals on the vertical domain are
+all present because of sheer harmonic function, and that no hierarchical
+order of motivic importance can be established on that domain. Rather,
+it is merely more difficult for us to parse out this structure; this may
+be perhaps due to the current limitations of the framework, or that the
+vertical structure for the Baroque fugue is intrinsically more nuanced
+than the horizontal, being in many ways a resultant structure of a more
+primary horizontal structure. Regardless of the exact reason, the more
+general nature of the vertical domain may call for extra parameters to
+constrain the data when trying to formulate conclusions about vertical
+intervals and their interaction with the structure of other musical
+elements. Likewise, when analyzing semitones on the horizontal domain
+(which will start to become an increasingly important area of analysis
+starting with the latter portion of the next chapter), further
+constraint of the data through the addition of specific functional or
+musical parameters, such as looking at semitone usage in prominent
+locations within subject material, how semitones vary as a function of
+note length, or semitones in specific scale degrees implicative of
+leading tone function, may be needed to parse out any salient conclusion
+about how semitones affect functional and thematic musical structures.
+For this section on KDE plots and histograms though, such additional
+musical parameters are not necessary in looking at these macro
+structures.
+
+One last note before the horizontal graphs are presented in this
+section: I have set the bandwidth of the horizontal KDE plots to a
+slightly smaller value (1.8 as opposed to 2) than the KDE plots in the
+previous, vertical section, so any possible perceived increase in the
+frequency or intensity of peak/trough oscillation is merely an effect of
+the decreased bandwidth, and not anything intrinsically reflective of
+the data itself.
+
+
+
+
+\begin{figure}[H]
+    \begin{center}
+    \adjustimage{max size={.8\linewidth}{0.9\paperheight}}{analysis_1_files/analysis_1_64_0.png}
+    \caption{All Minor Fugues Horizontal KDE Plots.}
+    \end{center}
+\end{figure}
+    
+
+
+
+\begin{figure}[H]
+    \begin{center}
+    \adjustimage{max size={.8\linewidth}{0.9\paperheight}}{analysis_1_files/analysis_1_67_0.png}
+    \caption{All Minor Fugues Horizontal Weighted Histograms.}
+    \end{center}
+\end{figure}
+    
+
+
+
+\begin{figure}[H]
+    \begin{center}
+    \adjustimage{max size={.8\linewidth}{0.9\paperheight}}{analysis_1_files/analysis_1_70_0.png}
+    \caption{All Averaged (Expected Value) Minor Fugues Horizontal KDE Plots. }
+    \end{center}
+\end{figure}
+    
+
+
+
+\begin{figure}[H]
+    \begin{center}
+    \adjustimage{max size={.8\linewidth}{0.9\paperheight}}{analysis_1_files/analysis_1_73_0.png}
+    \caption{All Averaged (Expected Value) Minor Fugues Horizontal Weighted Histograms. }
+    \end{center}
+\end{figure}
+    
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_1_files/analysis_1_74_0.png}
+    \end{center}
+    
+
+
+\begin{figure}[H]
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_1_files/analysis_1_76_0.png}
+    \caption[Actual and Averaged Minor Fugues Comparison Horizontal KDE Plots and Histograms. ]{All Actual (right) and Averaged (left) Minor Fugues Comparison Horizontal KDE Plots and Histograms.}
+    \end{center}
+\end{figure}
+    
+    The same trends observed in the vertical domain in the previous
+subsection are also consistent in the horizontal domain, but the effect
+of the separation between the Pythagorean and Meantone keys is even more
+pronounced here. The following is a list of additional observations for
+the horizontal searches:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Consistent to the plots generated in the vertical domain, the fugues
+  in the horizontal domain observe the same rule of keys tending towards
+  their type, notably in regards to treatment of pure intervals; in
+  other words, Pythagorean keys group together and tend to maximize
+  interval purity, and meantone keys congregate at the other end of the
+  spectrum.
+\item
+  This effect of keys tending towards their home types, especially in
+  dealing with just intervals, can be seen in the sharp division that
+  exists between groups of keys in the KDE plots and histograms of the
+  actual fugues-\/-\/-even more so than what we have observed on the
+  vertical domain-\/-\/-which is less present in the graphs of the
+  averages that transition more seamlessly between Pythagorean to
+  meantone. Additionally, like the vertical graphs, the spread of the
+  y-values for the 0 cents from just x-values is far greater for the
+  graphs of the actual fugues than their averaged counterparts. On the
+  histograms, the values of the three darkest blue markers at 0 cents
+  from just span from around .26 - just under .3 on the y-axis of the
+  actual fugues' graph, while the highest marker on the averaged graph
+  starts around .26, and spans all the way down to .23. Likewise, for
+  the meantone values on the same 0 cents from just x-axis value, the
+  lowest three red values span from around .08 - .12 on the graph of the
+  actual fugues, while the first marker on the graph of averages begins
+  after .12.
+\item
+  For the outer, positive values on the x-axis (16 and 22 cents from
+  just), we would expect the blue values to be higher than the red
+  values at these outer extreme regions, as the system of
+  well-temperament assigns these more extreme tempered intervals to the
+  Pythagorean keys. While this is the case for the horizontal graph of
+  the averages (as well as consistent with all graphs on the vertical
+  domain, as well as the key maps from the previous section), the graphs
+  of the actual fugues on the horizontal domain muddies and somewhat
+  reverses this effect, with some of the red (meantone) values higher
+  than their blue counterparts at the extreme positive end of the
+  x-axis. While this may be initially perplexing, we will observe in the
+  next section that deals with untempered interval graphs that this is
+  due to the comparatively high usage of melodic sixths almost
+  exclusively in the meantone keys, so much so that it has created a
+  reversal of the otherwise expected placement of the Pythagorean keys
+  maximizing these positive, outer extreme tempered values. However,
+  what is important to observe from this graph is that these changes and
+  trends are being made in a systematic way that preserves key type
+  (meantone/Pythagorean) unity, instead of being randomized.
+\end{enumerate}
+
+Returning momentarily to the subject of polarization of the two key
+types on the domain of just intervals in the actual fugues, in the
+previous vertical section, we observed that all of the keys, with the
+exception of d-sharp minor, and the boundary keys of f minor and c minor
+had more extreme peaks (higher values for the Pythagorean keys, lower
+value for meantone keys) in the case of their actual fugue graphs in
+relation to the graph of averages. In the case of the horizontal domain,
+all keys, d-sharp and the boundary keys included, behave according to
+this effect of polarization for the just intervals. Below are isolated
+KDE plots and histograms presented in table format, with each key's
+actual fugue paired with that key's averaged fugues on the same axis for
+comparison. Actual fugues are marked with solid lines, while the
+averaged fugues are marked with dotted lines, with colors corresponding
+to their previous assigned key colors (Pythagorean keys in shades of
+blue, meantone in shades of red).
+
+Note that, in the case of the blue plots, all solid lines lie above the
+dotted lines at 0 cents from just, and for the red plots, all solid
+lines lie below the dotted lines. The consistency of this result across
+all keys in these horizontal comparison graphs is a robust indicator
+that temperament is exerting an effect on compositional elements on the
+horizontal domain, strongly affirming a positive relationship between
+temperament and key on a compositional level, as well as further
+bolstering the existence of a presence and division between the two main
+key groups.
+
+
+
+
+\begin{figure}[H]
+    \begin{center}
+    \adjustimage{max size={.7\linewidth}{0.9\paperheight}}{analysis_1_files/analysis_1_80_0.png}
+    \caption[Actual and Averaged Minor Fugues Comparison Horizontal KDE Plots Isolated by Key. ]{Actual (solid line) and averaged (dotted line) minor fugues comparison horizontal KDE plots isolated by key. Note how for the x-axis position of 0 cents from just, all the solid lines lie above the dotted for the Pythagorean keys (marked in blue), which is reversed for the meantone keys (marked in red).}
+    \end{center}
+\end{figure}
+    
+
+
+
+\begin{figure}[H]
+    \begin{center}
+    \adjustimage{max size={.7\linewidth}{0.9\paperheight}}{analysis_1_files/analysis_1_83_0.png}
+    \caption[Actual and Averaged Minor Fugues Comparison Horizontal Weighted Histograms Isolated by Key. ]{Actual (solid line) and averaged (dotted line) minor fugues comparison horizontal weighted histograms isolated by key. Note how for the x-axis position of 0 cents from just, all the solid lines lie above the dotted for the Pythagorean keys (marked in blue), which is reversed for the meantone keys (marked in red).}
+    \end{center}
+\end{figure}
+    
+    \subsection{Transposition KDE Plots and
+Histograms}\label{transposition-kde-plots-and-histograms}
+
+\subsubsection{Setup}\label{setup}
+
+Through comparing the graphs of actual fugues with their averaged
+counterparts in the above section, we've observed the trend in both the
+vertical and horizontal domain that fugues belonging to the same key
+type tend to maximize certain defining traits (particularly interval
+purity) dictated by the temperament envelopes of that particular key
+type, group together, and behave similarly to other keys belonging to
+the same group. In short, our preliminary findings using the
+transposition/averages function in the previous section suggest that
+Pythagorean compositions tend towards Pythagorean, and Meantone
+compositions towards Meantone, establishing that there are compositional
+elements in play that must be more than just the mere effects from pure
+temperament alone.
+
+In this section, I will break apart the structure of the transposed
+fugues to demonstrate that this aforementioned structure of key type
+unity exists and can be systematically observed in a patterned manner on
+the level of individual fugue transpositions. To break this apart for
+better understanding, this section will present tables of KDE plots and
+histograms for each individual key, for both the vertical and horizontal
+domains respectively, similar to the charts seen in the last portion in
+the above section. However, instead of presenting a single plot
+representing the average of all transposed fugues for each key, I will
+omit the final averaging function from these graphs, and instead display
+all the transposed fugues as separate curves for a given key together on
+the same axis. Effectively, this will result in 12 plots per axis, and
+12 graphs per table (one graph per key): for the starting graph of f
+minor, all fugues will be transposed to f minor, and plotted together on
+the same axis for comparison, then for the next graph, all fugues will
+be transposed to b-flat minor, plotted, and continuing in this fashion
+until the last graph of the table will plot all fugues, transposed to c
+minor.
+
+To make sure this is clear before the tables of all graphs are
+presented, let us look quickly at the anatomy of these transposition
+plots using the example of the vertical and horizontal KDE plots and
+histograms of the key of b-flat minor:
+
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_1_files/analysis_1_85_0.png}
+    \end{center}
+    
+
+
+\begin{figure}[H]
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_1_files/analysis_1_87_0.png}
+    \caption{All Minor Fugues Transposed to B-flat Minor Vertical KDE Plots and Histograms. }
+    \end{center}
+\end{figure}
+    
+    In these plots charting the key of b-flat minor, every curve in the
+graphs represents a fugue that has been transposed to b-flat minor,
+color coded appropriately corresponding to their original key before
+transposition. So for example, the dark blue curve for both graphs,
+labeled "b-" is the b-flat minor fugue, transposed to b-flat
+(essentially our original b-flat minor fugue); the dark red curve (a
+minor) is the original a minor fugue, transposed to b-flat minor. As a
+bit of a recapitulatory note here, what we were seeing in the earlier,
+"averaged" graphs were just the averages of all these different curves
+(in this case, the b-flat averaged graph was just an average of all
+these fugues, transposed to b-flat minor), but here they have not been
+combined, but rather are being presented individually for greater
+in-depth analysis.
+
+For the KDE plots, colors and linewidths are left as is, for the
+histograms, the original fugue's (in this case, b-flat to b-flat minor)
+plot has been made bold and brought to the forefront of the graph.
+
+\subsubsection{Projected Expectations: Null Hypothesis vs. Alternative
+Hypothesis}\label{projected-expectations-null-hypothesis-vs.-alternative-hypothesis}
+
+While this might seem like a tedious exercise on the onset, the results
+from these graphs are important and can be very telling for the
+following reason: If we assume a null hypothesis that temperament has no
+remarkable effect on the underlying compositional devices, and that
+there is no intrinsic, compositional relationship between temperament
+and key, then it should logically follow that transposing a composition
+written in a particular key to a different key should render it
+untraceable to the key that it was originally pitched in, as there are
+no remaining compositional forces, besides temperament, that was
+rendering that composition unique to its specific home key. Continuing
+this line of logic, if we take a collection of pieces, each pitched in a
+different original key, and transpose them all to a same target new key,
+we should not be able to detect any patterns or trends between the
+resultant pieces based on their original keys or key groups before
+transposition, besides for the unifying trait that they would all
+resemble the new key in terms of their temperament profiles; in essence,
+transposition should effectively "erase" any traits a composition has
+that are linked to temperament. In our case, our collection of 12
+fugues, one fugue for each minor key, transposed to a new target key
+should yield a resulting chart of key plots that are essentially
+randomized, with no pattern or trends between plots according to their
+original keys.
+
+It is important to specify here that we are not stating that these
+fugues do not have each their own unique set of compositional devices
+and musical structures, and that, if we do not detect any patterns
+through transposition, then the data would then suggest these
+compositions to be uniform copies of one another-\/-\/-to make such a
+statement would be absurd and simply untrue. Rather, while it may remain
+perfectly true that these compositions could differ drastically in terms
+of their compositional elements and forces, unless these elements are
+correlated with key-\/-\/-specifically, key traits determined through
+temperamental influences-\/-\/-we would still have no logical motivation
+to reasonably expect detectable trends and patterns in resultant
+temperament graphs in a new key after original keys are passed through a
+transposition function.
+
+Given the expectations of what should result if we expect the null
+hypothesis to be true, what should we then anticipate to see in the case
+of a valid alternative hypothesis? If the alternative hypothesis were to
+hold true, and there did exist a connection between temperament and
+Bach's approach to composition given key, we should then expect to
+detect:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Patterned trends across the keys, similar to patterns seen in the
+  previous subsection of keys grouping together and moving as a unit, or
+  plots wanting to retain some form of semblance to the temperament
+  envelopes of their original source key.
+\item
+  Furthermore, we might even expect to see that the shape of the plot
+  belonging to the "correct fugue", that is, the specific fugue that is
+  transposed into its own key (b-flat to b-flat, c\# to c\#, a to a,
+  etc.) is best retained as opposed to the other fugues transposed to
+  its key, or at least, best retained by a closely related key. This
+  effect would be easiest to parse out at the extreme ends of the
+  spectrum (namely b-flat minor and a minor), as we would only have to
+  try to observe whether or not the extreme placements on the curves are
+  kept by these keys.
+\end{enumerate}
+
+With these logical guidelines then in mind, returning to to examine the
+b-flat minor group of transposed fugues, we can observe that:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  In both instances of the vertical and horizontal domain, the original
+  0 cents from just peaks are kept by members of the Pythagorean key
+  group (blue fugues), and in the instance of the vertical domain, the
+  highest peak is still retained by the original b-flat minor
+  fugue-\/-its original, extreme position amongst the entire spectrum of
+  keys (refer to histogram for easier parsing of the data). For the
+  horizontal domain, b-flat minor is the third peak down at 0 cents from
+  just, with the most extreme peak occupied by b-flat's subdominant key,
+  d\# minor, one degree away via the circle of fifths. Additionally, the
+  original b-flat minor fugue occupies the lowest region at the troughs
+  along the x-axis of both the vertical and horizontal domain, again
+  consistent with its original extreme tempered key profile.
+\item
+  The separation and "clustering" trend of Pythagorean and meantone key
+  groups, as well as key gradation, can be observed in some effect in
+  both graphs in their peaks and troughs, and is unequivocally
+  pronounced in the horizontal graph, as there is an unmistakable
+  division between the two groups of keys at the 0 cents from just point
+  on the x-axis, as well as the two outer values.
+\end{enumerate}
+
+Before we proceed to the tables containing the transposition graphs of
+all keys, let us quickly consider the same plots in transpositions to
+the meantone exemplar key, a minor.
+
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_1_files/analysis_1_89_0.png}
+    \end{center}
+    
+
+
+\begin{figure}[H]
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_1_files/analysis_1_91_0.png}
+    \caption{All Minor Fugues Transposed to A Minor Vertical KDE Plots and Histograms. }
+    \end{center}
+\end{figure}
+    
+    For these plots, we can observe the similar effects as seen in the
+b-flat minor plots:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Status of the original key: in the histograms, the values for the
+  actual a minor fugue preserve its original shape of lower values in
+  the 0 cents from just domain (recall that we should not expect to see
+  an absolute minimum at the 0 cents from just marker, as the original
+  key of a minor does not minimize this value to begin with), and
+  minimal values in the extreme, Pythagorean (± 22 cents) values,
+  especially on the negative end of the spectrum where the minor thirds
+  lie.
+\item
+  Grouping/clustering as an overall trend as a function of key and key
+  type: The separation of Pythagorean and Meantone groups is again most
+  clearly delineated in the horizontal plot, with a completely clean
+  separation at 0 cents from just between high blue peaks, and lower red
+  ones. This structure in the vertical domain is less pronounced than in
+  the vertical plot of the b-flat minor; this is a trend that we will
+  continue to see for the vertical plots for the meantone keys: while
+  all of the Pythagorean keys on the vertical domain preserve their peak
+  placements for the just intervals, this structure breaks down with the
+  meantone keys. The horizontal domain, however, consistently preserves
+  a clear separation of the keys throughout Pythagorean and meantone
+  keys-\/-\/-in many cases, a division that is completely clean, as seen
+  with the a minor graphs above. This may be a result of the vertical
+  domain's weaker structure-\/-\/-either as an inherent trait, or as a
+  result of the limitations of the computational framework-\/-\/-that
+  renders only the Pythagorean keys strong enough to hold onto the
+  structure of their own keys.
+\end{enumerate}
+
+The following tables now present all minor keys and their respective 12
+transposition plots, starting from the KDE plots and histograms in the
+vertical domain, followed by the same graphs in horizontal domain.
+
+
+
+
+\begin{figure}[H]
+    \begin{center}
+    \adjustimage{max size={.7\linewidth}{0.9\paperheight}}{analysis_1_files/analysis_1_95_0.png}
+    \caption{All Minor Fugues Transposed to Every Key Vertical KDE Plots. }
+    \end{center}
+\end{figure}
+    
+
+
+
+\begin{figure}[H]
+    \begin{center}
+    \adjustimage{max size={.7\linewidth}{0.9\paperheight}}{analysis_1_files/analysis_1_98_0.png}
+    \caption{All Minor Fugues Transposed to Every Key Vertical Weighted Histograms. }
+    \end{center}
+\end{figure}
+    
+
+
+
+\begin{figure}[H]
+    \begin{center}
+    \adjustimage{max size={.7\linewidth}{0.9\paperheight}}{analysis_1_files/analysis_1_101_0.png}
+    \caption{All Minor Fugues Transposed to Every Key Horizontal KDE Plots. }
+    \end{center}
+\end{figure}
+    
+
+
+
+\begin{figure}[H]
+    \begin{center}
+    \adjustimage{max size={.7\linewidth}{0.9\paperheight}}{analysis_1_files/analysis_1_104_0.png}
+    \caption{All Minor Fugues Transposed to Every Key Horizontal Weighted Histograms. }
+    \end{center}
+\end{figure}
+    
+    \subsection{Observations, Section Summary, and
+Conclusions}\label{observations-section-summary-and-conclusions}
+
+After observing these transposition graphs for all minor keys, the
+application of the twofold rubric of key stasis and/or the formation of
+grouping/clustering of key types finds it evident that there are clear
+and discernible patterns that exist across keys and key types;
+furthermore, the consistency and pervasiveness of these patterns across
+both the horizontal and vertical domain, as well as a vast majority of
+key areas (all key areas in the horizontal domain, and at least the
+Pythagorean keys on the vertical), give a compelling weight of evidence
+towards an alternative hypothesis of temperament having a direct role in
+determining elements of compositional devices and structures according
+to key.
+
+The set of observations, interpretations, and conclusions from these
+above tables are as follows:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  The plots on the horizontal domain are unmistakably patterned and
+  correlated with respect to original keys: the existence of clear key
+  gradients, and division between Pythagorean and meantone keys on this
+  domain is unequivocally clear and striking.
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    All of the peaks at 0 cents from just are maximized by Pythagorean
+    keys, with a complete reversal on the outer, extreme values of -22
+    and 22 cents from just. As we will see in later sections, this is
+    very possibly due to the high volume of melodic sixths almost
+    exclusively in the meantone keys.
+  \item
+    The division between the two key groups is indisputably clear, with
+    beautiful, clean separations between Pythagorean and meantone
+    especially on the 0 cents from just domain. On this domain, half of
+    the keys graphs (g\#, c\#, f\#, e, a, and g) witness completely
+    clean divisions between the groups (no interleaving of red and blue
+    lines). The other half of the key graphs (f, b-flat, d\#, b, d, and
+    c) have the lower 5 values all occupied by meantone keys, with three
+    keys graphs having just one instance of a meantone key rising above
+    one Pythagorean key, and three keys graphs have one meantone key
+    rising above two Pythagorean keys. Of the three key graphs that have
+    the reversal of one meantone/two Pythagorean keys, two of these keys
+    are boundary keys (b minor and f minor). All in all, these results
+    testify to an objectively clear division of the key groups,
+    indicating temperamental influence on key on the compositional
+    level.
+  \end{enumerate}
+\item
+  The plots on the vertical domain also display patterns of "clustering"
+  structure of key types, namely for the just values in the Pythagorean
+  keys, in which the very upper tier of peaks are all occupied by
+  Pythagorean keys. For two of these Pythagorean keys-\/-\/-b-flat and
+  c-sharp-\/-\/-the peak utmost peak of the key graphs are occupied by
+  the plot of the original fugue.
+\end{enumerate}
+
+\subsubsection{Summary of Chapter Conclusions and Setup for Intermediate
+Chapter}\label{summary-of-chapter-conclusions-and-setup-for-intermediate-chapter}
+
+The various analytical tests employed in this chapter point towards
+clear conclusions of a positive relationship between temperament, key,
+and general composition backed up by systematic and consistent results,
+which are summarized below:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Well-temperament creates systematic key effects which are independent
+  of composition. The tuning system divides the keys into two large key
+  groups: chromatic, or "Pythagorean" keys, and diatonic, or "meantone"
+  keys, in which keys from their respective groups resemble the traits
+  of their historic tuning structures (Pythagorean keys = pure fifths,
+  tempered thirds, meantone keys = tempered fifths, close-to-pure
+  thirds). Changes between keys are tonally gradated according to the
+  circle of fifths, with a smooth transition between Pythagorean and
+  meantone groups. The most extreme (exemplar) versions of the
+  Pythagorean group fall on b-flat minor, and on a minor (if we are
+  operating on the rubric of maximizing purity of thirds) for the
+  meantone group. The division between the key groups is more pronounced
+  in the graphs of the actual fugues (as opposed to the graphs of
+  averages), indicating that this temperamental structure of key group
+  division is further reflected in compositional structure.
+\item
+  Compositional structure given key is also reflective of temperament.
+  This can be observed through our two validity checks of transposition
+  and expected value in both the temperament graphs and the KDE plots.
+  In other words, relations between temperament and key are more than
+  just a pure effect of the temperament itself, but furthermore
+  reflected in the compositional makeup of a piece written for a
+  particular key.
+\item
+  These effects of temperament on composition given key are strongest on
+  the horizontal domain. Perhaps the plots that offer the strongest
+  evidence towards the positive relationship between temperament and
+  underlying compositional structures in this section are the horizontal
+  KDE and histogram transposition plots, in which we can witness clear
+  and consistent divisions between Pythagorean and meantone keys that
+  are retained after transposition.
+\end{enumerate}
+
+From these results, we have sufficient information to confirm that
+temperament exerts an effect on composition given key in a consistent,
+systematic, and quantifiable way on the most general level of
+composition, completely guarded against any possibility of personal
+bias. While our analysis here allows us to draw this conclusion about
+statistical significance of the data on a macro scale, this most general
+level of analysis does not definitively give us any express information
+about the specific underlying intervals or musical elements responsible
+for these temperamental effects, nor anything about their function,
+placement or role within the score. As so, any claims about musical
+significance tied to temperament are still largely conjectures at this
+point. However, the information that we have found out about temperament
+and key in this chapter will provide a guide to the parameters that we
+will set in the next chapter, which will begin to look more closely into
+the structures and musical elements that temperament interacts with, and
+what the roles of these structures are in regards to musical function
+and significance.
+
+From these three key conclusions of this general chapter, the what we
+would like to focus on in the chapter to follow is:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Test our hypotheses formed in this chapter about the expressive
+  differences between Pythagorean and meantone keys through looking at
+  the relationship between key and non-intervallic musical elements of
+  duration and texture to see if there is any marked difference in
+  treatment between the two key groups.
+\item
+  Looking at the historically defining intervals of the Pythagorean and
+  meantone tuning systems (perfect intervals vs. imperfect intervals),
+  and analyze their usage in relation to key to see if we can observe
+  connections between temperamental structures and the treatment of
+  these intervals.
+\item
+  Because of the stronger correlations on the horizontal domain, we will
+  pay an increase of attention to horizontal intervals in the coming
+  chapters. The stronger effects of temperament on the horizontal domain
+  in this chapter will also motivate us to examine the interval of the
+  semitone, which shares a special place in minor mode both in term of
+  function as well as affect.
+\item
+  We have already started to see patterns of keys getting divided in two
+  main groups in this chapter; in the next chapter we will see if we can
+  fine-tune this division through more thorough key anaylsis through
+  looking at scale degree graphs.
+\end{enumerate}
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    

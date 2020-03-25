@@ -1,0 +1,15 @@
+*.texn
+*.aux
+*.fls
+*.out
+*.png
+*.toc
+__pycache__
+.*
+_minted*
+*.log
+*.loe
+*.lof
+*.lot
+*.fdb_latexmk
+*.fdb_latexmk

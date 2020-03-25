@@ -1,0 +1,272 @@
+\documentclass[11pt,letterpaper]{report}
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+
+%------------------------------------------------------------------------------
+% Misc packages
+%------------------------------------------------------------------------------
+
+% Provides support for setting the spacing between lines in a document.
+\usepackage{setspace}
+
+% for the appendix
+\usepackage[toc,page]{appendix}
+
+% A class and package is provided which allows TeX pictures or other TeX code to be compiled standalone or as part of a main document. Special support for pictures with beamer overlays is also provided.  The package is used in the main document and skips extra preambles in sub-files
+\usepackage{standalone}
+
+% minted for syntax highlighted code insertion
+\usepackage{minted}
+
+%
+\usepackage{hanging}
+
+% Package top make the first line of all sections etc., be indented by the usual paragraphindentation.  This should work with all the standard document classes.
+\usepackage{indentfirst}
+
+% verbatim replacement that allows for more fancy verbatim mode commands
+\usepackage{fancyvrb}
+\DefineVerbatimEnvironment{Verbatim}{Verbatim}{fontsize=\small,commandchars=\\\{\}}
+
+% footnote sizes
+\usepackage{footmisc}
+\renewcommand\footnotelayout{\normalsize}
+\let\footnotesize\normalsize    %12pt font text, better to redefine \@footnotetext
+
+% allows for arithmetic on arguments of latex commands
+\usepackage{calc}
+
+% for table lines
+\usepackage{tabularx}
+\usepackage{ragged2e}
+
+% for complicated graph
+\usepackage[usestackEOL]{stackengine}
+
+
+%------------------------------------------------------------------------------
+% Common necessary for parsing Jupyter output files
+%------------------------------------------------------------------------------
+
+\input {"jupyter_common.tex"}
+\definecolor{linkcolor}{rgb}{0.0,0.0,0.0}
+
+%------------------------------------------------------------------------------
+% Pretty/Ugly Formatting
+%------------------------------------------------------------------------------
+
+\usepackage{etoolbox}
+\newtoggle{pretty}
+\input{"ugly.tex"}
+
+%------------------------------------------------------------------------------
+% Create new environment for musical examples
+%------------------------------------------------------------------------------
+
+\usepackage{newfloat,tocloft}
+\newlistof{Example}{loe}{List of Examples}
+\DeclareFloatingEnvironment[
+    fileext=loe,
+    listname={List of Musical Examples},
+    name=Example,
+    placement=h,
+    within=chapter,
+]{Example}
+
+%------------------------------------------------------------------------------
+% Caption Formatting
+%------------------------------------------------------------------------------
+
+\usepackage{caption}
+\captionsetup[figure]{font={small,it},labelfont={bf},skip=2pt,margin=2cm}
+\captionsetup[table]{font={small,it},labelfont={bf},skip=5pt,margin=2cm}
+\captionsetup[Example]{font={small,it},labelfont={bf},skip=2pt,margin=2cm}
+
+%------------------------------------------------------------------------------
+% BEGIN
+%------------------------------------------------------------------------------
+
+\begin{document}
+\title{}
+\author{}
+
+%------------------------------------------------------------------------------
+% Titlepage
+%------------------------------------------------------------------------------
+
+\pagenumbering{roman}
+\begin{titlepage}
+    \thispagestyle{empty}
+    \begin{singlespace}\centering\normalsize
+        \begin{tabbing}
+        \hspace{10ex}Sponsoring Committee: \= Dr. Panayotis Mavromatis, Chairperson\\
+        \>Dr. Morwaread Mary Farbood\\
+        \>Dr. Sarah Marlowe\\
+        \>Dr. Laurence Maloney\\
+        \end{tabbing}
+        \vspace{1in}
+        \begin{doublespace}
+            THE UNEQUAL TUNING SYSTEM OF WELL-TEMPERAMENT \\
+            AND ITS INFLUENCE ON KEY CHARACTERISTICS IN \\
+            J.S. BACH'S WELL-TEMPERED CLAVIER
+        \end{doublespace}
+        \vspace{1in}
+        Katherine Lin \\
+        \vspace{.25in}
+        Program in Piano Studies \\
+        Department of Music and Performing Arts Professions\\
+        \vfill
+        Submitted in partial fulfillment \\
+        of the requirements for the degree of \\
+        Doctor of Philosophy in the \\
+        Steinhardt School of Culture, Education and Human Development \\
+        New York University \\
+        2019 \\
+    \end{singlespace}
+\end{titlepage}
+\setcounter{page}{2}
+
+%------------------------------------------------------------------------------
+% Copyright
+%------------------------------------------------------------------------------
+\newpage
+\thispagestyle{empty}
+\vspace*{\stretch{1}}
+\begin{center}
+    Copyright \copyright{} 2020 Katherine Lin
+\end{center}
+\vspace*{\stretch{2}}
+
+%------------------------------------------------------------------------------
+% Abstract
+%------------------------------------------------------------------------------
+
+%The abstract is a brief summary of the contents of the dissertation. Begin
+%typing the abstract two inches from the top of a blank page with no heading.
+%The abstract should be typed double-spaced with the same typeface and margins
+%as the dissertation. The length of the abstract should be limited to 350 words.
+
+\clearpage
+\iftoggle{pretty}
+{\singlespacing}
+{\doublespacing}
+\thispagestyle{empty}
+\begin{center}
+    \vspace*{2in}
+    \textbf{Abstract}
+\end{center}
+\input {"abstract.tex"}
+\clearpage
+
+%------------------------------------------------------------------------------
+% Acknowledgements
+%------------------------------------------------------------------------------
+
+\clearpage
+\thispagestyle{empty}
+\phantomsection
+\addcontentsline{toc}{chapter}{Acknowledgements}
+\begin{singlespace}
+\begin{center}
+\vspace*{2in}
+\textbf{Acknowledgements}
+\end{center}
+
+Thank you--
+
+\end{singlespace}
+\clearpage
+
+%------------------------------------------------------------------------------
+% Table of Contents
+%------------------------------------------------------------------------------
+
+\begin{singlespace}
+
+\clearpage
+\tableofcontents
+\pagestyle{plain}
+\clearpage
+\end{singlespace}
+
+%------------------------------------------------------------------------------
+% List of Figures / Tables / Etc
+%------------------------------------------------------------------------------
+
+\begin{singlespace}
+\pagestyle{plain}
+
+\newpage
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+\newpage
+
+\newpage
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables
+\newpage
+
+\newpage
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Examples}
+\listof{Example}{List of Musical Examples}
+\newpage
+
+\end{singlespace}
+
+%------------------------------------------------------------------------------
+% Quote
+%------------------------------------------------------------------------------
+
+\begin{singlespace}
+\clearpage
+\thispagestyle{empty}
+\par\vspace*{.35\textheight}{``At last he came to the Vermeer, which he remembered as more striking, more different from anything else he knew, but in which, thanks to the critic's article, he noticed for the first time some small figures in blue, that the sand was pink, and, finally, the precious substance of the tiny patch of yellow wall. His dizziness increased; he fixed his gaze, like a child upon a yellow butterfly that it wants to catch, on the precious little patch of wall. `That's how I ought to have written,' he said. `My last books are too dry, I ought to have gone over them with a few layers of colour, made my language precious in itself, like this little patch of yellow wall\ldots' He repeated to himself: `Little patch of yellow wall, with a sloping roof, little patch of yellow wall\ldots'\thinspace'' \par \flushright---Marcel Proust, \textit{In Search of Lost Time}\par}
+\end{singlespace}
+
+%------------------------------------------------------------------------------
+% Body
+%------------------------------------------------------------------------------
+
+\pagenumbering{arabic}
+\pagestyle{plain}
+
+\iftoggle{pretty}
+{\singlespacing}
+{\doublespacing}
+
+\input {"intro.tex"}
+\input {"temperament.tex"}
+\input {"methods.tex"}
+\input {"analysis_1.tex"}
+\input {"analysis_2.tex"}
+\input {"analysis_3.tex"}
+\input {"conclusions.tex"}
+\input {"bibliography.tex"}
+
+%------------------------------------------------------------------------------
+% Appendix
+%------------------------------------------------------------------------------
+\begin{appendices}
+    \begin{singlespace}
+
+    %------------------------------------------------------------------------------
+    % bach.py source code
+    %------------------------------------------------------------------------------
+    \chapter{Bach Source Code}
+    %some other description
+    \inputminted[linenos,breakafter={=,.}, ,tabsize=2,breaklines]{python}{"bach.py"}
+
+    %------------------------------------------------------------------------------
+    % bach_df.py source code
+    %------------------------------------------------------------------------------
+    \chapter{Bach DF Source Code}
+    %some description
+    \inputminted[linenos,breakafter={=,.}, ,tabsize=2,breaklines]{python}{"bach_df.py"}
+
+    \end{singlespace}
+\end{appendices}
+
+\end{document}
