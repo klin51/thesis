@@ -25,8 +25,8 @@ clean:
 	rm -rf analysis_3_files
 
 latex:
-	#find . -name *.ipynb -exec jupyter nbconvert --template noprompt {} --to hide_code_latex \;
-	find . -maxdepth 1 -name "*.ipynb" -exec jupyter nbconvert {} --to hide_code_latex \;
+	#find . -name *.ipynb -exec jupyter-nbconvert --template noprompt {} --to hide_code_latex \;
+	find . -maxdepth 1 -name "*.ipynb" -exec jupyter-nbconvert {} --to hide_code_latex \;
 
 	echo "trimming empty verbatim environments"
 	find . -maxdepth 1 -name "*.tex" -exec sed -in '/\\begin{Verbatim}/ { N; /\\begin{Verbatim}\[commandchars=\\\\\\{\\}]\n$$/ { N; /\\end{Verbatim}/ { d; } ; } ; }' {} \;
