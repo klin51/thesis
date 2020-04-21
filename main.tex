@@ -6,6 +6,9 @@
 % Misc packages
 %------------------------------------------------------------------------------
 
+% Bibliography
+\usepackage{apacite}
+
 % Provides support for setting the spacing between lines in a document.
 \usepackage{setspace}
 
@@ -244,7 +247,10 @@ Thank you--
 \input {"analysis_2.tex"}
 \input {"analysis_3.tex"}
 \input {"conclusions.tex"}
-\input {"bibliography.tex"}
+\nocite{*}
+\bibliographystyle{apacite}
+\bibliography{bibliography.bib}
+
 
 %------------------------------------------------------------------------------
 % Appendix
