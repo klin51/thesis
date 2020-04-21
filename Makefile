@@ -36,6 +36,8 @@ latex:
 	find . -maxdepth 1 -name "*.tex" -exec sed -in '/^$$/ { N; /\\end{Verbatim}/ { s/\n// ; } ; }' {} \;
 	echo "trimming extra maketitles"
 	find . -maxdepth 1 -name "*.tex" -exec sed -in '/\\maketitle/d' {} \;
+	echo "trimming \\/"
+	find . -maxdepth 1 -name "*.tex" -exec sed -in 's/\\\///g' {} \;
 
 	python3 tanubot.py abstract.tex
 	python3 tanubot.py methods.tex
