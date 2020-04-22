@@ -1,7 +1,6 @@
     
     
     
-    
 
     \hypertarget{Methods}{\chapter{Methods}\label{Methods}}
     \section{The Analytical Framework and Principles of
@@ -899,7 +898,7 @@ in the Appendix for further reference.
 Module}{The bach.py Search Module}}\label{the-bach.py-search-module}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}2}]:} \PY{k+kn}{from} \PY{n+nn}{bach} \PY{k}{import} \PY{o}{*}
+{\color{incolor}In [{\color{incolor}2}]:} \PY{k+kn}{from} \PY{n+nn}{bach} \PY{k+kn}{import} \PY{o}{*}
 \end{Verbatim}
 
     All of the basic setup and functions written for the analysis portion of
@@ -1543,7 +1542,7 @@ transposition.
 Module}{The bach\_df.py Data Module}}\label{the-bach_df.py-data-module}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{from} \PY{n+nn}{bach\PYZus{}df} \PY{k}{import} \PY{o}{*}
+{\color{incolor}In [{\color{incolor}2}]:} \PY{k+kn}{from} \PY{n+nn}{bach\PYZus{}df} \PY{k+kn}{import} \PY{o}{*}
 \end{Verbatim}
 
     The \texttt{bach\_df} data module is the second of the analytical
@@ -1624,53 +1623,42 @@ are transposition invariant, and remain identical across every key.
 \begin{table}[H]
 \centering
 \tiny
-\begin{tabular}{|lllrrrrllllrrrrrll|}
+\begin{tabular}{|lllrrrllll|}
 \hline
-\textbf{{}} & \textbf{file} & \textbf{     key} & \textbf{ cents} & \textbf{ cents from just} & \textbf{ semitones} & \textbf{ generic interval} & \textbf{simple name} & \textbf{name} & \textbf{directed name} & \textbf{direction} & \textbf{ total semitones} & \textbf{ n1 duration} & \textbf{ n2 duration} & \textbf{ offset} & \textbf{ beat} & \textbf{n1 name} & \textbf{n2 name }\\
+\textbf{{}} & \textbf{file} & \textbf{     key} & \textbf{ cents} & \textbf{ cents from just} & \textbf{ semitones} & \textbf{name} & \textbf{direction} & \textbf{n1 name} & \textbf{n2 name }\\
 \hline
-0 &  c\_1 &  C minor &    108 &               -4 &          1 &                 2 &          m2 &   m2 &           m-2 &     False &                1 &         0.25 &         0.25 &    0.50 &  1.50 &       G &      F\# \\
-1 &  c\_1 &  C minor &    108 &               -4 &          1 &                 2 &          m2 &   m2 &            m2 &      True &                1 &         0.25 &         0.50 &    8.75 &  1.75 &      F\# &       G \\
-2 &  c\_1 &  C minor &    696 &               -6 &          7 &                 5 &          P5 &   P5 &           P-5 &     False &                7 &         0.50 &         0.50 &    9.00 &  2.00 &       G &       C \\
-3 &  c\_1 &  C minor &    294 &              -22 &          3 &                 3 &          m3 &   m3 &            m3 &      True &                3 &         0.50 &         0.50 &    9.50 &  2.50 &       C &      E- \\
-4 &  c\_1 &  C minor &    402 &               16 &          4 &                 3 &          M3 &   M3 &            M3 &      True &                4 &         0.50 &         0.25 &   10.00 &  3.00 &      E- &       G \\
+0 &  c\_1 &  C minor &    108 &               -4 &          1 &   m2 &     False &       G &      F\# \\
+1 &  c\_1 &  C minor &    108 &               -4 &          1 &   m2 &      True &      F\# &       G \\
+2 &  c\_1 &  C minor &    696 &               -6 &          7 &   P5 &     False &       G &       C \\
+3 &  c\_1 &  C minor &    294 &              -22 &          3 &   m3 &      True &       C &      E- \\
+4 &  c\_1 &  C minor &    402 &               16 &          4 &   M3 &      True &      E- &       G \\
 \hline
 \end{tabular}
-\caption{C minor fugue dataframe. }
+\caption{C minor fugue dataframe. (Selected Nine Columns) }
 \end{table}
 \normalsize
 \end{singlespace}
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}226}]:} \PY{n}{c\PYZus{}1\PYZus{}to\PYZus{}fsh\PYZus{}hz}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}226}]:}   file original key       key  cents  cents from just  semitones  \textbackslash{}
-          0  c\_1      C minor  F\# minor     90              -22          1   
-          1  c\_1      C minor  F\# minor     90              -22          1   
-          2  c\_1      C minor  F\# minor    702                0          7   
-          3  c\_1      C minor  F\# minor    300              -16          3   
-          4  c\_1      C minor  F\# minor    402               16          4   
-          
-             generic interval simple name name directed name direction  total semitones  \textbackslash{}
-          0                 2          m2   m2           m-2     False                1   
-          1                 2          m2   m2            m2      True                1   
-          2                 5          P5   P5           P-5     False                7   
-          3                 3          m3   m3            m3      True                3   
-          4                 3          M3   M3            M3      True                4   
-          
-             n1 duration  n2 duration  offset  beat n1 name n2 name  n1 octave  \textbackslash{}
-          0         0.25         0.25    0.50  1.50      C\#      B\#          6   
-          1         0.25         0.50    8.75  1.75      B\#      C\#          5   
-          2         0.50         0.50    9.00  2.00      C\#      F\#          6   
-          3         0.50         0.50    9.50  2.50      F\#       A          5   
-          4         0.50         0.25   10.00  3.00       A      C\#          5   
-          
-             n2 octave  measure  part subject  subject offset  
-          0          5        3     2    True            0.00  
-          1          6        3     2    True            0.25  
-          2          5        3     2    True            0.50  
-          3          5        3     2    True            1.00  
-          4          6        3     2    True            1.50  
-\end{Verbatim}
+\begin{singlespace}
+\begin{table}[H]
+\centering
+\tiny
+\begin{tabular}{|llllrrrllll|}
+\hline
+\textbf{{}} & \textbf{file} & \textbf{original key} & \textbf{      key} & \textbf{ cents} & \textbf{ cents from just} & \textbf{ semitones} & \textbf{name} & \textbf{direction} & \textbf{n1 name} & \textbf{n2 name }\\
+\hline
+0 &  c\_1 &      C minor &  F\# minor &     90 &              -22 &          1 &   m2 &     False &      C\# &      B\# \\
+1 &  c\_1 &      C minor &  F\# minor &     90 &              -22 &          1 &   m2 &      True &      B\# &      C\# \\
+2 &  c\_1 &      C minor &  F\# minor &    702 &                0 &          7 &   P5 &     False &      C\# &      F\# \\
+3 &  c\_1 &      C minor &  F\# minor &    300 &              -16 &          3 &   m3 &      True &      F\# &       A \\
+4 &  c\_1 &      C minor &  F\# minor &    402 &               16 &          4 &   M3 &      True &       A &      C\# \\
+\hline
+\end{tabular}
+\caption{C minor fugue transposed to F\# minor dataframe. (Selected Ten Columns) }
+\end{table}
+\normalsize
+\end{singlespace}
+
+
     \subsubsection{Dataframe Lists and Concatenated
 Dataframes}\label{dataframe-lists-and-concatenated-dataframes}
 
@@ -1905,34 +1893,28 @@ only intervals that have the value of 'm2' in the 'name' column.
 {\color{incolor}In [{\color{incolor}373}]:} \PY{n}{c\PYZus{}1\PYZus{}hz}\PY{p}{[}\PY{n}{c\PYZus{}1\PYZus{}hz}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{name}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{==}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{m2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}373}]:}    file      key  cents  cents from just  semitones  generic interval  \textbackslash{}
-          0   c\_1  C minor    108               -4          1                 2   
-          1   c\_1  C minor    108               -4          1                 2   
-          5   c\_1  C minor    108               -4          1                 2   
-          6   c\_1  C minor    108               -4          1                 2   
-          10  c\_1  C minor    108               -4          1                 2   
-          
-             simple name name directed name direction  total semitones  n1 duration  \textbackslash{}
-          0           m2   m2           m-2     False                1         0.25   
-          1           m2   m2            m2      True                1         0.25   
-          5           m2   m2           m-2     False                1         0.25   
-          6           m2   m2            m2      True                1         0.25   
-          10          m2   m2           m-2     False                1         0.25   
-          
-              n2 duration  offset  beat n1 name n2 name  n1 octave  n2 octave  measure  \textbackslash{}
-          0          0.25    0.50  1.50       G      F\#          5          5        3   
-          1          0.50    8.75  1.75      F\#       G          5          5        3   
-          5          0.25   10.50  3.50       G      F\#          5          5        3   
-          6          0.50   10.75  3.75      F\#       G          5          5        3   
-          10         0.25   12.50  1.50       G      F\#          5          5        4   
-          
-              part subject  subject offset  
-          0      2    True            0.00  
-          1      2    True            0.25  
-          5      2    True            2.00  
-          6      2    True            2.25  
-          10     2    True            4.00  
+{\color{outcolor}Out[{\color{outcolor}373}]:} 
 \end{Verbatim}
+\begin{singlespace}
+\begin{table}[H]
+\centering
+\tiny
+\begin{tabular}{|lllrrrrllll|}
+\hline
+\textbf{{}} & \textbf{file} & \textbf{     key} & \textbf{ cents} & \textbf{ cents from just} & \textbf{ semitones} & \textbf{ generic interval} & \textbf{simple name} & \textbf{name} & \textbf{directed name} & \textbf{direction }\\
+\hline
+0  &  c\_1 &  C minor &    108 &               -4 &          1 &                 2 &          m2 &   m2 &           m-2 &     False \\
+1  &  c\_1 &  C minor &    108 &               -4 &          1 &                 2 &          m2 &   m2 &            m2 &      True \\
+5  &  c\_1 &  C minor &    108 &               -4 &          1 &                 2 &          m2 &   m2 &           m-2 &     False \\
+6  &  c\_1 &  C minor &    108 &               -4 &          1 &                 2 &          m2 &   m2 &            m2 &      True \\
+10 &  c\_1 &  C minor &    108 &               -4 &          1 &                 2 &          m2 &   m2 &           m-2 &     False \\
+\hline
+\end{tabular}
+\caption[C minor Fugue Horizontal Intervals Dataframe, Minor Seconds Only. ]{C Minor Fugue Horizontal Intervals Dataframe, Minor Seconds Only. (First Ten Columns)}
+\end{table}
+\normalsize
+\end{singlespace}
+
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}375}]:} \PY{n+nb}{len}\PY{p}{(}\PY{n}{c\PYZus{}1\PYZus{}hz}\PY{p}{[}\PY{n}{c\PYZus{}1\PYZus{}hz}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{name}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{==}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{m2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
 \end{Verbatim}
@@ -1955,34 +1937,28 @@ string 'False'.
 {\color{incolor}In [{\color{incolor}415}]:} \PY{n}{c\PYZus{}1\PYZus{}hz}\PY{p}{[}\PY{p}{(}\PY{n}{c\PYZus{}1\PYZus{}hz}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{name}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{==}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{m2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{o}{\PYZam{}}\PY{p}{(}\PY{n}{c\PYZus{}1\PYZus{}hz}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{direction}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{==}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{False}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{]}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}415}]:}    file      key  cents  cents from just  semitones  generic interval  \textbackslash{}
-          0   c\_1  C minor    108               -4          1                 2   
-          5   c\_1  C minor    108               -4          1                 2   
-          10  c\_1  C minor    108               -4          1                 2   
-          16  c\_1  C minor    102              -10          1                 2   
-          20  c\_1  C minor    102              -10          1                 2   
-          
-             simple name name directed name direction  total semitones  n1 duration  \textbackslash{}
-          0           m2   m2           m-2     False                1         0.25   
-          5           m2   m2           m-2     False                1         0.25   
-          10          m2   m2           m-2     False                1         0.25   
-          16          m2   m2           m-2     False                1         1.00   
-          20          m2   m2           m-2     False                1         0.25   
-          
-              n2 duration  offset  beat n1 name n2 name  n1 octave  n2 octave  measure  \textbackslash{}
-          0          0.25     0.5   1.5       G      F\#          5          5        3   
-          5          0.25    10.5   3.5       G      F\#          5          5        3   
-          10         0.25    12.5   1.5       G      F\#          5          5        4   
-          16         0.25    14.5   3.5      E-       D          5          5        4   
-          20         0.25    16.5   1.5      E-       D          5          5        5   
-          
-              part subject  subject offset  
-          0      2    True             0.0  
-          5      2    True             2.0  
-          10     2    True             4.0  
-          16     2    True             6.0  
-          20     2   False             0.0  
+{\color{outcolor}Out[{\color{outcolor}415}]:} 
 \end{Verbatim}
+\begin{singlespace}
+\begin{table}[H]
+\centering
+\tiny
+\begin{tabular}{|lllrrrrllll|}
+\hline
+\textbf{{}} & \textbf{file} & \textbf{     key} & \textbf{ cents} & \textbf{ cents from just} & \textbf{ semitones} & \textbf{ generic interval} & \textbf{simple name} & \textbf{name} & \textbf{directed name} & \textbf{direction }\\
+\hline
+0  &  c\_1 &  C minor &    108 &               -4 &          1 &                 2 &          m2 &   m2 &           m-2 &     False \\
+5  &  c\_1 &  C minor &    108 &               -4 &          1 &                 2 &          m2 &   m2 &           m-2 &     False \\
+10 &  c\_1 &  C minor &    108 &               -4 &          1 &                 2 &          m2 &   m2 &           m-2 &     False \\
+16 &  c\_1 &  C minor &    102 &              -10 &          1 &                 2 &          m2 &   m2 &           m-2 &     False \\
+20 &  c\_1 &  C minor &    102 &              -10 &          1 &                 2 &          m2 &   m2 &           m-2 &     False \\
+\hline
+\end{tabular}
+\caption[C minor Fugue Horizontal Intervals Dataframe, Descending Minor Seconds Only. ]{C Minor Fugue Horizontal Intervals Dataframe, Descending Minor Seconds Only. (First Ten Columns)}
+\end{table}
+\normalsize
+\end{singlespace}
+
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}416}]:} \PY{n+nb}{len}\PY{p}{(}\PY{n}{c\PYZus{}1\PYZus{}hz}\PY{p}{[}\PY{p}{(}\PY{n}{c\PYZus{}1\PYZus{}hz}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{name}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{==}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{m2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{o}{\PYZam{}}\PY{p}{(}\PY{n}{c\PYZus{}1\PYZus{}hz}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{direction}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{==}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{False}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{]}\PY{p}{)}
 \end{Verbatim}
@@ -2009,7 +1985,7 @@ chart:
 
 \begin{figure}[H]
     \begin{center}
-    \adjustimage{max size={0.6\linewidth}{0.9\paperheight}}{methods_files/methods_47_0.png}
+    \adjustimage{max size={0.6\linewidth}{0.9\paperheight}}{methods_files/methods_57_0.png}
     \caption{ Descending Minor Seconds in c minor fugue in cents. }
     \end{center}
 \end{figure}
@@ -2029,46 +2005,33 @@ introducing a new parameter selecting for only 'True' values in the
                  \PY{o}{\PYZam{}}\PY{p}{(}\PY{n}{c\PYZus{}1\PYZus{}hz}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{subject}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{==}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{True}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{]}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{l+m+mi}{8}\PY{p}{)}
 \end{Verbatim}
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}418}]:}    file      key  cents  cents from just  semitones  generic interval  \textbackslash{}
-          0   c\_1  C minor    108               -4          1                 2   
-          5   c\_1  C minor    108               -4          1                 2   
-          10  c\_1  C minor    108               -4          1                 2   
-          16  c\_1  C minor    102              -10          1                 2   
-          72  c\_1  C minor    102              -10          1                 2   
-          77  c\_1  C minor    102              -10          1                 2   
-          82  c\_1  C minor    102              -10          1                 2   
-          90  c\_1  C minor     96              -16          1                 2   
-          
-             simple name name directed name direction  total semitones  n1 duration  \textbackslash{}
-          0           m2   m2           m-2     False                1         0.25   
-          5           m2   m2           m-2     False                1         0.25   
-          10          m2   m2           m-2     False                1         0.25   
-          16          m2   m2           m-2     False                1         1.00   
-          72          m2   m2           m-2     False                1         0.25   
-          77          m2   m2           m-2     False                1         0.25   
-          82          m2   m2           m-2     False                1         0.25   
-          90          m2   m2           m-2     False                1         0.25   
-          
-              n2 duration  offset  beat n1 name n2 name  n1 octave  n2 octave  measure  \textbackslash{}
-          0          0.25    0.50  1.50       G      F\#          5          5        3   
-          5          0.25   10.50  3.50       G      F\#          5          5        3   
-          10         0.25   12.50  1.50       G      F\#          5          5        4   
-          16         0.25   14.50  3.50      E-       D          5          5        4   
-          72         0.25   40.50  1.50      E-       D          5          5       11   
-          77         0.25   42.50  3.50      E-       D          5          5       11   
-          82         0.25   44.50  1.50      E-       D          5          5       12   
-          90         0.25   47.75  4.75      A-       G          4          4       12   
-          
-              part subject  subject offset  
-          0      2    True            0.00  
-          5      2    True            2.00  
-          10     2    True            4.00  
-          16     2    True            6.00  
-          72     2    True            0.00  
-          77     2    True            2.00  
-          82     2    True            4.00  
-          90     2    True            7.25  
+{\color{outcolor}Out[{\color{outcolor}418}]:} 
 \end{Verbatim}
+\begin{singlespace}
+\begin{table}[H]
+\centering
+\tiny
+\begin{tabular}{|lllrrrlllr|}
+\hline
+\textbf{{}} & \textbf{file} & \textbf{     key} & \textbf{ cents} & \textbf{ cents from just} & \textbf{ semitones} & \textbf{name} & \textbf{direction} & \textbf{subject} & \textbf{ subject offset }\\
+\hline
+0  &  c\_1 &  C minor &    108 &               -4 &          1 &   m2 &     False &    True &            0.00 \\
+5  &  c\_1 &  C minor &    108 &               -4 &          1 &   m2 &     False &    True &            2.00 \\
+10 &  c\_1 &  C minor &    108 &               -4 &          1 &   m2 &     False &    True &            4.00 \\
+16 &  c\_1 &  C minor &    102 &              -10 &          1 &   m2 &     False &    True &            6.00 \\
+72 &  c\_1 &  C minor &    102 &              -10 &          1 &   m2 &     False &    True &            0.00 \\
+77 &  c\_1 &  C minor &    102 &              -10 &          1 &   m2 &     False &    True &            2.00 \\
+82 &  c\_1 &  C minor &    102 &              -10 &          1 &   m2 &     False &    True &            4.00 \\
+90 &  c\_1 &  C minor &     96 &              -16 &          1 &   m2 &     False &    True &            7.25 \\
+\hline
+\end{tabular}
+\caption[C minor Fugue Horizontal Intervals Dataframe, Subject Descending Minor Seconds Only. ]{C Minor Fugue Horizontal Intervals Dataframe, Subject Descending Minor Seconds Only. (First Nine Columns)}
+\end{table}
+\normalsize
+\end{singlespace}
+
+
+
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}419}]:} \PY{n+nb}{len}\PY{p}{(}\PY{n}{c\PYZus{}1\PYZus{}hz}\PY{p}{[}\PY{p}{(}\PY{n}{c\PYZus{}1\PYZus{}hz}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{name}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{==}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{m2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{o}{\PYZam{}}\PY{p}{(}\PY{n}{c\PYZus{}1\PYZus{}hz}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{direction}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{==}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{False}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PYZbs{}
                      \PY{o}{\PYZam{}}\PY{p}{(}\PY{n}{c\PYZus{}1\PYZus{}hz}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{subject}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{==}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{True}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{]}\PY{p}{)}
@@ -2088,7 +2051,7 @@ subject has affected our interval distribution:
 
 \begin{figure}[H]
     \begin{center}
-    \adjustimage{max size={0.6\linewidth}{0.9\paperheight}}{methods_files/methods_53_0.png}
+    \adjustimage{max size={0.6\linewidth}{0.9\paperheight}}{methods_files/methods_67_0.png}
     \caption{ Subject Descending Minor Seconds in c minor fugue in cents. }
     \end{center}
 \end{figure}
@@ -2121,56 +2084,43 @@ semitone after the third iteration of the subject head motif). Here is
 the resulting dataframe, and its corresponding \texttt{seaborn} chart:
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}429}]:} \PY{n}{c\PYZus{}1\PYZus{}hz}\PY{p}{[}\PY{p}{(}\PY{n}{c\PYZus{}1\PYZus{}hz}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{name}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{==}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{m2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{o}{\PYZam{}}\PY{p}{(}\PY{n}{c\PYZus{}1\PYZus{}hz}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{direction}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{==}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{False}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PYZbs{}
-                 \PY{o}{\PYZam{}}\PY{p}{(}\PY{n}{c\PYZus{}1\PYZus{}hz}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{subject}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{==}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{True}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{o}{\PYZam{}}\PY{p}{(}\PY{n}{c\PYZus{}1\PYZus{}hz}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{subject offset}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{\PYZlt{}}\PY{o}{=}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{]}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{l+m+mi}{8}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}12}]:} \PY{n}{c\PYZus{}1\PYZus{}hz}\PY{p}{[}\PY{p}{(}\PY{n}{c\PYZus{}1\PYZus{}hz}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{name}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{==}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{m2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{o}{\PYZam{}}\PY{p}{(}\PY{n}{c\PYZus{}1\PYZus{}hz}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{direction}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{==}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{False}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PYZbs{}
+                \PY{o}{\PYZam{}}\PY{p}{(}\PY{n}{c\PYZus{}1\PYZus{}hz}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{subject}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{==}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{True}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PYZbs{}
+                \PY{o}{\PYZam{}}\PY{p}{(}\PY{n}{c\PYZus{}1\PYZus{}hz}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{subject offset}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{\PYZlt{}}\PY{o}{=}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{]}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{l+m+mi}{8}\PY{p}{)}
 \end{Verbatim}
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}429}]:}     file      key  cents  cents from just  semitones  generic interval  \textbackslash{}
-          0    c\_1  C minor    108               -4          1                 2   
-          5    c\_1  C minor    108               -4          1                 2   
-          10   c\_1  C minor    108               -4          1                 2   
-          72   c\_1  C minor    102              -10          1                 2   
-          77   c\_1  C minor    102              -10          1                 2   
-          82   c\_1  C minor    102              -10          1                 2   
-          161  c\_1  C minor    108               -4          1                 2   
-          166  c\_1  C minor    108               -4          1                 2   
-          
-              simple name name directed name direction  total semitones  n1 duration  \textbackslash{}
-          0            m2   m2           m-2     False                1         0.25   
-          5            m2   m2           m-2     False                1         0.25   
-          10           m2   m2           m-2     False                1         0.25   
-          72           m2   m2           m-2     False                1         0.25   
-          77           m2   m2           m-2     False                1         0.25   
-          82           m2   m2           m-2     False                1         0.25   
-          161          m2   m2           m-2     False                1         0.25   
-          166          m2   m2           m-2     False                1         0.25   
-          
-               n2 duration  offset  beat n1 name n2 name  n1 octave  n2 octave  measure  \textbackslash{}
-          0           0.25     0.5   1.5       G      F\#          5          5        3   
-          5           0.25    10.5   3.5       G      F\#          5          5        3   
-          10          0.25    12.5   1.5       G      F\#          5          5        4   
-          72          0.25    40.5   1.5      E-       D          5          5       11   
-          77          0.25    42.5   3.5      E-       D          5          5       11   
-          82          0.25    44.5   1.5      E-       D          5          5       12   
-          161         0.25    76.5   1.5       C       B          5          4       20   
-          166         0.25    78.5   3.5       C       B          5          4       20   
-          
-               part subject  subject offset  
-          0       2    True             0.0  
-          5       2    True             2.0  
-          10      2    True             4.0  
-          72      2    True             0.0  
-          77      2    True             2.0  
-          82      2    True             4.0  
-          161     2    True             0.0  
-          166     2    True             2.0  
+{\color{outcolor}Out[{\color{outcolor}12}]:} 
 \end{Verbatim}
+\begin{singlespace}
+\begin{table}[H]
+\centering
+\tiny
+\begin{tabular}{|lllrrrlllr|}
+\hline
+\textbf{{}} & \textbf{file} & \textbf{     key} & \textbf{ cents} & \textbf{ cents from just} & \textbf{ semitones} & \textbf{name} & \textbf{direction} & \textbf{subject} & \textbf{ subject offset }\\
+\hline
+0   &  c\_1 &  C minor &    108 &               -4 &          1 &   m2 &     False &    True &             0.0 \\
+5   &  c\_1 &  C minor &    108 &               -4 &          1 &   m2 &     False &    True &             2.0 \\
+10  &  c\_1 &  C minor &    108 &               -4 &          1 &   m2 &     False &    True &             4.0 \\
+72  &  c\_1 &  C minor &    102 &              -10 &          1 &   m2 &     False &    True &             0.0 \\
+77  &  c\_1 &  C minor &    102 &              -10 &          1 &   m2 &     False &    True &             2.0 \\
+82  &  c\_1 &  C minor &    102 &              -10 &          1 &   m2 &     False &    True &             4.0 \\
+161 &  c\_1 &  C minor &    108 &               -4 &          1 &   m2 &     False &    True &             0.0 \\
+166 &  c\_1 &  C minor &    108 &               -4 &          1 &   m2 &     False &    True &             2.0 \\
+\hline
+\end{tabular}
+\caption[C minor Fugue Horizontal Intervals Dataframe, Subject Descending Minor Seconds Before Offset 4 Only. ]{C Minor Fugue Horizontal Intervals Dataframe, Subject Descending Minor Seconds Before Offset 4 Only. (First Nine Columns)}
+\end{table}
+\normalsize
+\end{singlespace}
+
+
 
 
 
 \begin{figure}[H]
     \begin{center}
-    \adjustimage{max size={0.6\linewidth}{0.9\paperheight}}{methods_files/methods_57_0.png}
+    \adjustimage{max size={0.6\linewidth}{0.9\paperheight}}{methods_files/methods_76_0.png}
     \caption{ Subject Opening Motif Descending Minor Seconds in c minor fugue in cents. }
     \end{center}
 \end{figure}
