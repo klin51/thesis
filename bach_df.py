@@ -8,6 +8,11 @@ import fnmatch
 
 from bach import *
 
+myfonts = ['Liberation Sans', 'Arial']
+#try:
+#    import statsmodels
+#except ImportError as e:
+#    print ("You need to install statsmodels")
 
 #ALL VERTICAL SEARCH DF
 c_1_vt=pd.read_pickle("./bach_pickle_df/c_1_minor_vt.pkl")

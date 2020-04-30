@@ -1444,7 +1444,8 @@ can be achieved.
 
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}203}]:} \PY{c+c1}{\PYZsh{} A melodic fifth on the horizontal dimension}
-          \PY{n}{st}\PY{o}{=}\PY{n}{stream}\PY{o}{.}\PY{n}{Stream}\PY{p}{(}\PY{p}{)}\PY{p}{;} \PY{n}{st}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{p}{[}\PY{n}{note}\PY{o}{.}\PY{n}{Note}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{C}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,}\PY{n}{note}\PY{o}{.}\PY{n}{Note}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{G}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{]}\PY{p}{)}\PY{p}{;} \PY{n}{st}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+          \PY{n}{st}\PY{o}{=}\PY{n}{stream}\PY{o}{.}\PY{n}{Stream}\PY{p}{(}\PY{p}{)}\PY{p}{;} \PY{n}{st}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{p}{[}\PY{n}{note}\PY{o}{.}\PY{n}{Note}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{C}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,}\PY{n}{note}\PY{o}{.}\PY{n}{Note}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{G}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+          \PY{n}{st}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
 \begin{Example}[H]
@@ -1619,6 +1620,12 @@ see identical values in these particular cent columns in both
 dataframes, as by definition the cent value of equal-tempered intervals
 are transposition invariant, and remain identical across every key.
 
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}226}]:} \PY{n}{c\PYZus{}1\PYZus{}hz}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}226}]:} 
+\end{Verbatim}
 \begin{singlespace}
 \begin{table}[H]
 \centering
@@ -1638,6 +1645,12 @@ are transposition invariant, and remain identical across every key.
 \end{table}
 \normalsize
 \end{singlespace}
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}226}]:} \PY{n}{c\PYZus{}1\PYZus{}to\PYZus{}fsh\PYZus{}hz}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}226}]:} 
+\end{Verbatim}
 \begin{singlespace}
 \begin{table}[H]
 \centering
@@ -1985,7 +1998,7 @@ chart:
 
 \begin{figure}[H]
     \begin{center}
-    \adjustimage{max size={0.6\linewidth}{0.9\paperheight}}{methods_files/methods_57_0.png}
+    \adjustimage{max size={0.6\linewidth}{0.9\paperheight}}{methods_files/methods_58_0.png}
     \caption{ Descending Minor Seconds in c minor fugue in cents. }
     \end{center}
 \end{figure}
@@ -2051,7 +2064,7 @@ subject has affected our interval distribution:
 
 \begin{figure}[H]
     \begin{center}
-    \adjustimage{max size={0.6\linewidth}{0.9\paperheight}}{methods_files/methods_67_0.png}
+    \adjustimage{max size={0.6\linewidth}{0.9\paperheight}}{methods_files/methods_68_0.png}
     \caption{ Subject Descending Minor Seconds in c minor fugue in cents. }
     \end{center}
 \end{figure}
@@ -2120,7 +2133,7 @@ the resulting dataframe, and its corresponding \texttt{seaborn} chart:
 
 \begin{figure}[H]
     \begin{center}
-    \adjustimage{max size={0.6\linewidth}{0.9\paperheight}}{methods_files/methods_76_0.png}
+    \adjustimage{max size={0.6\linewidth}{0.9\paperheight}}{methods_files/methods_77_0.png}
     \caption{ Subject Opening Motif Descending Minor Seconds in c minor fugue in cents. }
     \end{center}
 \end{figure}
