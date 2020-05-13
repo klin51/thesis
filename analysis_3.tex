@@ -1,6 +1,7 @@
     
     
     
+    
 
     \hypertarget{Analysis III: Local and Fugal Analysis}{\chapter{Analysis III: Local and Fugal Analysis}\label{Analysis III: Local and Fugal Analysis}}
 
@@ -54,7 +55,7 @@ composition, in which its musical integrity hinges upon, and to which
 alteration of these elements can potentially bring about a major
 transformation---or complete dissolution---to the identity of a
 piece and the musical ideas that it seeks to convey. If we can draw an
-analogy of other compositional forms and their treatment of motivic
+analogy of other compositional genres and their treatment of motivic
 material to tenacious minds, then fugues are at the extreme end of
 obsession, and Bach's fugues are beautifully neurotically so; he is a
 master of the complete exploration of a subject through its endless
@@ -392,11 +393,13 @@ subject, of all the minor fugues for overview:
 
 
 
-    \begin{center}
-    \adjustimage{max size={0.6\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_7_0.png}
-    \end{center}
-    
-    The result from this chart is in line with what we would expect given
+
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.6\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_8_0.png}
+    \caption{Distribution of Fifths in All Minor Fugues Integrated. }
+\end{figure}    The result from this chart is in line with what we would expect given
 the analysis from previous chapters; theoretically, pure fifths
 outnumber tempered fifths 2 to 1, so in a completely fair split, our
 expected values for this chart should be 33.33\% tempered intervals to
@@ -412,13 +415,11 @@ at the distribution of fifths across all minor fugue subjects:
 
 
 \begin{figure}[H]
-    \begin{center}
-    \adjustimage{max size={0.6\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_10_0.png}
-    \caption{Fifths in All Minor Fugue Subjects}
-    \end{center}
-\end{figure}
-    
-    Immediately, we can observe a sizable jump for the pure intervals, as
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.6\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_12_0.png}
+    \caption{Distribution of Fifths in All Minor Fugue Subjects Integrated. }
+\end{figure}    Immediately, we can observe a sizable jump for the pure intervals, as
 its value increases almost by 10\%. The values of this graph indicates
 that more than 80\% of subject fifths are pure, as opposed to 70\% of
 fifths being pure when we consider subject and nonsubject material
@@ -447,23 +448,19 @@ this search to only subject fifths, the value increases to 98\%.
 
 
 \begin{figure}[H]
-    \begin{center}
-    \adjustimage{max size={0.6\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_13_0.png}
-    \caption{All fugue fifths comparison chart}
-    \end{center}
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.6\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_16_0.png}
+    \caption[Distribution of all minor fugue fifths juxtaposed against Pythagorean fugue fifths. ]{Distribution of all minor fugue fifths (blue) juxtaposed against Pythagorean fugue fifths (red).}
 \end{figure}
-    
-
 
 
 \begin{figure}[H]
-    \begin{center}
-    \adjustimage{max size={0.6\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_15_0.png}
-    \caption{Pythagorean fugue fifths comparison chart}
-    \end{center}
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.6\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_19_0.png}
+    \caption[Distribution of Pythagorean fugue fifths juxtaposed against Pythagorean fugue subject fifths. ]{Distribution of Pythagorean fugue fifths (blue) juxtaposed against Pythagorean fugue subject fifths (red).}
 \end{figure}
-    
-
     From the progression across these initial charts of fifths, we can
 already observe that pure fifths are selected for thematic and motivic
 use. Specifically, and fugally, there is an increase of usage of the
@@ -509,8 +506,8 @@ contribute to the resulting musical structures and general character of
 these compositions.
 
 If the subject is motivically the most prominent thematic force within
-the fugal form, the opening interval of the subject is even more so, as
-it is not only our first encounter with the subject, but with the entire
+the fugue, the opening interval of the subject is even more so, as it is
+not only our first encounter with the subject, but with the entire
 composition. The following Python search extracts the fugues from WTC
 I---if any---that contain either a fifth or fourth as its
 opening interval; we will also display the subjects from the fugues
@@ -528,21 +525,19 @@ detected:
 
 
 \begin{Example}[H]
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_21_0.png}
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_25_0.png}
     \caption{ D-sharp minor fugue subject (mm. 1-3). }
-    \end{center}
-\end{Example}
-    
+\end{Example}    
 
 
 \begin{Example}[H]
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_23_0.png}
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_27_0.png}
     \caption{ B-flat minor fugue subject (mm. 1-4). }
-    \end{center}
-\end{Example}
-    
+\end{Example}    
     The two fugues yielded by this inquiry are none other than the two
 exemplar Pythagorean fugues, b-flat and d-sharp minor. This is
 completely in line with the results and expectations from our analyses
@@ -585,39 +580,55 @@ perfect intervals are pure, when taking in account all subject fifths,
 even greater; all 21 full subject fifths/fourths are pure, for thematic
 fifths, only one fifth is tempered out of the 29 total.
 
-\begin{Verbatim}[commandchars=\\\{\}]
-      file  cents from just  ic nb sc directed name subject  subject offset  \textbackslash{}
-484  dsh\_1                0       0.0            P5    True             0.0   
-491  dsh\_1                0       0.0           P-5    True             5.0   
-492  dsh\_1                0       5.0            P4    True             6.0   
+\begin{singlespace}
+\begin{table}[H]
+\centering
+\tiny
+\begin{tabular}{|llrrllrr|}
+\hline
+\textbf{{}} & \textbf{  file} & \textbf{ cents from just} & \textbf{ ic nb sc} & \textbf{directed name} & \textbf{subject} & \textbf{ subject offset} & \textbf{ measure }\\
+\hline
+484 &  dsh\_1 &                0 &       0.0 &            P5 &    True &             0.0 &        1 \\
+491 &  dsh\_1 &                0 &       0.0 &           P-5 &    True &             5.0 &        2 \\
+492 &  dsh\_1 &                0 &       5.0 &            P4 &    True &             6.0 &        2 \\
+\hline
+\end{tabular}
+\caption[D-sharp minor fugue subject fifths/fourths (first statement). ]{D-sharp minor fugue first statement subject fifths/fourths. "Ic nb sc" shorthand for "interval class, non-base note scale-degree".}
+\end{table}
+\normalsize
+\end{singlespace}
 
-     measure  
-484        1  
-491        2  
-492        2  
-\end{Verbatim}
-\begin{Verbatim}[commandchars=\\\{\}]
-    file  cents from just  ic nb sc directed name subject  subject offset  \textbackslash{}
-0  bfl\_1                0       0.0           P-4    True             0.0   
-
-   measure  
-0        1  
-\end{Verbatim}
 
 
 \begin{figure}[H]
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_28_0.png}
-    \caption{Opening fourths/fifths in c-sharp minor fugue final subject. }
-    \end{center}
-\end{figure}
-    
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_34_0.png}
+    \caption{D-sharp minor fugue subject fifths/fourths opening interval only (left), D-sharp minor fugue all subject fifths/fourths (right). }
+\end{figure}\begin{singlespace}
+\begin{table}[H]
+\centering
+\tiny
+\begin{tabular}{|llrrllrr|}
+\hline
+\textbf{{}} & \textbf{  file} & \textbf{ cents from just} & \textbf{ ic nb sc} & \textbf{directed name} & \textbf{subject} & \textbf{ subject offset} & \textbf{ measure }\\
+\hline
+0 &  bfl\_1 &                0 &       0.0 &           P-4 &    True &             0.0 &        1 \\
+\hline
+\end{tabular}
+\caption{B-flat minor fugue subject (first stsatement), opening fourth. }
+\end{table}
+\normalsize
+\end{singlespace}
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_29_0.png}
-    \end{center}
-    
-    Indeed, to say that these two fugues utilize the fifth as important
+
+
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_40_0.png}
+    \caption{B-flat minor fugue subject fifths/fourths (left), B-flat minor fugue all thematic fifths/fourths (right). }
+\end{figure}    Indeed, to say that these two fugues utilize the fifth as important
 thematic material is an understatement, as both the vertical and
 horizontal structures of the two fugues are entirely constructed upon
 the theme of the fifth, and the exhaustive exploration of its sonic
@@ -688,12 +699,11 @@ and overall acoustical resonance of the piece.
 
 
 \begin{Example}[H]
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_32_0.png}
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_43_0.png}
     \caption{ Falling fifths in b-flat minor fugue (mm. 50-54). }
-    \end{center}
-\end{Example}
-    
+\end{Example}    
     For the d-sharp minor fugue, the subject highlights the fifth in a
 slightly different fashion, mainly through repetition within the
 subject, and thorough subject transformation and development that
@@ -728,35 +738,34 @@ and fourth throughout the course of the fugue.
 
 
 \begin{Example}[H]
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_35_0.png}
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_46_0.png}
     \caption{ Knelling fifths in d-sharp minor fugue (mm. 44-47). }
-    \end{center}
-\end{Example}
-    
+\end{Example}    
     One other crucial feature that both these fugues have in common is the
 compositional device of stretto, which both compositions employ to an
 extreme degree, and which is central to both fugues' resulting vertical
-structures, as well as their formal organizational structure and
-resulting architecture. Essentially, stretto plays a major component to
-the formal design of both fugues, both of which are exposition fugues,
-and to which each subsequent subject exposition gradually introduces an
-increasingly intense and intricate involvement of stretto. For the
-d-sharp minor fugue, this culminates in a masterful stretto of the three
-voices, each varied under different levels of augmentation (bass in
-original form, mezzo in partial augmentation, and soprano in full
-augmentation), bearing resemblance to the contrapuntal technique of the
-mensuration canon of the medieval and Renaissance periods.
+structures, as well as their formal and thematic organizational
+structure and resulting architecture. Essentially, stretto plays a major
+component to the formal design and thematic evolution/development of
+both fugues, both of which are exposition fugues, and to which each
+subsequent subject exposition gradually introduces an increasingly
+intense and intricate involvement of stretto. For the d-sharp minor
+fugue, this culminates in a masterful stretto of the three voices, each
+varied under different levels of augmentation (bass in original form,
+mezzo in partial augmentation, and soprano in full augmentation),
+bearing resemblance to the contrapuntal technique of the mensuration
+canon of the medieval and Renaissance periods.
 
 
 
 \begin{Example}[H]
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_38_0.png}
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_49_0.png}
     \caption{ Stretto and augmentation in d-sharp minor fugue (mm. 77-80). }
-    \end{center}
-\end{Example}
-    
+\end{Example}    
     In the case of the b-flat minor fugue, Bach concludes the piece with a
 brilliant five-part \emph{stretto maestraele} (meaning that all subjects
 are presented in their complete material) at the half measure, starting
@@ -813,12 +822,11 @@ meandering.
 
 
 \begin{Example}[H]
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_41_0.png}
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_52_0.png}
     \caption{ Stretto maestraele in b-flat minor fugue (mm. 67-75). }
-    \end{center}
-\end{Example}
-    
+\end{Example}    
     A final word on vertical texture as informed by stretto: both fugues use
 stretto in conjunction with the thematic fifth to create a prominent
 presence of harmonic fifths and fourths on the vertical domain; this not
@@ -844,12 +852,11 @@ that hearkens back to medieval style polyphony and harmonic texture.
 
 
 \begin{Example}[H]
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_44_0.png}
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_55_0.png}
     \caption{ Vertical quartal harmony in d-sharp minor fugue (mm. 52-53). }
-    \end{center}
-\end{Example}
-    
+\end{Example}    
     For the thicker, impressive vocal forces of the 5-voice b-flat minor
 fugue, these fifths in conjunction to the rich vocal texture allow for
 the maximization of a sonorous, chorale-like setting (the grand
@@ -883,12 +890,11 @@ presence of the double subject in stretto.
 
 
 \begin{Example}[H]
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_47_0.png}
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_58_0.png}
     \caption{ Cadential trine in b-flat minor fugue (mm. 54-56). }
-    \end{center}
-\end{Example}
-    
+\end{Example}    
     Through this examination of Bach's usage of the fifth and fourth in a
 thematic setting within the subjects of these two fugues, it is evident
 that the perfect interval is a central building block to not only the
@@ -896,8 +902,8 @@ thematic and formal structure to both compositions, but also to the
 acoustical resonant property to create a sense of sonic space and
 solemnity of character.
 
-\subsubsection{Other Subjects Opening: C\# Minor
-Fugue}\label{other-subjects-opening-c-minor-fugue}
+\subsubsection{Second and Third Subjects Opening: C\# Minor
+Fugue}\label{second-and-third-subjects-opening-c-minor-fugue}
 
 We will now ask the question again, but this time include second and
 third subject statements into the mix. Although an opening interval of a
@@ -907,7 +913,8 @@ importance:
 
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}4}]:} \PY{n}{d}\PY{o}{=}\PY{n}{m\PYZus{}hz\PYZus{}concat\PYZus{}wk}
-        \PY{n}{df}\PY{o}{=}\PY{n}{d}\PY{p}{[}\PY{p}{(}\PY{n}{d}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{int class}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{==}\PY{l+m+mi}{5}\PY{p}{)}\PY{o}{\PYZam{}}\PY{p}{(}\PY{n}{d}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{subject}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{==}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{True}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{o}{\PYZam{}}\PY{p}{(}\PY{n}{d}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{subject offset}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{==}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{]}
+        \PY{n}{df}\PY{o}{=}\PY{n}{d}\PY{p}{[}\PY{p}{(}\PY{n}{d}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{int class}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{==}\PY{l+m+mi}{5}\PY{p}{)}\PY{o}{\PYZam{}}\PY{p}{(}\PY{n}{d}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{subject}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{==}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{True}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PYZbs{}
+             \PY{o}{\PYZam{}}\PY{p}{(}\PY{n}{d}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{subject offset}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{==}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{]}
         \PY{n}{df}\PY{o}{.}\PY{n}{index}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{n}{level}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}
 \end{Verbatim}
 \begin{Verbatim}[commandchars=\\\{\}]
@@ -916,12 +923,11 @@ importance:
 
 
 \begin{Example}[H]
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_51_0.png}
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_62_0.png}
     \caption{ C-sharp minor fugue final subject (mm. 49-51). }
-    \end{center}
-\end{Example}
-    
+\end{Example}    
     We now observe that the c-sharp minor fugue is included in addition to
 the original b-flat and d-sharp minor fugues. Not only is c-sharp minor
 another member of the Pythagorean group, but it is one of two next best
@@ -940,24 +946,31 @@ further observe than an overwhelming 29 out of 31 intervals are pure
 (table of first statement fifth, and distribution of all fifths shown
 below).
 
-\begin{Verbatim}[commandchars=\\\{\}]
-      file  cents from just  ic nb sc directed name subject 2  subject offset  \textbackslash{}
-137  csh\_1                0       5.0            P4      True             0.0   
+\begin{singlespace}
+\begin{table}[H]
+\centering
+\tiny
+\begin{tabular}{|llrrllrr|}
+\hline
+\textbf{{}} & \textbf{  file} & \textbf{ cents from just} & \textbf{ ic nb sc} & \textbf{directed name} & \textbf{subject 2} & \textbf{ subject offset} & \textbf{ measure }\\
+\hline
+137 &  csh\_1 &                0 &       5.0 &            P4 &      True &             0.0 &       52 \\
+\hline
+\end{tabular}
+\caption{C-sharp minor fugue final subject fourth (first statement, opening interval). }
+\end{table}
+\normalsize
+\end{singlespace}
 
-     measure  
-137       52  
-\end{Verbatim}
 
 
 
 \begin{figure}[H]
-    \begin{center}
-    \adjustimage{max size={0.6\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_55_0.png}
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.6\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_70_0.png}
     \caption{Opening fourths/fifths in c-sharp minor fugue final subject. }
-    \end{center}
-\end{figure}
-    
-    This second fugal subject of the c-sharp minor fugue bears a distinct
+\end{figure}    This second fugal subject of the c-sharp minor fugue bears a distinct
 difference in character from the previous b-flat and d-sharp minor fugal
 themes that we have just encountered, namely that the fifth in this case
 is paired with slightly faster note values (quarter notes), with an
@@ -1048,21 +1061,19 @@ connecting two statements of the "sigh" motif).
 
 
 \begin{Example}[H]
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_59_0.png}
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_74_0.png}
     \caption[E minor fugue subject (mm. 1-3). ]{ E minor fugue subject (mm. 1-3). Non-motivic, arpeggiated fourths in first and second measure.}
-    \end{center}
-\end{Example}
-    
+\end{Example}    
 
 
 \begin{Example}[H]
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_61_0.png}
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_76_0.png}
     \caption[B minor fugue subject (mm. 1-3). ]{ B minor fugue subject (mm. 1-3). Non-motivic, connecting fourth in the second measure.}
-    \end{center}
-\end{Example}
-    
+\end{Example}    
     These fourths all clearly occur as secondary material, serving either to
 embellish a line, or connect motivic material. The last instance of a
 fourth that I chosen to set aside is the special ascending fourth that
@@ -1075,12 +1086,11 @@ another section within this chapter.
 
 
 \begin{Example}[H]
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_64_0.png}
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_79_0.png}
     \caption[F minor fugue subject (mm. 1-3). ]{ F minor fugue subject (mm. 1-3). Chromatic fourth (b-natural - e-natural) in second measure.}
-    \end{center}
-\end{Example}
-    
+\end{Example}    
     Lastly, I have chosen to look strictly at subject material, and have
 excluded countersubjects and motivically salient episodic material from
 the search as to further keep biases and unwanted artifacts to a
@@ -1193,27 +1203,35 @@ The figures below (in order) consists of:
 \end{enumerate}
 
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_66_0.png}
-    \end{center}
-    
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_67_0.png}
-    \end{center}
-    
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_82_0.png}
+    \caption[Distribution of thematic subject fifths and fourths as a function of base pitch for individual fugues. ]{Distribution of thematic subject fifths and fourths as a function of base pitch for individual fugues containing them. Pythagorean fugues marked in blue, meantone fugues in red.}
+\end{figure}
+
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_84_0.png}
+    \caption[Prevalence of thematic subject fifths and fourths as a function of fugue. ]{Prevalence of thematic subject fifths and fourths as a function of fugue. Left graph measures frequency in terms of normalized duration on the y-axis, right graph charts normalized counts.}
+\end{figure}
 
 
-    \begin{center}
-    \adjustimage{max size={0.75\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_69_0.png}
-    \end{center}
-    
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.75\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_87_0.png}
+    \caption{Distribution of all thematic subject fifths and fourths as a function of base pitch integrated across all fugues. }
+\end{figure}
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_70_0.png}
-    \end{center}
-    
-    The general observations from these tables are as follows:
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_89_0.png}
+    \caption[Distribution of fifths and fourths as a function of interval purity, all intervals vs. thematic subject intervals. ]{Distribution of all integrated fifths and fourths as a function of interval purity (left); distribution of integrated thematic subject fifths and fourths as a function of interval purity (right).}
+\end{figure}    The general observations from these tables are as follows:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1285,16 +1303,20 @@ The figures below (in order) consists of:
 \end{enumerate}
 
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_72_0.png}
-    \end{center}
-    
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_73_0.png}
-    \end{center}
-    
-    In summary, there is a clear and dramatic positive correlation and
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_92_0.png}
+    \caption[Percentage of Horizontal Pure Fifths in Each Minor Fugue. ]{Percentage of Horizontal Pure Fifths in Each Minor Fugue, Actual Fugue (Left), Averaged Fugues (Right).}
+\end{figure}
+
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_94_0.png}
+    \caption[Percentage of Horizontal Perfect Intervals in Each Minor Fugue. ]{Percentage of Horizontal Pure Perfect Intervals in Each Minor Fugue, Actual Fugue (Left), Averaged Fugues (Right).}
+\end{figure}    In summary, there is a clear and dramatic positive correlation and
 connection between thematic fifths and fourths featured in subject
 material and key, with the following conclusions:
 
@@ -1443,21 +1465,19 @@ as to display the subject statements for our reference:
 
 
 \begin{Example}[H]
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_79_0.png}
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_100_0.png}
     \caption{ C-sharp minor fugue first subject (mm. 1-3). }
-    \end{center}
-\end{Example}
-    
+\end{Example}    
 
 
 \begin{Example}[H]
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_81_0.png}
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_102_0.png}
     \caption{ F minor fugue subject (mm. 1-3). }
-    \end{center}
-\end{Example}
-    
+\end{Example}    
     Immediately, we note that both of these fugues belong to the Pythagorean
 class keys, as we anticipated. Furthermore, both of these opening
 semitones of the first iteration of the subject are Pythagorean limma
@@ -1466,14 +1486,38 @@ the interval according to the key (c-sharp at the leading tone position,
 and f at the submediant position) verified below in the following two
 tables:
 
-\begin{Verbatim}[commandchars=\\\{\}]
-       file  cents  sc degree L  measure subject  subject offset
-1170  csh\_1     90         11.0        1    True             0.0
-\end{Verbatim}
-\begin{Verbatim}[commandchars=\\\{\}]
-    file  cents  sc degree L  measure subject  subject offset
-712  f\_1     90          7.0        1    True             0.0
-\end{Verbatim}
+\begin{singlespace}
+\begin{table}[H]
+\centering
+\tiny
+\begin{tabular}{|llrrlrlr|}
+\hline
+\textbf{{}} & \textbf{  file} & \textbf{ cents} & \textbf{ sc degree L} & \textbf{directed name} & \textbf{ measure} & \textbf{subject} & \textbf{ subject offset }\\
+\hline
+1170 &  csh\_1 &     90 &         11.0 &           m-2 &        1 &    True &             0.0 \\
+\hline
+\end{tabular}
+\caption{C-sharp minor fugue subject (first statement), slow opening semitone. }
+\end{table}
+\normalsize
+\end{singlespace}
+
+\begin{singlespace}
+\begin{table}[H]
+\centering
+\tiny
+\begin{tabular}{|llrrlrlr|}
+\hline
+\textbf{{}} & \textbf{file} & \textbf{ cents} & \textbf{ sc degree L} & \textbf{directed name} & \textbf{ measure} & \textbf{subject} & \textbf{ subject offset }\\
+\hline
+712 &  f\_1 &     90 &          7.0 &            m2 &        1 &    True &             0.0 \\
+\hline
+\end{tabular}
+\caption{F minor fugue subject (first statement), slow opening semitone. }
+\end{table}
+\normalsize
+\end{singlespace}
+
     While the first statement of the subject is arguably the most important
 iteration of it, it is not quite enough to just look solely at this
 singular instance, as that would be neglecting the structure of the
@@ -1490,16 +1534,20 @@ Pythagorean limma at 90 cents, and the lightest bar representing
 semitones at 108 cents.
 
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_86_0.png}
-    \end{center}
-    
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_87_0.png}
-    \end{center}
-    
-    For both fugues, we can easily observe that the semitone at 90
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_114_0.png}
+    \caption[Distribution of opening slow subject semitones in C-sharp minor fugue as a function of cents and lower scale degree. ]{Distribution of opening slow subject semitones in C-sharp minor fugue as a function of cents (left) and lower scale degree (right).}
+\end{figure}
+
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_116_0.png}
+    \caption[Distribution of opening slow subject semitones in F minor fugue as a function of cents and lower scale degree. ]{Distribution of opening slow subject semitones in F minor fugue as a function of cents (left) and lower scale degree (right).}
+\end{figure}    For both fugues, we can easily observe that the semitone at 90
 cents---the Pythagorean limma---is the most frequently used type
 of semitone, followed by some usage of the semitone at 96 cents, and in
 the case of the c-sharp minor fugue, one instance of the semitone at 102
@@ -1556,11 +1604,13 @@ contrast, and c-sharp and f-sharp as the most "uniformly" chromatic
 minor keys.
 
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_89_0.png}
-    \end{center}
-    
-    So, while there lie similarities between both fugal subjects, which are
+
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_119_0.png}
+    \caption[Distribution of horizontal minor seconds (m2), according to lower scale degree for Pythagorean minor fugues, direction invariant. ]{Distribution of horizontal minor seconds (m2) according to lower scale degree for Pythagorean minor fugues, direction invariant. Gradient of bar corresponds with purity of the semitone, with lighter bars indicating purer intervals, and darker bars indicating more tempered intervals.}
+\end{figure}    So, while there lie similarities between both fugal subjects, which are
 both slow and dirge-like, highly chromatic, and feature cross-like
 outlines to further accentuate chromaticism, they differ dramatically in
 their length, f minor being long and drawn out, with variegated leaps
@@ -1600,11 +1650,13 @@ demonstrates how c-sharp is not only a preferred key for its specific
 subject and subject developmental style, but the optimal key.
 
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_91_0.png}
-    \end{center}
-    
-    By looking at all of these twelve transposition graphs side by side, we
+
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_122_0.png}
+    \caption[Table of opening slow subject semitones in C-sharp minor fugue as a function of lower scale degree transposed to each key. ]{Table of opening slow subject semitones in C-sharp minor fugue as a function of lower scale degree transposed to each key. E.g., top left graph labeled "f" contains the distribution of these subject semitones from the c-sharp minor fugue transposed to f minor. The fugue in the original key (labeled "c\#") can be found in the second row, center graph. Note how the original c-sharp minor fugue maximizes the usage of the narrowest semitone (indicated by the darkest blue bars) out of all of the keys.}
+\end{figure}    By looking at all of these twelve transposition graphs side by side, we
 can see that if we wish to preserve a) the Pythagorean limma at peak
 positions (tonic, and in this case subdominant) and b) uniformity and
 minimal level of variation in the narrowness of the semitone, c-sharp is
@@ -1683,21 +1735,19 @@ As with before, we will corroborate our claim to these fugues with
 
 
 \begin{Example}[H]
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_96_0.png}
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_127_0.png}
     \caption{ C minor fugue subject (mm. 1-3). }
-    \end{center}
-\end{Example}
-    
+\end{Example}    
 
 
 \begin{Example}[H]
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_98_0.png}
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_129_0.png}
     \caption{ A minor fugue subject (mm. 1-3). }
-    \end{center}
-\end{Example}
-    
+\end{Example}    
     Looking at both of the subjects side by side, we can observe their
 striking similarities; not only do both subjects involve the same pitch
 motif of the mordent, they also share the same rhythmic pattern (two
@@ -1718,8 +1768,7 @@ portrayed by the slow semitones in the section previous.
     \includegraphics{anapest4.png}
 \end{center}
 \caption{Musical example of an anapaestic rhythm.}
-\end{figure}
-    Immediately, it is important to note that the two keys in which Bach has
+\end{figure}    Immediately, it is important to note that the two keys in which Bach has
 set these subjects to are both meantone keys, a and c, as opposed to the
 Pythagorean keys connected to the slow semitones. As we observed in the
 previous chapter, the temperamental construction of the meantone minor
@@ -1735,14 +1784,38 @@ and elegant in character.
 At this point, we will look at the type of semitone that is used for the
 opening interval of the initial subject statement:
 
-\begin{Verbatim}[commandchars=\\\{\}]
-    file  cents  sc degree L directed name subject  subject offset  measure
-264  c\_1    108         11.0           m-2    True             0.0        1
-\end{Verbatim}
-\begin{Verbatim}[commandchars=\\\{\}]
-    file  cents  sc degree L directed name subject  subject offset  measure
-634  a\_1     96         11.0           m-2    True             0.0        1
-\end{Verbatim}
+\begin{singlespace}
+\begin{table}[H]
+\centering
+\tiny
+\begin{tabular}{|llrrllrr|}
+\hline
+\textbf{{}} & \textbf{file} & \textbf{ cents} & \textbf{ sc degree L} & \textbf{directed name} & \textbf{subject} & \textbf{ subject offset} & \textbf{ measure }\\
+\hline
+264 &  c\_1 &    108 &         11.0 &           m-2 &    True &             0.0 &        1 \\
+\hline
+\end{tabular}
+\caption{C minor fugue subject opening semitone (first statement). }
+\end{table}
+\normalsize
+\end{singlespace}
+
+\begin{singlespace}
+\begin{table}[H]
+\centering
+\tiny
+\begin{tabular}{|llrrllrr|}
+\hline
+\textbf{{}} & \textbf{file} & \textbf{ cents} & \textbf{ sc degree L} & \textbf{directed name} & \textbf{subject} & \textbf{ subject offset} & \textbf{ measure }\\
+\hline
+634 &  a\_1 &     96 &         11.0 &           m-2 &    True &             0.0 &        1 \\
+\hline
+\end{tabular}
+\caption{A minor fugue subject opening semitone (first statement). }
+\end{table}
+\normalsize
+\end{singlespace}
+
     For the c minor fugue, the widest available semitone at 108 cents is
 employed; for a minor though, the semitone is narrower, at 96 cents
 (second most narrow semitone available). However, there is more
@@ -1766,28 +1839,51 @@ note the subject offset and directed name column in the third row entry
 to verify the inverted subject statement (first statement happens on
 measure 14).
 
-\begin{Verbatim}[commandchars=\\\{\}]
-    file  cents  sc degree L directed name subject  subject offset  measure
-264  c\_1    108         11.0           m-2    True             0.0        1
-269  c\_1    108         11.0           m-2    True             2.0        1
-274  c\_1    108         11.0           m-2    True             4.0        2
-\end{Verbatim}
+\begin{singlespace}
+\begin{table}[H]
+\centering
+\tiny
+\begin{tabular}{|llrrllrr|}
+\hline
+\textbf{{}} & \textbf{file} & \textbf{ cents} & \textbf{ sc degree L} & \textbf{directed name} & \textbf{subject} & \textbf{ subject offset} & \textbf{ measure }\\
+\hline
+264 &  c\_1 &    108 &         11.0 &           m-2 &    True &             0.0 &        1 \\
+269 &  c\_1 &    108 &         11.0 &           m-2 &    True &             2.0 &        1 \\
+274 &  c\_1 &    108 &         11.0 &           m-2 &    True &             4.0 &        2 \\
+\hline
+\end{tabular}
+\caption{C minor fugue all subject thematic semitones (first statement). }
+\end{table}
+\normalsize
+\end{singlespace}
+
 
 
 
 \begin{Example}[H]
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_108_0.png}
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_148_0.png}
     \caption[A minor fugue subject in inverso (mm. 14-16). ]{ A minor fugue subject in inverso (mm. 14-16). Subject starts on the pickup to the fourth beat in the first measure of the excerpt.}
-    \end{center}
-\end{Example}
-    
-\begin{Verbatim}[commandchars=\\\{\}]
-    file  cents  sc degree L directed name subject  subject offset  measure
-634  a\_1     96         11.0           m-2    True             0.0        1
-639  a\_1    108          2.0           m-2    True             2.0        1
-104  a\_1    108          7.0            m2    True             0.0       14
-\end{Verbatim}
+\end{Example}    
+\begin{singlespace}
+\begin{table}[H]
+\centering
+\tiny
+\begin{tabular}{|llrrllrr|}
+\hline
+\textbf{{}} & \textbf{file} & \textbf{ cents} & \textbf{ sc degree L} & \textbf{directed name} & \textbf{subject} & \textbf{ subject offset} & \textbf{ measure }\\
+\hline
+634 &  a\_1 &     96 &         11.0 &           m-2 &    True &             0.0 &        1 \\
+639 &  a\_1 &    108 &          2.0 &           m-2 &    True &             2.0 &        1 \\
+104 &  a\_1 &    108 &          7.0 &            m2 &    True &             0.0 &       14 \\
+\hline
+\end{tabular}
+\caption{A minor fugue all subject thematic semitones, first statement in recto and and inverso. }
+\end{table}
+\normalsize
+\end{singlespace}
+
     Looking at the a minor table with the additional iterations of the
 subject motif taken into account, we observe that the widest semitone at
 108 cents is utilized in both cases of the reiteration of the subject
@@ -1815,16 +1911,20 @@ all instances of the subject mordent motif.
 
 
 
-    \begin{center}
-    \adjustimage{max size={0.6\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_112_0.png}
-    \end{center}
-    
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_113_0.png}
-    \end{center}
-    
-    Observations:
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.6\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_156_0.png}
+    \caption{C minor fugue all subject mordent motif thematic semitones. }
+\end{figure}
+
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_158_0.png}
+    \caption[A minor fugue subject opening semitones, and all subject mordent motif thematic semitones. ]{A minor fugue subject opening semitones (left), and all subject mordent motif thematic semitones (right).}
+\end{figure}    Observations:
 
 \begin{itemize}
 \tightlist
@@ -1855,11 +1955,13 @@ by the slow moving semitone motif, which showed a strong disposition
 towards the narrow Pythagorean limma.
 
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_115_0.png}
-    \end{center}
-    
-    Just through this section's comparison of the usage and approach to the
+
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_161_0.png}
+    \caption[Slow opening semitone motif in F minor and C-sharp minor subjects compared against fast mordent semitone motifs in C minor and A minor subjects. ]{Slow opening semitone motif in F minor and C-sharp minor subjects (left) compared against fast mordent semitone motifs in C minor and A minor subjects (right). Note the difference in the distributions, with the slow semitones favoring the narrowest Pythagorean limma semitone (90 cents), while the fast semitones largely favor the widest version of semitone (108 cents).}
+\end{figure}    Just through this section's comparison of the usage and approach to the
 semitone as thematic material, we can see a clear division between theme
 type and choice of key and tempered interval. Essentially when
 controlling only for duration, we witness a division of two groups of
@@ -2027,12 +2129,11 @@ this very idiosyncratic and extreme Pythagorean exemplar key.
 
 
 \begin{Example}[H]
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_125_0.png}
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_171_0.png}
     \caption[Minor ninth in the B-flat minor fugue subject (mm. 1-3). ]{ B-flat minor fugue subject (mm. 1-3). Minor ninth leap between the notes of F and G-flat, outlined between the last note of the first measure and first note of the second measure.}
-    \end{center}
-\end{Example}
-    
+\end{Example}    
     In the previous section involving fifths and fourths, we observed
 through careful analysis how centric the fifth was to the thematic
 construction and structure of this fugue. Tantamount though to the
@@ -2048,12 +2149,12 @@ foundation to the harmonic and formal structure of the piece, the first
 and foremost interval still that comes to mind when recalling this fugue
 is this iconic gesture of the beautiful reaching minor ninth, in all its
 quiet desperation, and it is this interval that is cemented in our minds
-as being inextricably tied to this fugue. David Ledbetter notes of this
-relationship between this interval and key eloquently: "What appealed to
-Bach in this genre was the expressive tension possible between the
-objective control inherent in the \emph{stile antico} and the tortured
-personal anguish of the second-practice dissonance, enhanced by the
-weird key (b-flat minor)."
+as being inextricably tied to this fugue. David Ledbetter (2002, p.224)
+notes of this relationship between this interval and key eloquently:
+"What appealed to Bach in this genre was the expressive tension possible
+between the objective control inherent in the \emph{stile antico} and
+the tortured personal anguish of the second-practice dissonance,
+enhanced by the weird key (b-flat minor)."
 
 At the conclusion of the previous chapter, we were able to see how the
 temperament profile of b-flat minor (maximum purity of perfect
@@ -2080,35 +2181,55 @@ descending semitone resolutions in subjects as a function of temperament
 5. Distribution of subject and answer leap (both minor ninth and minor
 tenth) and descending semitone resolutions as a function of temperament
 
-\begin{Verbatim}[commandchars=\\\{\}]
-    file  cents  sc degree L directed name subject  subject offset  measure
-1  bfl\_1     90          7.0            m9    True             2.0        1
-\end{Verbatim}
+\begin{singlespace}
+\begin{table}[H]
+\centering
+\tiny
+\begin{tabular}{|llrrllrr|}
+\hline
+\textbf{{}} & \textbf{  file} & \textbf{ cents} & \textbf{ sc degree L} & \textbf{directed name} & \textbf{subject} & \textbf{ subject offset} & \textbf{ measure }\\
+\hline
+1 &  bfl\_1 &     90 &          7.0 &            m9 &    True &             2.0 &        1 \\
+\hline
+\end{tabular}
+\caption{B minor fugue subject minor ninth leap (first statement). }
+\end{table}
+\normalsize
+\end{singlespace}
 
 
-    \begin{center}
-    \adjustimage{max size={0.6\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_129_0.png}
-    \end{center}
-    
 
 
-    \begin{center}
-    \adjustimage{max size={0.6\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_131_0.png}
-    \end{center}
-    
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.6\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_179_0.png}
+    \caption{B-flat minor fugue subject ascending minor ninth leap. }
+\end{figure}
 
 
-    \begin{center}
-    \adjustimage{max size={0.6\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_133_0.png}
-    \end{center}
-    
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.6\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_182_0.png}
+    \caption{B-flat minor fugue answer ascending minor tenth leap. }
+\end{figure}
 
 
-    \begin{center}
-    \adjustimage{max size={0.6\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_135_0.png}
-    \end{center}
-    
-    The observations from these graphs and tables are as follows:
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.6\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_185_0.png}
+    \caption{B-flat minor fugue subject ascending minor ninth leap and descending semitone motif. }
+\end{figure}
+
+
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.6\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_188_0.png}
+    \caption{B-flat minor fugue subject and answer leap and semitone resolution motif. }
+\end{figure}    The observations from these graphs and tables are as follows:
 
 \begin{itemize}
 \tightlist
@@ -2176,16 +2297,20 @@ followed by minor ninth/semitone) into all twelve minor keys are
 presented in the charts below for verification:
 
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_137_0.png}
-    \end{center}
-    
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_138_0.png}
-    \end{center}
-    
-    From these charts, we can observe that, on average, b-flat minor is the
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_191_0.png}
+    \caption[Table of opening subject perfect intervals in the B-flat minor fugue as a function of lower scale degree, transposed to each minor key. ]{Table of opening subject perfect intervals in the B-flat minor fugue as a function of lower scale degree, transposed to each minor key. E.g., top left graph labeled "f" contains the distribution of these subject fifths from the original B-flat minor fugue transposed to f minor. The fugue in the original key (labeled "b-") can be found in the first row, center graph. The original key of B-flat has the second highest purity percentage for these subject perfect intervals at 96.55\%, exceeded only by the D-sharp minor key transposition.}
+\end{figure}
+
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_193_0.png}
+    \caption[Table of subject minor ninth/tenth leap and semitone resolution in the B-flat minor fugue as a function of lower scale degree, transposed to each minor key. ]{Table of subject minor ninth/tenth leap and semitone resolution in the B-flat minor fugue as a function of lower scale degree, transposed to each minor key. The original key of B-flat (first row, center column) has the second highest percentage of the narrowest variety of interval for these subject intervals (at -22 cents from just), exceeded only by the F minor key transposition. Combined with the information from the above table, the original key of B-flat minor is, on average, the optimal key when it comes to selecting for pure fifths and narrow semitones for these subject intervals.}
+\end{figure}    From these charts, we can observe that, on average, b-flat minor is the
 key that greatest preserves both the purity for the thematic perfect
 intervals, as well as the the narrowness (through the Pythagorean limma
 and Pythagorean minor third) of the minor ninth/tenth and semitone
@@ -2229,12 +2354,11 @@ measure in the excerpt below, bass voice):
 
 
 \begin{Example}[H]
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_141_0.png}
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_196_0.png}
     \caption[Descending minor ninth in b-flat minor fugue (mm. 70-74). ]{ Descending minor ninth in b-flat minor fugue (mm. 70-74). Descending minor ninth starting at pickup to m. 72, bass voice.}
-    \end{center}
-\end{Example}
-    
+\end{Example}    
     While this single appearance cannot constitute motivic material, its
 presence within the piece is structurally important, and far from
 casual, or merely dictated by contrapuntal or linear necessity because
@@ -2275,17 +2399,31 @@ punchline here lies in the fact that even the tempering of this interval
 is a foil to the ascending interval, as it uses the widest semitone
 available at 108 cents:
 
-\begin{Verbatim}[commandchars=\\\{\}]
-      file  cents  sc degree L directed name subject  subject offset  measure
-805  bfl\_1    108          6.0           m-9   False             0.0       72
-\end{Verbatim}
+\begin{singlespace}
+\begin{table}[H]
+\centering
+\tiny
+\begin{tabular}{|llrrllrr|}
+\hline
+\textbf{{}} & \textbf{  file} & \textbf{ cents} & \textbf{ sc degree L} & \textbf{directed name} & \textbf{subject} & \textbf{ subject offset} & \textbf{ measure }\\
+\hline
+805 &  bfl\_1 &    108 &          6.0 &           m-9 &   False &             0.0 &       72 \\
+\hline
+\end{tabular}
+\caption{B minor fugue descending minor ninth leap. }
+\end{table}
+\normalsize
+\end{singlespace}
 
 
-    \begin{center}
-    \adjustimage{max size={0.6\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_145_0.png}
-    \end{center}
-    
-    Aside from this interval's contribution to the fugue's structural
+
+
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.6\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_204_0.png}
+    \caption{B-flat minor fugue descending minor ninth leap.}
+\end{figure}    Aside from this interval's contribution to the fugue's structural
 balance and symmetry, the tempering of this descending is artistically
 salient, in that it further sets this descending version of the interval
 apart from all of the previous thematic ascending ninths. The contrast,
@@ -2320,12 +2458,11 @@ bass):
 
 
 \begin{Example}[H]
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_149_0.png}
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_208_0.png}
     \caption[Countersubject descending ninths in f minor fugue (mm. 4-7). ]{ Countersubject descending ninths in f minor fugue (mm. 4-7), first and second instances of statement. First statement outlined in tenor voice against the subject in the alto (first measure of excerpt), second instance outlined in the alto, with the subject entry in the bass (fourth measure of excerpt).}
-    \end{center}
-\end{Example}
-    
+\end{Example}    
     Recalling the scale degree breakdown and analysis of the key of f minor
 in the previous chapter, we observed f minor to be a boundary key with
 polarizing effects when it comes to the key's chromatic layout as
@@ -2352,19 +2489,33 @@ representing the difficult and polarizing nature of the chromaticism in
 this particular key. Let us consider the tempering of the three
 instances of this interval:
 
-\begin{Verbatim}[commandchars=\\\{\}]
-     file  cents  sc degree L directed name  measure
-359   f\_1    108         11.0           m-9        7
-728   f\_1    108          6.0           m-9        4
-1154  f\_1    108         11.0           m-9       13
-\end{Verbatim}
+\begin{singlespace}
+\begin{table}[H]
+\centering
+\tiny
+\begin{tabular}{|llrrlr|}
+\hline
+\textbf{{}} & \textbf{file} & \textbf{ cents} & \textbf{ sc degree L} & \textbf{directed name} & \textbf{ measure }\\
+\hline
+359  &  f\_1 &    108 &         11.0 &           m-9 &        7 \\
+728  &  f\_1 &    108 &          6.0 &           m-9 &        4 \\
+1154 &  f\_1 &    108 &         11.0 &           m-9 &       13 \\
+\hline
+\end{tabular}
+\caption{F minor fugue countersubject descending minor ninth leap. }
+\end{table}
+\normalsize
+\end{singlespace}
 
 
-    \begin{center}
-    \adjustimage{max size={0.6\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_153_0.png}
-    \end{center}
-    
-    All of the three iterations of this countersubject descending minor
+
+
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.6\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_216_0.png}
+    \caption{F minor fugue descending minor ninth leap in countersubject. }
+\end{figure}    All of the three iterations of this countersubject descending minor
 ninth leap are at the widest semitone value of 108 cents, consistent
 with the same width as the descending minor ninth statement in the
 b-flat minor fugue. In the specific context of the chromaticism in this
@@ -2401,16 +2552,20 @@ second set containing all instances of minor ninths regardless of
 thematic usage.
 
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_155_0.png}
-    \end{center}
-    
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_156_0.png}
-    \end{center}
-    
-    While we have shown through this section's analysis the larger, musical
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_219_0.png}
+    \caption[Ascending thematic minor ninths compared against descending thematic minor ninths in the B-flat and F minor fugues. ]{Ascending thematic minor ninths (left) compared against descending thematic minor ninths (right) in the B-flat and F minor fugues, the only fugues that contain thematic instances of these intervals in their subject and countersubject material. Note the difference in the distributions, with the ascending ninths favoring the narrowest Pythagorean limma semitone (90 cents), while the descending ninths favor the widest version of semitone (108 cents).}
+\end{figure}
+
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_221_0.png}
+    \caption[Ascending minor ninths compared against descending minor ninths in all fugues. ]{Ascending minor ninths (left) compared against descending minor ninths (right) in all fugues.}
+\end{figure}    While we have shown through this section's analysis the larger, musical
 significance of the tempering of these intervals in context of their
 compositions, beyond the specific thematic import attached to
 composition, there could be deduced something of a general natural
@@ -2560,11 +2715,13 @@ in blue, in this case strictly for the purpose of distinguishing the
 two.
 
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_162_0.png}
-    \end{center}
-    
-    From looking at the shapes of the these distributions, the clear
+
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_228_0.png}
+    \caption[Distribution of diminished sevenths compared against major sixths in all fugues as a function of cents. ]{Distribution of diminished sevenths (left) compared against major sixths (right) in all fugues as a function of cents.}
+\end{figure}    From looking at the shapes of the these distributions, the clear
 conclusion that we can deduce from comparing the two charts are:
 
 \begin{enumerate}
@@ -2653,52 +2810,52 @@ in blue).
 
 
 \begin{Example}[H]
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_167_0.png}
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_233_0.png}
     \caption[Diminished seventh leap in a minor fugue subject (mm. 1-3). ]{ A minor fugue subject (mm. 1-3). Descending diminished seventh leap (contiguous) in second measure.}
-    \end{center}
-\end{Example}
-    
+\end{Example}    
 
 
 \begin{Example}[H]
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_169_0.png}
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_235_0.png}
     \caption[Diminished seventh leap in b minor fugue subject (mm. 1-3). ]{ B minor fugue subject (mm. 1-3). Two diminished seventh leaps (continuous) in second measure.}
-    \end{center}
-\end{Example}
-    
+\end{Example}    
 
 
 \begin{Example}[H]
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_171_0.png}
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_237_0.png}
     \caption[Diminished seventh leap (noncontiguous) in d minor fugue subject (mm. 1-3). ]{ D minor fugue subject (mm. 1-3). Ascending diminished seventh leap (noncontiguous) in second measure.}
-    \end{center}
-\end{Example}
-    
+\end{Example}    
 
 
 \begin{Example}[H]
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_173_0.png}
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_239_0.png}
     \caption[Diminished seventh leap (noncontiguous) in g minor fugue subject (mm. 1-2). ]{ G minor fugue subject (mm. 1-2). Descending diminished seventh leap (noncontiguous) in first measure.}
-    \end{center}
-\end{Example}
-    
+\end{Example}    
 
 
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_176_0.png}
-    \end{center}
-    
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_177_0.png}
-    \end{center}
-    
-    The observations from the above data are as follows:
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_243_0.png}
+    \caption[Diminished sevenths in minor fugue subjects. ]{Diminished sevenths in minor fugue subjects. The sevenths in the A minor and B minor fugues are contiguous intervals, while the sevenths in the D minor and G minor fugues are noncontiguous, with one additional note interleaved in between the outer notes of the interval.}
+\end{figure}
+
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_245_0.png}
+    \caption[Distribution of major sixths in fugues with subjects containing diminished sevenths. ]{Distribution of major sixths in fugues with subjects containing diminished sevenths (distribution of these subject diminished sevenths seen in above figure).}
+\end{figure}    The observations from the above data are as follows:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -2755,16 +2912,20 @@ in the charts below using the example of exemplar meantone key d minor
 compared with exemplar Pythagorean key b-flat minor).
 
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_179_0.png}
-    \end{center}
-    
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_180_0.png}
-    \end{center}
-    
-    In a sort of facile way, we may initially expect these wide, 906 cents
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_248_0.png}
+    \caption[Distribution of major sixths in meantone exemplar key D minor compared against Pythagorean exemplar key B-flat minor for averaged fugues. ]{Distribution of major sixths in meantone exemplar key D minor (left) compared against Pythagorean exemplar key B-flat minor (right) for averaged fugues.}
+\end{figure}
+
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_250_0.png}
+    \caption[Distribution of major sixths in D minor fugue compared against B-flat minor fugue. ]{Distribution of major sixths in D minor fugue (left) compared against B-flat minor fugue (right).}
+\end{figure}    In a sort of facile way, we may initially expect these wide, 906 cents
 diminished sevenths---which are enharmnonic equivalents to the
 sixths---to appear in Pythagorean keys, however, because of the way
 the scale is constructed in well-temperament, it turns out that it is in
@@ -2818,9 +2979,6 @@ found in the meantone keys of the WTC I fugues, and both prominently
 utilize the theme of the diminished seventh as musical symbolism for
 this falling motion (observe the series of descending diminished seventh
 leaps in the bass voice in the opening of Durch Adams Fall below).
-
-    Chorale prelude - Through Adams fall D minor BWV 637 from the "Little
-Organ Book" (BWV 599-644)
 \begin{Example}[H]
 \centering
 \includegraphics{durch_adams_fall_nt.png}
@@ -2851,16 +3009,20 @@ directionally neutral case of the interval (as depicted in the charts
 below)---altogether increasingly its musical and dramatic effect.
 
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_185_0.png}
-    \end{center}
-    
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_186_0.png}
-    \end{center}
-    
-    Returning to this comparison between the minor ninth and diminished
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_255_0.png}
+    \caption[Distribution of contiguous descending d7 intervals compared against contiguous descending M6 intervals across all fugues. ]{Distribution of contiguous descending d7 intervals (left) compared against contiguous descending M6 intervals (right) across all fugues.}
+\end{figure}
+
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_257_0.png}
+    \caption[Distribution of contiguous direction invariant d7 intervals compared against contiguous direction invariant M6 intervals across all fugues. ]{Distribution of contiguous, direction invariant d7 intervals (left) compared against contiguous, direction invariant M6 intervals (right) across all fugues.}
+\end{figure}    Returning to this comparison between the minor ninth and diminished
 seventh though: while one can question the fact as to whether the minor
 ninth should be inherently associated with more morose, gloomy affects,
 and the diminished seventh associated with more upbeat characters of
@@ -2943,11 +3105,13 @@ distribution of the enharmonically equivalent major thirds (indicated in
 red):
 
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_189_0.png}
-    \end{center}
-    
-    Looking at the shapes of these two distributions, we observe the
+
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_261_0.png}
+    \caption[Distribution of diminished fourths compared against major thirds across all fugues. ]{Distribution of diminished fourths (left) compared against major thirds (right) across all fugues.}
+\end{figure}    Looking at the shapes of these two distributions, we observe the
 following:
 
 \begin{enumerate}
@@ -3020,22 +3184,35 @@ red).
 
 
 \begin{Example}[H]
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_194_0.png}
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_266_0.png}
     \caption[Diminished fourth in c-sharp minor fugue first subject (mm. 1-3). ]{ C-sharp minor fugue first subject (mm. 1-3). Diminished fourth in second measure.}
-    \end{center}
-\end{Example}
-    
-\begin{Verbatim}[commandchars=\\\{\}]
-       file  cents  sc degree L  measure subject  subject offset
-1171  csh\_1    390         11.0        2    True             4.0
-\end{Verbatim}
+\end{Example}    
+\begin{singlespace}
+\begin{table}[H]
+\centering
+\tiny
+\begin{tabular}{|llrrlrlr|}
+\hline
+\textbf{{}} & \textbf{  file} & \textbf{ cents} & \textbf{ sc degree L} & \textbf{directed name} & \textbf{ measure} & \textbf{subject} & \textbf{ subject offset }\\
+\hline
+1171 &  csh\_1 &    390 &         11.0 &            d4 &        2 &    True &             4.0 \\
+\hline
+\end{tabular}
+\caption{C-sharp minor fugue subject diminished fourth (first statement). }
+\end{table}
+\normalsize
+\end{singlespace}
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_196_0.png}
-    \end{center}
-    
-    The immediate observations of the data are as follows:
+
+
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_272_0.png}
+    \caption[Distribution of subject diminished fourths compared against all major thirds in the C-sharp minor fugue. ]{Distribution of subject diminished fourths (left) compared against all major thirds (right) in the C-sharp minor fugue.}
+\end{figure}    The immediate observations of the data are as follows:
 
 \begin{itemize}
 \tightlist
@@ -3114,16 +3291,20 @@ similarity between the two distributions, and their strong predilection
 towards the most narrow versions of their intervals.
 
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_198_0.png}
-    \end{center}
-    
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_199_0.png}
-    \end{center}
-    
-    The final important thing to note from the scale degree graphs above is
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_275_0.png}
+    \caption[Distribution of opening slow subject semitones in C-sharp minor fugue as a function of cents and lower scale degree. ]{Distribution of opening slow subject semitones in C-sharp minor fugue as a function of cents (left) and lower scale degree (right).}
+\end{figure}
+
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_277_0.png}
+    \caption[Distribution of subject diminished fourths in the C-sharp minor fugue as a function of cents and lower scale degree. ]{Distribution of subject diminished fourths in the C-sharp minor fugue as a function of cents (left) and lower scale degree (right).}
+\end{figure}    The final important thing to note from the scale degree graphs above is
 the specific scale degrees that contain the most frequent intervals, and
 of course, their tempering variety. For both cases, we can observe that
 the two bars with the highest frequency values for both graphs (on scale
@@ -3141,11 +3322,13 @@ semitones in the previous section with transposition graphs, but to
 corroborate this as well in the case of the diminished fourths:
 
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_201_0.png}
-    \end{center}
-    
-    While this outcome of frequency is to be expected, what is significant
+
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_280_0.png}
+    \caption[Table of subject diminished fourths in the C-sharp minor fugue as a function of lower scale degree, transposed to each key. ]{Table of subject diminished fourths in the C-sharp minor fugue as a function of lower scale degree, transposed to each key. E.g., top left graph labeled "f" contains the distribution of these subject diminished fourths from the C-sharp minor fugue transposed to F minor. The fugue in the original key (labeled "c\#") can be found in the second row, center graph. Note how the original C-sharp minor fugue maximizes the usage of the narrowest (in this instance, purest, at 390 cents) variety of the interval, indicated by the lightest blue bars, out of all of the keys.}
+\end{figure}    While this outcome of frequency is to be expected, what is significant
 about these graphs are the exact scale degrees that these frequent
 values fall upon. The first statement of the subject (in tonic) engages
 the leading tone, so it is logical that the most frequent scale degree
@@ -3194,11 +3377,13 @@ and imagined for its particular key.
 
 
 
-    \begin{center}
-    \adjustimage{max size={0.7\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_204_0.png}
-    \end{center}
-    
-    \subsection{Chromatic vs. Diatonic Perfect
+
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.7\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_284_0.png}
+    \caption[Sum of cents in the C-sharp minor fugue cross subject (subject 1) for the fugue transposed to each key. ]{Sum of cents in the C-sharp minor fugue cross subject (subject 1) for the fugue transposed to each key. The fugue's original key of C-sharp minor minimizes this sum of cents compared against all other keys.}
+\end{figure}    \subsection{Chromatic vs. Diatonic Perfect
 Intervals}\label{chromatic-vs.-diatonic-perfect-intervals}
 
 The last type of interval that we will analyze in this section is the
@@ -3249,12 +3434,11 @@ descending diatonic fifth immediately following.
 
 
 \begin{Example}[H]
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_209_0.png}
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_289_0.png}
     \caption[Chromatic fourth in f minor fugue subject (mm. 1-3). ]{ F minor fugue subject (mm. 1-3). Chromatic fourth (B-natural - E-natural) in second measure.}
-    \end{center}
-\end{Example}
-    
+\end{Example}    
     Immediately, the key of f minor is fitting because of the key's boundary
 nature that we have already established in the scale degree section of
 the previous chapter, and have already begun to see a portion of the
@@ -3286,11 +3470,13 @@ two perfect intervals as a function of cents side by side, with the
 chromatic fourth on the left, and diatonic fifth on the right.
 
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_211_0.png}
-    \end{center}
-    
-    The temperamental differences between these two intervals are quite
+
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_292_0.png}
+    \caption[Distribution of subject chromatic fourths compared against subject diatonic fifth in the F minor fugue. ]{Distribution of subject chromatic fourths (left) compared against subject diatonic fifth (right) in the F minor fugue.}
+\end{figure}    The temperamental differences between these two intervals are quite
 readily observable, with all occurrences of the diatonic fifth falling
 on pure intervals, contrasted against the chromatic fourths which
 divides its intervals equally between the pure and tempered versions of
@@ -3317,11 +3503,13 @@ against the subject's opening semitone motif. The charts of the two
 intervals are presented below for comparison:
 
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_213_0.png}
-    \end{center}
-    
-    In this example of the opening semitone and the connecting semitone, we
+
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_295_0.png}
+    \caption[Distribution of subject opening semitones compared against subject connecting semitones in the F minor fugue. ]{Distribution of subject opening semitones (left) compared against subject connecting semitones (right) in the F minor fugue.}
+\end{figure}    In this example of the opening semitone and the connecting semitone, we
 can see that they are directly in opposition of one another in terms of
 temperament, the opening semitone clustered around the Pythagorean limma
 (as we have examined earlier), and the connecting semitone mostly at the
@@ -3394,14 +3582,15 @@ way we believe other musical elements such as harmony, rhythm,
 articulation, dynamics, and form to have significant and direct control
 over the artistic integrity of a piece. While any sort of analysis
 dealing with determining musical significance can quickly wax
-subjective, the strict form of the fugue allows us to simplify and make
-concrete an otherwise potentially abstract problem. The culminating
-principle behind the analytical approach in this chapter is rather
-simple: if we can show that the fugal subject, an its constituent
-motifs, symbols and intervals therein a) mirror the temperamental traits
-of its home key and b) utilize in meaningful and thematic ways the
-special intervals idiosyncratic to the home key, we can confirm a
-significant connection between temperament and musical significance.
+subjective, the strict thematic treatment within the fugue allows us to
+simplify and make concrete an otherwise potentially abstract problem.
+The culminating principle behind the analytical approach in this chapter
+is rather simple: if we can show that the fugal subject, an its
+constituent motifs, symbols and intervals therein a) mirror the
+temperamental traits of its home key and b) utilize in meaningful and
+thematic ways the special intervals idiosyncratic to the home key, we
+can confirm a significant connection between temperament and musical
+significance.
 
 The rough format for the breakdown of each of the Pythagorean
 compositions in this summary section will be as follows:
@@ -3467,11 +3656,13 @@ Thirds)}\label{exemplar-modal-pythagorean-keys-pure-perfect-intervals-pythagorea
 \textbf{Summary of Key:}
 
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_218_0.png}
-    \end{center}
-    
-    Temperamental Traits:
+
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_301_0.png}
+    \caption[Scale degree charts: fifths, thirds, and semitones as a function of lower scale degree for the B-flat minor fugue. ]{Scale degree charts: fifths (left), thirds (center), and semitones (right) as a function of lower scale degree for the B-flat minor fugue. Fifths and semitones are horizontal; thirds are vertical.}
+\end{figure}    Temperamental Traits:
 
 \begin{itemize}
 \tightlist
@@ -3530,18 +3721,19 @@ Most important/idiosyncratic intervallic features:
 
 
 \begin{Example}[H]
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_221_0.png}
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_304_0.png}
     \caption{ B-flat minor fugue subject (mm. 1-4). }
-    \end{center}
-\end{Example}
-    
+\end{Example}    
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_222_0.png}
-    \end{center}
-    
-    Subject features:
+
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_306_0.png}
+    \caption[Subject/thematic opening fifths/fourths, and subject minor ninth leap and semitone resolution for the B-flat minor fugue. ]{Subject/thematic opening fifths/fourths (left), and subject minor ninth (minor tenth answer) leap and semitone resolution (right) for the B-flat minor fugue.}
+\end{figure}    Subject features:
 
 \begin{itemize}
 \tightlist
@@ -3607,11 +3799,13 @@ resonance and depressiveness, and are completely optimized for its key.
 \textbf{Summary of Key:}
 
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_225_0.png}
-    \end{center}
-    
-    Temperamental Traits:
+
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_310_0.png}
+    \caption[Scale degree charts: fifths, thirds, and semitones as a function of lower scale degree for the D-sharp minor fugue. ]{Scale degree charts: fifths (left), thirds (center), and semitones (right) as a function of lower scale degree for the D-sharp minor fugue. Fifths and semitones are horizontal; thirds are vertical.}
+\end{figure}    Temperamental Traits:
 
 \begin{itemize}
 \tightlist
@@ -3659,18 +3853,19 @@ Most important/idiosyncratic intervallic features:
 
 
 \begin{Example}[H]
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_228_0.png}
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_313_0.png}
     \caption{ D-sharp minor fugue subject (mm. 1-3). }
-    \end{center}
-\end{Example}
-    
+\end{Example}    
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_229_0.png}
-    \end{center}
-    
-    Subject features:
+
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_315_0.png}
+    \caption[D-sharp minor subject opening fifths/fourths; all subject fifths/fourths. ]{D-sharp minor subject opening fifths/fourths (left); all subject fifths/fourths (right).}
+\end{figure}    Subject features:
 
 \begin{itemize}
 \tightlist
@@ -3725,11 +3920,13 @@ Tones)}\label{exemplar-tonal-pythagorean-keys-smooth-chromaticism-strong-leading
 \textbf{Summary of Key:}
 
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_233_0.png}
-    \end{center}
-    
-    Temperamental Traits:
+
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_320_0.png}
+    \caption[Scale degree charts: fifths, thirds, and semitones as a function of lower scale degree for the C-sharp minor fugue. ]{Scale degree charts: fifths (left), thirds (center), and semitones (right) as a function of lower scale degree for the C-sharp minor fugue. Fifths and semitones are horizontal; thirds are vertical.}
+\end{figure}    Temperamental Traits:
 
 \begin{itemize}
 \tightlist
@@ -3780,41 +3977,42 @@ Most important/idiosyncratic intervallic features:
 
 
 \begin{Example}[H]
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_236_0.png}
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_323_0.png}
     \caption{ C-sharp minor first fugue subject (mm. 1-3). }
-    \end{center}
-\end{Example}
-    
+\end{Example}    
 
 
 \begin{Example}[H]
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_238_0.png}
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_325_0.png}
     \caption{ C-sharp minor second fugue subject (mm. 36-38). }
-    \end{center}
-\end{Example}
-    
+\end{Example}    
 
 
 \begin{Example}[H]
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_240_0.png}
-    \caption{ C-sharp minor first fugue subject (mm. 49-51). }
-    \end{center}
-\end{Example}
-    
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_327_0.png}
+    \caption{ C-sharp minor third fugue subject (mm. 49-51). }
+\end{Example}    
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_241_0.png}
-    \end{center}
-    
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_242_0.png}
-    \end{center}
-    
-    Subject features:
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_329_0.png}
+    \caption[C-sharp minor first subject opening semitones; first subject diminished fourths. ]{C-sharp minor first subject opening semitones (left); first subject diminished fourths (right).}
+\end{figure}
+
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_331_0.png}
+    \caption[C-sharp minor final subject opening fifths/fourths; final subject semitone resolution. ]{C-sharp minor final subject opening fifths/fourths (left); final subject semitone resolution (right).}
+\end{figure}    Subject features:
 
 \begin{itemize}
 \tightlist
@@ -3885,11 +4083,13 @@ realized in any other key.
 Key:}\footnote{We did not cover this fugue in the analysis of this chapter, but it (along with the b minor fugue) is included here for overview because of the clear connections between its subject/thematic material and its key.}
 
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_245_0.png}
-    \end{center}
-    
-    Temperamental Traits:
+
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_335_0.png}
+    \caption[Scale degree charts: fifths, thirds, and semitones as a function of lower scale degree for the F-sharp minor fugue. ]{Scale degree charts: fifths (left), thirds (center), and semitones (right) as a function of lower scale degree for the F-sharp minor fugue. Fifths and semitones are horizontal; thirds are vertical.}
+\end{figure}    Temperamental Traits:
 
 \begin{itemize}
 \tightlist
@@ -3939,19 +4139,20 @@ Most important/idiosyncratic intervallic features:
 
 
 \begin{Example}[H]
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_248_0.png}
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_338_0.png}
     \caption{ F-sharp minor fugue subject (mm. 1-4). }
-    \end{center}
-\end{Example}
-    
+\end{Example}    
 
 
-    \begin{center}
-    \adjustimage{max size={0.6\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_250_0.png}
-    \end{center}
-    
-    Subject features:
+
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.6\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_341_0.png}
+    \caption{F-sharp minor subject semitone approaching fifth scale degree. }
+\end{figure}    Subject features:
 
 \begin{itemize}
 \tightlist
@@ -4009,11 +4210,13 @@ Chromaticism)}\label{boundary-keys-polarized-chromaticism}
 \textbf{Summary of Key:}
 
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_254_0.png}
-    \end{center}
-    
-    Temperamental Traits:
+
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_346_0.png}
+    \caption[Scale degree charts: fifths, thirds, and semitones as a function of lower scale degree for the F minor fugue. ]{Scale degree charts: fifths (left), thirds (center), and semitones (right) as a function of lower scale degree for the F minor fugue. Fifths and semitones are horizontal; thirds are vertical.}
+\end{figure}    Temperamental Traits:
 
 \begin{itemize}
 \tightlist
@@ -4070,29 +4273,34 @@ Most important/idiosyncratic intervallic features:
 
 
 \begin{Example}[H]
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_257_0.png}
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_349_0.png}
     \caption{ F minor fugue subject (mm. 1-3). }
-    \end{center}
-\end{Example}
-    
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_258_0.png}
-    \end{center}
-    
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_259_0.png}
-    \end{center}
-    
+\end{Example}    
 
 
-    \begin{center}
-    \adjustimage{max size={0.5\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_261_0.png}
-    \end{center}
-    
-    Subject features:
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_351_0.png}
+    \caption[F minor subject opening semitone; subject connecting semitone. ]{F minor subject opening semitone (left); subject connecting semitone (right).}
+\end{figure}
+
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_353_0.png}
+    \caption[F minor subject chromatic fourth; subject diatonic fifth. ]{F minor subject opening chromatic fourth (left); subject diatonic fifth (right).}
+\end{figure}
+
+
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.5\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_356_0.png}
+    \caption{F minor countersubject descending minor ninth.}
+\end{figure}    Subject features:
 
 \begin{itemize}
 \tightlist
@@ -4153,11 +4361,13 @@ subject and thematic material.
 Key:}\footnote{This is the other key in this section that we did not cover in analysis in the chapter, nor is this a Pythagorean key fugue, but we have included it for short mention because it is a) a boundary key and b) its subject bears remarkable similarities to the f minor fugue that are connected with the boundary nature of its key.}
 
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_264_0.png}
-    \end{center}
-    
-    Temperamental Traits:
+
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_360_0.png}
+    \caption[Scale degree charts: fifths, thirds, and semitones as a function of lower scale degree for the B minor fugue. ]{Scale degree charts: fifths (left), thirds (center), and semitones (right) as a function of lower scale degree for the B minor fugue. Fifths and semitones are horizontal; thirds are vertical.}
+\end{figure}    Temperamental Traits:
 
 \begin{itemize}
 \tightlist
@@ -4205,12 +4415,11 @@ Most important/idiosyncratic intervallic features:
 
 
 \begin{Example}[H]
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_267_0.png}
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_363_0.png}
     \caption{ B minor fugue subject (mm. 1-3). }
-    \end{center}
-\end{Example}
-    
+\end{Example}    
     Subject features:
 
 \begin{itemize}
@@ -4266,11 +4475,13 @@ shades and colors that the well-tempered tuning system has to offer.
 
 
 
-    \begin{center}
-    \adjustimage{max size={0.75\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_270_0.png}
-    \end{center}
-    
-    \subsection{Concluding Remarks}\label{concluding-remarks}
+
+\begin{figure}[H]
+\vspace{1.5em}
+    \centering
+    \adjustimage{max size={0.75\linewidth}{0.9\paperheight}}{analysis_3_files/analysis_3_367_0.png}
+    \caption[All horizontal intervals in the B minor fugue by cents. ]{All horizontal intervals in the B minor fugue by cents. All but 2 of 40---every interval, including every single version of their tempered types, except for two versions of the major seventh---are present. This makes the B minor fugue the most intervallically diverse fugue across the entire collection.}
+\end{figure}    \subsection{Concluding Remarks}\label{concluding-remarks}
 
 From this summary of keys and subjects, we can clearly observe that the
 Pythagorean subjects indeed mirror their keys, as do the types of motifs
