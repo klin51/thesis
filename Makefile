@@ -48,6 +48,25 @@ latex:
 	python3 tanubot.py temperament.tex
 	python3 tanubot.py conclusions.tex
 
+	perl -00pe0 abstract.tex
+	perl -00pe0 methods.tex
+	perl -00pe0 analysis_1.tex
+	perl -00pe0 analysis_2.tex
+	perl -00pe0 analysis_3.tex
+	perl -00pe0 intro.tex
+	perl -00pe0 temperament.tex
+	perl -00pe0 conclusions.tex
+
+	perl -i -pe 's/\\end\{figure\}[\n\r\t\s]+/\\end\{figure\}/smg' abstract.tex
+	perl -i -pe 's/\\end\{figure\}[\n\r\t\s]+/\\end\{figure\}/smg' methods.tex
+	perl -i -pe 's/\\end\{figure\}[\n\r\t\s]+/\\end\{figure\}/smg' analysis_1.tex
+	perl -i -pe 's/\\end\{figure\}[\n\r\t\s]+/\\end\{figure\}/smg' analysis_2.tex
+	perl -i -pe 's/\\end\{figure\}[\n\r\t\s]+/\\end\{figure\}/smg' analysis_3.tex
+	perl -i -pe 's/\\end\{figure\}[\n\r\t\s]+/\\end\{figure\}/smg' intro.tex
+	perl -i -pe 's/\\end\{figure\}[\n\r\t\s]+/\\end\{figure\}/smg' temperament.tex
+	perl -i -pe 's/\\end\{figure\}[\n\r\t\s]+/\\end\{figure\}/smg' conclusions.tex
+
+
 pretty:
 	$(MAKE_PRETTY)
 	$(LATEX) $(FILE)_pretty.tex

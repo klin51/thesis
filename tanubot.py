@@ -172,7 +172,8 @@ def run_tanubot (input_file_name, output_file_name):
 
                 if ("\\adjustimage" in line):
                     f.write("\\begin{%s}[H]\n" % fig_type)
-                    f.write("    \\begin{center}\n")
+                    f.write("\\vspace{1.5em}\n")
+                    f.write("    \\centering\n")
                     if len(old)>0 and old[0] in line:
                         line = line.replace(old[0],new[0])
                         old.pop()
@@ -182,8 +183,7 @@ def run_tanubot (input_file_name, output_file_name):
                         f.write("    \\caption[%s]{%s}\n" % (tanubot_short_caption, tanubot_caption))
                     else:
                         f.write("    \\caption{%s}\n" % tanubot_caption)
-                    f.write("    \\end{center}\n")
-                    f.write("\\end{%s}\n" % fig_type)
+                    f.write("\\end{%s}" % fig_type)
 
                 elif not "{center}" in line:
                     if (not tanubot_skip_line ):
