@@ -39,6 +39,7 @@ latex:
 	echo "trimming \\/"
 	find . -maxdepth 1 -name "*.tex" -exec sed -in 's/\\\///g' {} \;
 
+	python3 tanubot.py acknowledgements.tex
 	python3 tanubot.py abstract.tex
 	python3 tanubot.py methods.tex
 	python3 tanubot.py analysis_1.tex
@@ -48,7 +49,6 @@ latex:
 	python3 tanubot.py temperament.tex
 	python3 tanubot.py conclusions.tex
 
-	perl -00pe0 abstract.tex
 	perl -00pe0 methods.tex
 	perl -00pe0 analysis_1.tex
 	perl -00pe0 analysis_2.tex
@@ -57,7 +57,6 @@ latex:
 	perl -00pe0 temperament.tex
 	perl -00pe0 conclusions.tex
 
-	perl -i -pe 's/\\end\{figure\}[\n\r\t\s]+/\\end\{figure\}/smg' abstract.tex
 	perl -i -pe 's/\\end\{figure\}[\n\r\t\s]+/\\end\{figure\}/smg' methods.tex
 	perl -i -pe 's/\\end\{figure\}[\n\r\t\s]+/\\end\{figure\}/smg' analysis_1.tex
 	perl -i -pe 's/\\end\{figure\}[\n\r\t\s]+/\\end\{figure\}/smg' analysis_2.tex
