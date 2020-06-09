@@ -73,7 +73,7 @@ def run_tanubot (input_file_name, output_file_name):
                 tanubot_expecting_short_caption = False
             tanubot_skip_line = True
 
-        if "TANUBOT" in line.upper():
+        if "TANUBOT" in line:
             print("EXECUTING TANUBOT COMMAND: %s" % line)
 
             if ("TANUBOT IMAGE\_WIDTH" in line):
